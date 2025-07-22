@@ -121,7 +121,7 @@
 		--btn-bg-cl: var(--ctx-button-background-light);
 		
 		&::after {
-			box-shadow: var(--shadow-sm);
+			box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--ctx-border-secondary-pale);
 		}
 
 		&.btn_disabled,
@@ -138,27 +138,6 @@
 	&_secondary-light {
 		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
 	}
-	//&_danger {
-	//	--btn-bg-cl: var(--ctx-button-background-error-active);
-	//	--btn-cl: var(--ctx-text-error-active);
-	//	--btn-shadow-cl: transparent;
-	//
-	//	&:hover {
-	//		--btn-bg-cl: var(--ctx-button-background-error-hover);
-	//		--btn-shadow-cl: transparent;
-	//	}
-	//
-	//	&:focus-visible {
-	//		--btn-shadow-cl: var(--ctx-border-error-focus);
-	//	}
-	//
-	//	&.btn_disabled,
-	//	&:disabled {
-	//		--btn-bg-cl: var(--ctx-button-background-error-disabled);
-	//		--btn-cl: var(--ctx-text-error-disabled);
-	//		--btn-shadow-cl: transparent;
-	//	}
-	//}
 	
 	&_ghost {
 		--btn-bg-cl: transparent;

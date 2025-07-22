@@ -50,7 +50,8 @@ const DonateFormTabs = () => {
 						<Image
 							src='ozon'
 							alt=''
-							className={ratioClass({ view: '3x2' })}
+							cover
+							className={ratioClass({ view: '5x3' })}
 						/>
 					}
 					action={

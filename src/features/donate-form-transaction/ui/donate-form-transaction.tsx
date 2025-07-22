@@ -325,7 +325,7 @@ const DonateFormTransaction = ({ children, className, view, clientName }: Donate
 						checkboxValue='comment-checkbox'
 					>
 						<Typography view='text-sm'>
-							Отправить без коментария
+							Отправить без комментария
 						</Typography>
 					</Checkbox>
 				</div>

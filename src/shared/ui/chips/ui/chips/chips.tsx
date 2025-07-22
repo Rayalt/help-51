@@ -22,7 +22,6 @@ const Chips = ({
 	return (
 		<Fragment>
 			{chips.map((chip) => (
-				
 				<label
 					className={ cn(
 						classes.chip,

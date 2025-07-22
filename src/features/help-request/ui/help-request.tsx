@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import classes from '../help-request.module.scss';
-import { Citizenship, citizenship, HelpGender, helpGender, HelpRequestProps } from 'features/help-request/model/types';
+import { Citizenship, citizenship, helpGender } from 'features/help-request/model/types';
 import { DataWidget } from 'widgets/data-widget/ui/data-widget';
 import { FormCard } from 'widgets';
 import { itemContentType } from 'widgets/form-card/model/types';
@@ -108,7 +108,7 @@ const HelpRequest = () => {
 				const today = new Date();
 				const age = today.getFullYear() - year - (
 					today.getMonth() + 1 < month ||
-								(today.getMonth() + 1 === month && today.getDate() < day) ? 1 : 0
+						(today.getMonth() + 1 === month && today.getDate() < day) ? 1 : 0
 				);
 
 				if (age < 0) return 'Возраст должен быть меньше 0';
@@ -155,9 +155,9 @@ const HelpRequest = () => {
 			{...register('address', {
 				required: 'Укажите город'
 			})}
-			view={errors.address ? 'error' : undefined}
+			view={ errors.address ? 'error' : undefined }
 		/>
-		{errors.address &&
+		{ errors.address &&
 		<Hint color="error">{errors.address.message}</Hint>
 		}
 	</Fragment>
@@ -203,7 +203,7 @@ const HelpRequest = () => {
 					render={({ field }) => (
 						<Fragment>
 							<MaskedInput
-								view={errors.phone ? 'error' : undefined}
+								view={ errors.phone ? 'error' : undefined }
 								mask="999 999-99-99"
 								prefix="+7"
 								placeholder="Ваш телефон"
@@ -212,9 +212,6 @@ const HelpRequest = () => {
 									const raw = e.target.value.replace(/\D/g, '');
 									field.onChange(`+7${raw}`);
 								}}
-								className={cn({
-									[classes.error]: errors.phone,
-								})}
 							/>
 							{errors.phone && (
 								<Hint color="error">{errors.phone.message}</Hint>

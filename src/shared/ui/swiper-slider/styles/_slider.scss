@@ -1,7 +1,7 @@
 @use 'app/markup/scss/mixins/breakpoints' as bp;
 @use 'app/markup/scss/mixins/transform' as tf;
 
-.slider {
+.slider, .swiper {
 	--swiper-pagination-bottom: 0;
 	--swiper-pagination-color: var(--ctx-elements-background-accent-active);
 	

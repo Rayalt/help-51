@@ -9,9 +9,10 @@ import { StoreProvider } from 'app/providers';
 
 // const rootElement: HTMLElement = document.getElementById('root');
 // const root = ReactDOM.createRoot(rootElement);
+const basename = process.env.NODE_ENV === 'production' ? '/help-51' : '/';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<BrowserRouter>
+	<BrowserRouter basename={basename}>
 		<StoreProvider>
 			<Suspense fallback=''>
 				<ErrorBoundary fallback={<ErrorMessage />}>

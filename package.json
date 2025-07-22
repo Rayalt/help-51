@@ -1,8 +1,9 @@
 {
-  "name": "reacr-ru",
+  "name": "help-51",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://rayalt.github.io/help-51/",
   "scripts": {
     "start": "webpack-dev-server --env port=3000",
     "start:dev": "npm start",
@@ -15,7 +16,9 @@
     "lint:fix:errors": "eslint \"**/*.{ts,tsx}\" --fix --quiet",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build:prod",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -79,6 +82,7 @@
     "concurrently": "9.1.2",
     "file-loader": "^6.2.0",
     "framer-motion": "12.23.6",
+    "gh-pages": "^6.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-error-boundary": "4.1.2",
