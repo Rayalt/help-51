@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { ContactsType, SocialsType } from 'widgets';
 
 export const contactsLinkListEmail: ContactsType[] = [
@@ -21,7 +22,7 @@ export const contactsLinkList: ContactsType[] = [
 	...contactsLinkListShort,
 	{
 		path: '/',
-		text: 'Главный офис: Мурманск, Карла Либкхнента, 28, офис 401',
+		text: <Fragment>Главный офис: Мурманск, Карла Либкхнента&nbsp;28, офис&nbsp;401</Fragment>,
 		icon: 'placemark',
 	},
 ];

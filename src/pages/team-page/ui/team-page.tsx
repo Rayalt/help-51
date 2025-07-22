@@ -17,20 +17,22 @@ const TeamPage = () => {
 					key={ item.id }
 					className={cn('row', classes['team-element'])}
 				>
-					<Image
-						src={ item.photo }
-						alt=''
-						cover
-						className={cn(
-							ratioClass({ view: '1x1' }),
-							classes['sm:col-3'], 
-							classes['col-5'], 
-							classes['team-element__img']
-						)}
-					></Image>
+					<div
+						className={cn(['sm:col-3'], ['col-5'])}
+					>
+						<Image
+							src={ item.photo }
+							alt=''
+							cover
+							className={cn(
+								ratioClass({ view: '1x1' }),
+								classes['team-element__img']
+							)}
+						></Image>
+					</div>
 					
 					<div
-						className={ cn(classes['team-element__info'], classes['sm:col-8'])}
+						className={ cn(classes['team-element__info'], 'sm:col-8')}
 					>
 						<div
 							className={ cn(classes['team-element__name'])}

@@ -14,10 +14,6 @@
 		height: auto;
 		padding-top: 10px;
 		padding-bottom: 10px;
-		
-		@include bp.media-breakpoint-up(lg) {
-			flex-shrink: 0;
-		}
 	}
 	
 	&__btn-text {
