@@ -1,0 +1,14 @@
+.news-page {
+	&__img {
+		margin-top: 44px;
+		border-radius: 32px;
+		box-shadow: var(--shadow-md);
+		overflow: hidden;
+	}
+	
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+}

@@ -1,0 +1,92 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+
+.donate-form {
+	--donate-form-mt: 24px;
+	--donate-form-gap: 24px;
+	gap: var(--donate-form-gap);
+	
+	display: flex;
+	flex-direction: column;
+	
+	@include bp.media-breakpoint-up(md) {
+		--donate-form-mt: 40px;
+		--donate-form-gap: 32px;
+	}
+	
+	&__img {}
+	&__subtitle {
+		padding-left: 8px;
+		//margin-bottom: 16px;
+		
+	}
+	
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__field {
+		//margin-top: 12px;
+	}
+	
+	&__chips-wrapper {
+		overflow-x: scroll;
+		padding-bottom: 12px;
+		
+		& + .donate-form__field {
+			//margin-top: 12px;
+		}
+	}
+	
+	&__chips {
+		display: flex;
+		gap: 12px;
+	}
+	
+	&__actions {
+		display: flex;
+		gap: 12px;
+		margin-top: var(--donate-form-mt);
+	}
+	
+	&__sum-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+	}
+	
+	&__sum {
+		//margin-left: auto;
+	}
+	
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 24px;
+		
+		@include bp.media-breakpoint-up(sm) {
+			flex-direction: row;
+		}
+	}
+	
+	&__offer {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	
+	&__submit {
+		width: 100%;
+		
+		@include bp.media-breakpoint-up(sm) {
+			width: auto;
+			margin-bottom: 2px;
+		}
+	}
+}

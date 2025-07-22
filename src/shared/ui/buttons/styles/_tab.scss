@@ -1,0 +1,97 @@
+@use 'app/markup/scss/mixins/buttons' as btn;
+@use 'app/markup/scss/mixins/text-component' as tc;
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+@use 'app/markup/scss/mixins/transition' as tz;
+
+.tab {
+	--tab-inner-px: 32px;
+	--tab-inner-py: 16px;
+	--tab-bg-cl: var(--ctx-button-background-light);
+	--tab-cl: inherit;
+	--tab-border-cl: var(--ctx-border-secondary-light);
+	--tab-broder-w: 1px;
+	--tab-brs: 56px;
+
+	border-radius: var(--tab-brs);
+	color: var(--tab-cl);
+	background-color: var(--tab-bg-cl);
+	max-width: 372px;
+	padding: 0;
+	border: 0;
+	text-align: left;
+	text-decoration: none;
+	user-select: none;
+	position: relative;
+	box-shadow: var(--shadow-sm), inset 0 0 0 var(--tab-broder-w) var(--tab-border-cl);
+	white-space: nowrap;
+	flex-shrink: 0;
+	
+	&,
+	&.state:active {
+		transform: none;
+	}
+	
+	&:focus {
+		&.state {
+			--state-shadow-cl: var(--ctx-border-accent);
+		}
+	}
+	
+	&__inner {
+		padding: 0 var(--tab-inner-px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 56px;
+	}
+	
+	&__title {
+		--typography-cl: var(--tab-title-cl);
+		
+		@include tz.transition(color .2s);
+	}
+	
+	&__subtitle {
+		color: var(--ctx-text-secondary);
+		padding-right: 2px;
+		padding-left: 2px;
+		
+		
+		@include tc.text-component(xxs, semibold);
+	}
+
+	&_primary {
+		--tab-title-cl: var(--ctx-text-primary);
+		
+		&.tab_active {
+			--tab-title-cl: var(--ctx-text-accent-primary);
+			--tab-border-cl: var(--ctx-border-accent);
+		}
+	}
+	
+	&_secondary {
+		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+		--tab-title-cl: var(--ctx-text-secondary);
+		
+		white-space: normal;
+		
+		&:focus {
+			&.state {
+				--state-shadow-cl: var(--ctx-border-primary);
+			}
+		}
+		
+		&.tab_active {
+			--tab-title-cl: var(--ctx-text-accent-secondary);
+			--tab-border-cl: var(--ctx-border-primary);
+		}
+	}
+	
+	&_active {
+		--tab-broder-w: 2px;
+		
+		pointer-events: none;
+	}
+	
+	&_icon {}
+}

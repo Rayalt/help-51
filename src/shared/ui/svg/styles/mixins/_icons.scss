@@ -1,0 +1,21 @@
+@use "sass:map";
+@use '../variables/icons-variables' as var;
+@use '../variables/icons' as ic;
+@use 'app/markup/scss/variables/breakpoints' as bp-var;
+
+$icons: ic.$icons;
+$icon-properties-list: var.$icon-properties-list;
+$token-breakpoints: bp-var.$token-breakpoints;
+
+@mixin icon-vars-generate {
+	@each $bp, $component in $icons {
+		@each $component-name, $properties in $component {
+			@each $name, $value in $properties {
+				$local-bp: map.get(map.get($token-breakpoints, $bp), real);
+				$short-name: map.get($icon-properties-list, $name);
+
+				--#{$local-bp}-icon-#{$component-name}-#{$short-name}: #{$value}px;
+			}
+		}
+	}
+}

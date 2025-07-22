@@ -1,0 +1,33 @@
+@use 'sass:list';
+@use '../variables/ratio' as var;
+
+$aspect-ratios: var.$aspect-ratios;
+
+// Credit: Nicolas Gallagher and SUIT CSS.
+
+.ratio {
+	--aspect-ratio-x: 1;
+	--aspect-ratio-y: 1;
+
+	@supports (aspect-ratio: auto) {
+		aspect-ratio: var(--aspect-ratio-x) / var(--aspect-ratio-y);
+
+		&::before {
+			content: none;
+		}
+	}
+
+	&::before {
+		content: '';
+		padding-top: calc(var(--aspect-ratio-y) / var(--aspect-ratio-x) * 100%);
+		float: left;
+	}
+}
+
+
+@each $item in $aspect-ratios {
+	.ratio_#{list.nth($item, 1)}x#{list.nth($item, 2)} {
+		--aspect-ratio-x: #{list.nth($item, 1)};
+		--aspect-ratio-y: #{list.nth($item, 2)};
+	}
+}

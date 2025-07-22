@@ -1,0 +1,8 @@
+.programs-tabs {
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding-left: 8px;
+	}
+}

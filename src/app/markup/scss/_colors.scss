@@ -1,0 +1,171 @@
+$colors: (
+	context: (
+		background: (
+			primary: (
+				color: brand-100,
+			),
+			inverse-primary: (
+				color: white,
+			),
+			paranja: (
+				color: brand-300,
+				opacity: .4,
+			),
+		),
+		button-background: (
+			accent-secondary-gradient-1: (
+				color: brand-300,
+			),
+			accent-secondary-gradient-2: (
+				color: brand-200,
+			),
+			accent-gradient-1: (
+				color: orange-400,
+			),
+			accent-gradient-2: (
+				color: yellow-400,
+			),
+			accent-disabled: (
+				color: orange-100,
+			),
+			secondary: (
+				color: brand-100,
+			),
+			secondary-disabled: (
+				color: brand-100,
+			),
+			light: (
+				color: white,
+			),
+			light-disabled: (
+				color: gray-100,
+			),
+		),
+		border: (
+			selected: (
+				color: gray-400,
+			),
+			primary: (
+				color: brand-300,
+			),
+			primary-light: (
+				color: brand-100,
+			),
+			accent: (
+				color: orange-400,
+			),
+			secondary: (
+				color: gray-300,
+			),
+			secondary-light: (
+				color: gray-200,
+			),
+			error: (
+				color: error-400,
+			),
+		),
+		text: (
+			primary: (
+				color: gray-400,
+			),
+			inverse-primary: (
+				color: white,
+			),
+			secondary: (
+				color: gray-300,
+			),
+			accent-primary: (
+				color: orange-400,
+			),
+			accent-secondary: (
+				color: brand-300,
+			),
+			accent-secondary-disabled: (
+				color: brand-200,
+			),
+			accent-secondary-light: (
+				color: brand-200,
+			),
+			accent-secondary-pale: (
+				color: brand-100,
+			),
+			error: (
+				color: red-400,
+			),
+			error-secondary: (
+				color: red-300,
+			),
+		),
+		shadow: (
+			primary: (
+				color: brand-400,
+				opacity: .25,
+			)
+		),
+		graphic: (
+			primary: (
+				color: orange-400,
+			),
+			secondary: (
+				color: brand-300,
+			),
+		),
+		elements-background: (
+			primary-active: (
+				color: brand-300,
+			),
+			accent-active: (
+				color: orange-400,
+			),
+			active: (
+				color: brand-100,
+			),
+			inverse-active: (
+				color: white,
+			),
+			disabled: (
+				color: gray-100,
+			),
+			secondary-gradient-1: (
+				color: gray-400,
+				opacity: .1,
+			),
+			hover: (
+				color: orange-400,
+				opacity: .1,
+			),
+			hover-secondary: (
+				color: brand-200,
+				opacity: .2,
+			),
+			hover-secondary-light: (
+				color: gray-300,
+				opacity: .1,
+			),
+			error: (
+				color: red-200,
+			),
+			error-hover: (
+				color: red-400,
+				opacity: .1,
+			),
+		),
+		skeleton: (
+			
+		)
+	),
+);
+
+@use "sass:map";
+@use "mixins/colors" as cl;
+
+
+// stylelint-disable indentation, block-closing-brace-empty-line-before
+:root {
+
+
+@include cl.get-ctx-colors(map.get($colors, context));
+
+
+}
+// stylelint-enable indentation, block-closing-brace-empty-line-before

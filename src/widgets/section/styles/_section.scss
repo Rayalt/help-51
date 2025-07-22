@@ -1,0 +1,209 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.section {
+	--section-bg-cl: var(--ctx-background-primary);
+	--section-py: 44px;
+	--section-action-mt: 32px;
+	--section-header-actions-gap: 16px;
+	//--typography-cl: var(--ctx-text-accent-secondary);
+	--section-descr-mt: 16px;
+	--section-wrapper-mt: 40px;
+	--section-widget-px: 24px;
+	--section-content-correction: 4px;
+	--section-anchor-indent: -172px;
+	--section-container-gap: 40px;
+	--section-about-nav-gap: 8px;
+	--section-about-mb: 24px;
+	--section-bg-pos-1: var(--xs-section-bg-pos-1);
+	--section-bg-size-1: var(--xs-section-bg-size-1);
+	--section-bg-pos-2: var(--xs-section-bg-pos-2);
+	--section-bg-size-2: var(--xs-section-bg-size-2);
+
+	background-color: var(--section-bg-cl);
+	padding-top: var(--section-py);
+	padding-bottom: var(--section-py);
+	position: relative;
+	background-position: var(--section-bg-pos-1, center), var(--section-bg-pos-2, center);
+	background-size: var(--section-bg-size-1, auto), var(--section-bg-size-2, auto);
+	background-repeat: no-repeat, no-repeat;
+	background-image: var(--section-bg-image-1, none), var(--section-bg-image-2, none);
+	flex-grow: 1;
+	
+	@include bp.media-breakpoint-up(sm) {
+		--section-py: 88px;
+		--section-bg-pos-1: var(--sm-section-bg-pos-1);
+		--section-bg-size-1: var(--sm-section-bg-size-1);
+		--section-bg-pos-2: var(--sm-section-bg-pos-2);
+		--section-bg-size-2: var(--sm-section-bg-size-2);
+	}
+	
+	@include bp.media-breakpoint-up(md) {
+		--section-action-mt: 40px;
+		--section-descr-mt: 24px;
+		--section-header-actions-gap: 24px;
+		--section-content-correction: 6px;
+		--section-bg-pos-1: var(--md-section-bg-pos-1);
+		--section-bg-size-1: var(--md-section-bg-size-1);
+		--section-bg-pos-2: var(--md-section-bg-pos-2);
+		--section-bg-size-2: var(--md-section-bg-size-2);
+	}
+	
+	@include bp.media-breakpoint-up(lg) {
+		--section-bg-pos-1: var(--lg-section-bg-pos-1);
+		--section-bg-size-1: var(--lg-section-bg-size-1);
+		--section-bg-pos-2: var(--lg-section-bg-pos-2);
+		--section-bg-size-2: var(--lg-section-bg-size-2);
+	}
+	
+	&:has(.slider) {
+		--section-wrapper-mt: 24px;
+		//--section-container-gap: 24px;
+	}
+	
+	&:has(.tabs) {
+		--section-wrapper-mt: 12px;
+		//--section-container-gap: 12px;
+		
+		@include bp.media-breakpoint-up(md) {
+			--section-wrapper-mt: 28px;
+			//--section-container-gap: 28px;
+		}
+	}
+	
+	&__anchor {
+		position: absolute;
+		top: var(--section-anchor-indent);
+		
+		@include bp.media-breakpoint-up(sm) {
+			--section-anchor-indent: -178px;
+		}
+
+		@include bp.media-breakpoint-up(md) {
+			--section-anchor-indent: -182px;
+		}
+	}
+	
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--section-container-gap);
+	}
+	
+	&__image {
+		width: 100%;
+		height: auto;
+		@include bp.media-breakpoint-up(sm) {
+			margin-top: 16px;
+		}
+		@include bp.media-breakpoint-up(md) {
+			margin-top: 8px;
+		}
+		@include bp.media-breakpoint-up(lg) {
+			margin-top: 0;
+		}
+	}
+	
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		
+		@include bp.media-breakpoint-up(sm) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	
+	
+	&__title { 
+		padding-left: var(--section-content-correction);
+	}
+	
+	&__header-actions {
+		display: none;
+		gap: var(--section-header-actions-gap);
+		margin-right: var(--section-content-correction);
+		margin-left: var(--section-content-correction);
+		
+		&_show {
+			display: flex;
+		}
+	}
+	
+	&__text {
+		margin-top: var(--section-descr-mt);
+		padding-left: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	
+	&__description {
+	}
+	
+	&__wrapper {
+		margin-top: var(--section-wrapper-mt);
+	}
+	
+	&__slider {
+		margin-top: 24px;
+	}
+	
+	&__main-action {
+		display: flex;
+		justify-content: center;
+		margin-top: var(--section-action-mt);
+	}
+	
+	&__main-action-btn {
+		flex-grow: 1;
+		
+		@include bp.media-breakpoint-up(sm) {
+			flex-grow: 0;
+		}
+	}
+	
+	&__btn {
+	}
+	&__addon {
+		margin-top: 12px;
+	}
+	
+	&__nav {
+		flex-wrap: wrap;
+		display: none;
+		gap: var(--section-about-nav-gap);
+		margin-bottom: var(--section-about-mb);
+		
+		@include bp.media-breakpoint-up(sm) {
+			display: flex;
+		}
+		
+		@include bp.media-breakpoint-up(md) {
+			--section-about-nav-gap: 16px;
+			--section-about-mb: 40px;
+		}
+	}
+	
+	&__widget {
+		padding-right: var(--section-widget-px);
+		padding-left: var(--section-widget-px);
+		transform: translateY(calc(-24px - 44px));
+		
+		@include bp.media-breakpoint-up(sm) {
+			transform: translateY(-24px - 88px);
+		}
+		@include bp.media-breakpoint-up(md) {
+			transform: translateY(-36px - 88px);
+			--section-widget-px: 32px;
+			
+		}
+	}
+	
+	&_inverted {
+		--section-bg-cl: var(--ctx-background-inverse-primary);
+		//--typography-cl: var(--ctx-text-accent-primary);
+	}
+}

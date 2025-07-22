@@ -1,0 +1,47 @@
+// ===============================================
+// STATE
+// ===============================================
+
+
+// stylelint-disable @stylistic/indentation, @stylistic/block-closing-brace-empty-line-before
+:root {
+
+
+// MAIN
+// -----------------------------------------------
+
+--state-main-normal-bg-img: transparent;
+--state-main-hover-bg-img: var(--ctx-elements-background-hover);
+
+--state-shadow-w: 1px;
+--state-shadow-pos: inset 0 0 0;
+
+--state-main-normal-shadow-cl: transparent;
+--state-main-focus-shadow-cl: var(--ctx-border-selected);
+
+--state-bofore-content: '';
+
+// -----------------------------------------------
+// MAIN
+
+
+// ERROR
+// -----------------------------------------------
+
+--state-error-hover-bg-img: var(--ctx-elements-background-error-hover);
+
+// -----------------------------------------------
+// ERROR
+
+
+// POSITIVE
+// -----------------------------------------------
+
+--state-positive-hover-bg-img: var(--ctx-elements-background-positive-hover);
+
+// -----------------------------------------------
+// POSITIVE
+
+
+}
+// stylelint-enable @stylistic/indentation, @stylistic/block-closing-brace-empty-line-before

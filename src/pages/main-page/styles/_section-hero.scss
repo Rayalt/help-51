@@ -1,0 +1,29 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+
+.section-hero {
+	min-height: 400px;
+	
+	@include bp.media-breakpoint-up(sm) {
+		min-height: 600px;
+	}
+	
+	//&__nav {
+	//	--section-about-nav-gap: 8px;
+	//	--section-about-mb: 24px;
+	//	
+	//	flex-wrap: wrap;
+	//	display: none;
+	//	gap: var(--section-about-nav-gap);
+	//	margin-bottom: var(--section-about-mb);
+	//	
+	//	@include bp.media-breakpoint-up(sm) {
+	//		display: flex;
+	//	}
+	//	
+	//	@include bp.media-breakpoint-up(md) {
+	//		--section-about-nav-gap: 16px;
+	//		--section-about-mb: 40px;
+	//	}
+	//}
+}

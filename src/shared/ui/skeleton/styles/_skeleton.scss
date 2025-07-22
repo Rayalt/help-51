@@ -1,0 +1,69 @@
+// ===============================================
+// SKELETON
+// ===============================================
+
+@use '../mixins/breakpoints' as bp-mixin;
+@use '../helpers/animations';
+
+.skeleton {
+	//@include bp-mixin.media-breakpoint-up(md) {
+	//	--skeleton-h: var(--md-skeleton-h);
+	//	--skeleton-w: var(--md-skeleton-w);
+	//	--skeleton-brs: var(--md-skeleton-brs);
+	//}
+	//
+	//@include bp-mixin.media-breakpoint-up(lg) {
+	//	--skeleton-h: var(--lg-skeleton-h);
+	//	--skeleton-w: var(--lg-skeleton-w);
+	//	--skeleton-brs: var(--lg-skeleton-brs);
+	//}
+	//
+	//@include bp-mixin.media-breakpoint-up(xl) {
+	//	--skeleton-h: var(--xl-skeleton-h);
+	//	--skeleton-w: var(--xl-skeleton-w);
+	//	--skeleton-brs: var(--xl-skeleton-brs);
+	//}
+	//
+	//@include bp-mixin.media-breakpoint-up(xxl) {
+	//	--skeleton-h: var(--xxl-skeleton-h);
+	//	--skeleton-w: var(--xxl-skeleton-w);
+	//	--skeleton-brs: var(--xxl-skeleton-brs);
+	//}
+	//
+	//@include bp-mixin.media-breakpoint-up(xxxl) {
+	//	--skeleton-h: var(--xxxl-skeleton-h);
+	//	--skeleton-w: var(--xxxl-skeleton-w);
+	//	--skeleton-brs: var(--xxxl-skeleton-brs);
+	//}
+
+	//--skeleton-h: var(--sm-skeleton-h);
+	//--skeleton-w: var(--sm-skeleton-w);
+	//--skeleton-brs: var(--sm-skeleton-brs);
+
+	position: relative;
+	width: var(--skeleton-w);
+	height: var(--skeleton-h);
+	border-radius: var(--skeleton-brs);
+	background-image:
+		linear-gradient(
+			90deg,
+			var(--ctx-skeleton-background) 30%,
+			var(--ctx-skeleton-loader) 50%,
+			var(--ctx-skeleton-loader) 55%,
+			var(--ctx-skeleton-background) 75%
+		);
+	background-size: 400%;
+	animation: skeleton 10s linear infinite;
+
+	&--title {
+		height: 28px;
+	}
+
+	&--square {
+		&::before {
+			content: '';
+			display: block;
+			padding-bottom: 100%;
+		}
+	}
+}

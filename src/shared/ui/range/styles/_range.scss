@@ -1,0 +1,65 @@
+.range {
+	--range-bar-w: 0;
+	--range-bar-bg-cl: 
+		linear-gradient(
+			90deg, 
+			var(--ctx-button-background-accent-gradient-2) 0%, 
+			var(--ctx-button-background-accent-gradient-1)100%
+		);
+	--range-icon-border-cl: var(--ctx-border-accent);
+	--heart-solid-icon-bg-cl-1: var(--ctx-button-background-accent-gradient-1);
+	--heart-solid-icon-bg-cl-2: var(--ctx-button-background-accent-gradient-2);
+	
+	background-color: var(--ctx-elements-background-disabled);
+	height: 24px;
+	border-radius: 12px;
+	
+	&__bar {
+		display: grid;
+		height: 100%;
+		border-radius: inherit;
+		width: var(--range-bar-w);
+		
+		&::before {
+			border-radius: inherit;
+			background-image: var(--range-bar-bg-cl);
+			content: '';
+			grid-row-start: 1;
+			grid-row-end: 1;
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
+		
+	}
+	
+	&__icon {
+		background-color: var(--ctx-elements-background-inverse-active);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 24px;
+		z-index: 1;
+		flex-shrink: 0;
+		box-shadow: inset 0 0 0 1px var(--range-icon-border-cl);
+		grid-row-start: 1;
+		grid-row-end: 1;
+		grid-column-start: 1;
+		grid-column-end: 1;
+		margin-left: auto;
+		color: var(--ctx-graphic-primary);
+	}
+	
+	&_closed {
+		--range-bar-bg-cl: 
+			linear-gradient(
+				90deg, 
+				var(--ctx-button-background-accent-secondary-gradient-2) 0%, 
+				var(--ctx-button-background-accent-secondary-gradient-1)100%
+			);
+		--range-icon-border-cl: var(--ctx-border-primary);
+		--heart-solid-icon-bg-cl-1: var(--ctx-button-background-accent-secondary-gradient-1);
+		--heart-solid-icon-bg-cl-2: var(--ctx-button-background-accent-secondary-gradient-2);
+	}
+}

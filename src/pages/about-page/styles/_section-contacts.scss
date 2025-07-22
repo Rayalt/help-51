@@ -1,0 +1,20 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.section-contacts {
+	&__map {
+		order: 1;
+		
+		@include bp.media-breakpoint-up(md) {
+			order: 0;
+		}
+	}
+	
+	&__info {
+		align-self: center;
+		
+		@include bp.media-breakpoint-up(lg) {
+			align-self: start;
+			padding-top: 16px;	
+		}
+	}
+}

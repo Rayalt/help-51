@@ -1,0 +1,78 @@
+@use 'app/markup/scss/mixins/text-component' as tc;
+
+.page-title,
+.section-title,
+.title,
+.subtitle,
+.text-xxs,
+.text-sm,
+.text-md,
+.text-lg {
+	color: var(--typography-cl);
+}
+
+.page-title,
+.section-title {
+	font-family: var(--ff-corki);
+	text-transform: uppercase;
+}
+
+.page-title {
+	@include tc.text-component(h1);
+}
+
+.section-title {
+	@include tc.text-component(h2);
+}
+
+.title {
+	@include tc.text-component(h3, bold);
+}
+
+.subtitle {
+	@include tc.text-component(h4, semibold);
+}
+
+.text-xxs {
+	@include tc.text-component(xxs, semibold);
+}
+
+.text-sm {
+	@include tc.text-component(sm, semibold);
+}
+
+.text-md {
+	@include tc.text-component(md, semibold);
+}
+
+.text-lg {
+	@include tc.text-component(lg, semibold);
+}
+
+.typography-primary {
+	--typography-cl: var(--ctx-text-primary);
+}
+
+.typography-inverse-primary {
+	--typography-cl: var(--ctx-text-inverse-primary);
+}
+
+.typography-accent-primary {
+	--typography-cl: var(--ctx-text-accent-primary);
+}
+
+.typography-accent-secondary {
+	--typography-cl: var(--ctx-text-accent-secondary);
+}
+
+.typography-accent-secondary-light {
+	--typography-cl: var(--ctx-text-accent-secondary-light);
+}
+
+.typography-disabled {
+	--typography-cl: var(--ctx-text-secondary);
+}
+
+.typography-error {
+	--typography-cl: var(--ctx-text-error);
+}

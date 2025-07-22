@@ -1,0 +1,20 @@
+.document {
+	--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+	
+	display: flex;
+	gap: 12px;
+	padding: 8px;
+	text-decoration: none;
+	border-radius: 12px;
+
+	&__icon {
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}

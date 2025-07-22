@@ -1,0 +1,12 @@
+@use 'shared/ui/svg/styles/mixins/icons' as ic-mixin;
+
+:root {
+
+
+@include ic-mixin.icon-vars-generate;
+
+--icon-size: 1em;
+--icon-fz: 16px;
+
+
+}

@@ -1,0 +1,109 @@
+@use 'app/markup/scss/mixins/transition' as tz;
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.dropdown {
+	--dropdown-shadow-w: 1px;
+	--dropdown-btn-shadow-cl: transparent;
+	--dropdown-select-border-cl: var(--ctx-border-secondary-light);
+	--state-main-focus-shadow-cl: var(--ctx-border-accent);
+	
+	position: relative;
+	width: 100%;
+	display: flex;
+	
+	.state {
+		&,
+		&:has(.state:active) {
+			transform: none;
+		}
+	}
+	
+	&__select,
+	&__btn {
+		outline: none;
+		display: flex;
+		//flex-shrink: 0;
+		align-items: center;
+		border: 0;
+		text-align: left;
+		vertical-align: middle;
+		text-decoration: none;
+		//white-space: nowrap;
+		cursor: pointer;
+		user-select: none;
+		box-shadow: inset 0 1px 0 0  var(--dropdown-btn-shadow-cl);
+	}
+	
+	&__select {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 100%;
+		white-space: nowrap;
+		gap: 8px;
+	}
+	
+	&__option {
+		display: flex;
+		
+		& +.dropdown__option {
+			--dropdown-btn-shadow-cl: var(--ctx-border-secondary-light);
+		}
+	}
+	
+	&__options-title,
+	&__btn {
+		padding: 12px 16px;
+	}
+	
+	&__btn {
+		background-color: transparent;
+		flex-grow: 1;
+		
+		& {
+			display: block;
+		}
+	}
+	
+	&__select,
+	&__list {
+		box-shadow: inset 0 0 0 var(--dropdown-shadow-w) var(--dropdown-select-border-cl), var(--shadow-sm);
+		border-radius: 12px;
+	}
+	
+	&__select {
+		flex-grow: 1;
+		justify-content: space-between;
+		background-color: var(--ctx-elements-background-inverse-active);
+		padding: 8px 16px;
+	}
+	
+	&__select-inner {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	&__icon {
+		@include tz.transition(transform .2s);
+	}
+	
+	&__list	{
+		width: 100%;
+		top: 48px;
+		margin-top: 8px;
+		position: absolute;
+		z-index: 4;
+		overflow: hidden;
+		background-color: var(--ctx-elements-background-inverse-active);
+	}
+	
+	&_open {
+		.dropdown__icon {
+			transform: rotate(-180deg);
+		}
+	}
+	
+	&__secondary {
+		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+		--state-main-focus-shadow-cl: var(--ctx-border-selected);
+	}
+}

@@ -1,0 +1,88 @@
+@use 'app/markup/scss/mixins/transform' as tf;
+@use 'app/markup/scss/mixins/transition' as tz;
+
+
+.state {
+	--state-shadow-cl: var(--state-main-normal-shadow-cl);
+	--state-bg-img: var(--state-main-normal-bg-img);
+	--state-bg: linear-gradient(0deg, var(--state-bg-img), var(--state-bg-img));
+
+	position: relative;
+	background-image: var(--state-bg);
+	
+	@include tz.transition(true, transform .2s, --state-bg-img .2s);
+	@include tf.transform(translateZ(0));
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		box-shadow: var(--state-shadow-pos) var(--state-shadow-w) var(--state-shadow-cl);
+		border-radius: inherit;
+		pointer-events: none;
+		
+		@include tz.transition(box-shadow .2s);
+	}
+	
+	&:hover {
+		@media (hover: hover) {
+			--state-bg-img: var(--state-main-hover-bg-img);
+
+			cursor: pointer;
+		}
+	}
+
+	&:focus-visible {
+		--state-shadow-cl: var(--state-main-focus-shadow-cl);
+
+		outline: none;
+	}
+	
+	&:active {
+		--state-main-focus-shadow-cl: transparent;
+		
+		@include tf.transform(scale(.95));
+
+		&:has(.state:active) {
+			@include tf.transform(scale(1));
+		}
+
+		/*
+			TODO: Переписать все --transform-переменные на @property
+			по аналогии со --state-bg-img, когда будет нормальная поддержка,
+			чтобы запретить наследование переменных (приводит к багам)
+			https://caniuse.com/mdn-css_at-rules_property
+		*/
+		.state {
+			&:not(:active) {
+				--transform-scale: '';
+			}
+		}
+	}
+	
+	&_inherit {
+		[class*='_error'] &,
+		[class*='_negative'] & {
+			&:hover {
+				--state-bg-img: var(--state-error-hover-bg-img);
+			}
+		}
+	}
+	
+	&:has(input, textarea) {
+		&:focus-within {
+			--state-shadow-cl: var(--state-main-focus-shadow-cl);
+	
+			outline: none;
+		}
+	}
+}
+
+@property --state-bg-img {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: transparent;
+}

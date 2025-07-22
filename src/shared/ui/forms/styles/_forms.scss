@@ -1,0 +1,184 @@
+@use 'app/markup/scss/mixins/text-component' as tc;
+@use 'app/markup/scss/mixins/transition' as tz;
+
+.field {
+	--field-bg-cl: var(--ctx-elements-background-inverse-active);
+	--field-control-border-cl: var(--ctx-border-secondary-light);
+	--field-control-cl: var(--ctx-text-primary);
+	--field-control-h: calc(var(--field-h) - var(--field-shadow-w) * 2);
+	--field-placeholder-cl: var(--ctx-text-secondary);
+	--field-h: 48px;
+	--field-px: 0;
+	--field-control-py: 8px;
+	--field-control-px: 16px;
+	--field-shadow-w: 1px;
+	--field-textarea-control-min-h: 102px;
+	--state-main-focus-shadow-cl: var(--ctx-border-accent);
+	
+	display: flex;
+	align-items: center;
+	width: 100%;
+	outline: none;
+	color: var(--field-control-cl);
+	padding-right: var(--field-px);
+	padding-left: var(--field-px);
+	box-shadow: inset 0 0 0 var(--field-shadow-w) var(--field-control-border-cl), var(--shadow-sm);
+	height: var(--field-h);
+	border: 0;
+	border-radius: 12px;
+	background-color: var(--field-bg-cl);
+
+	@include tc.text-component(sm, medium);
+	@include tz.transition(padding .2s);
+	
+	&.state {
+		--state-shadow-w: 2px;
+		
+		cursor: unset;
+
+		&,
+		&:has(.state:active) {
+			transform: none;
+		}
+	}
+	
+	&:has(.field__control:focus-within) {
+		--field-px: 8px;
+		--field-control-px: 8px;
+		
+		& > .field__prefix {
+			opacity: 1;
+		}
+	}
+	
+	&__prefix {
+		opacity: 0;
+		
+		@include tz.transition(opacity .2s);
+	}
+	
+	&__control {
+		z-index: 0;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		min-width: 0;
+		height: var(--field-control-h);
+		border: 0;
+		padding: var(--field-control-py) var(--field-control-px);
+		outline: none;
+		background-color: transparent;
+		color: var(--field-control-cl);
+		font-family: var(--ff-raleway);
+		white-space: nowrap;
+		resize: none;
+		-webkit-text-fill-color: var(--field-control-cl);
+		
+		@include tz.transition(padding .2s);
+		
+		&:autofill {
+			box-shadow: inset 0 0 0 var(--field-h) var(--field-bg-cl);
+		}
+
+		// Placeholder
+		&::placeholder {
+			color: var(--field-placeholder-cl);
+
+			/*
+				Override Firefox's unusual default opacity;
+				see https://github.com/twbs/bootstrap/pull/11526.
+			*/
+			opacity: 1;
+			-webkit-text-fill-color: var(--field-placeholder-cl);
+		}
+
+		&::-webkit-strong-password-auto-fill-button {
+			position: absolute;
+			right: 0;
+			visibility: hidden;
+		}
+
+		/*
+			Disabled and read-only inputs
+
+			HTML5 says that controls under a fieldset > legend:first-child won't be
+			disabled if the fieldset is disabled. Due to implementation difficulty, we
+			don't honor that edge case; we style them as disabled anyway.
+		*/
+		&:disabled,
+		&[readonly] {
+			/*
+				iOS fix for unreadable disabled content;
+				see https://github.com/twbs/bootstrap/issues/11655.
+			*/
+			opacity: 1;
+		}
+
+		&::-ms-reveal,
+		&::-ms-clear {
+			display: none;
+		}
+	}
+
+	//&:hover {
+	//	--field-control-border-cl: var(--ctx-border-primary-active);
+	//	--field-control-bg-cl: var(--ctx-elements-background-hover);
+	//}
+
+	&::placeholder {
+		color: var(--ctx-text-secondary);
+
+		/*
+			Override Firefox's unusual default opacity;
+			see https://github.com/twbs/bootstrap/pull/11526.
+		*/
+		// opacity: 1;
+		-webkit-text-fill-color: var(--ctx-text-secondary);
+	}
+	
+	&_phone {
+		--field-control-px: 0;
+
+		padding-right: var(--field-px);
+		padding-left: calc(var(--field-px) * 2);
+		
+		display: flex;
+		
+		.field__control {
+			order: 1;
+		}
+		
+		.field__prefix {
+			margin-right: auto;
+		}
+	}
+	
+	&_secondary {
+		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+		--state-main-focus-shadow-cl: var(--ctx-border-selected);
+	}
+	
+	&_textarea {
+		--field-control-py: 16px;
+		
+		height: auto;
+		resize: none;
+		min-height: var(--field-textarea-control-min-h);
+		
+		.field__control {
+			//@include scrollbar(var(--body-scroll-cl), 8px, var(--ctx-elements-background-active));
+
+			height: 100%;
+			min-height: calc(var(--field-textarea-control-min-h) - var(--field-shadow-w) * 2);
+			overflow: auto;
+			white-space: revert;
+		}
+	}
+	
+	&_error {
+		--field-bg-cl: var(--ctx-elements-background-error);
+		--field-cl: var(--ctx-text-error);
+		--field-placeholder-cl: var(--ctx-text-error-secondary);
+		--field-control-border-cl: var(--ctx-border-error);
+	}
+}

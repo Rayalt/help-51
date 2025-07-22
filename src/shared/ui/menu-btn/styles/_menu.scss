@@ -1,0 +1,30 @@
+.menu {
+	&__icon {
+		background-color: var(--ctx-elements-background-primary-active);
+		display: block;
+		border-radius: 1px;
+		height: 2px;
+		width: 16px;
+		margin: auto;
+		position: relative;
+		
+		&::before,
+		&::after {
+			background-color: var(--ctx-elements-background-primary-active);
+			border-radius: 1px;
+			content: '';
+			display: block;
+			height: 2px;
+			position: absolute;
+			width: 16px;
+		}
+		
+		&::before {
+			bottom: 5px;
+		}
+		
+		&::after {
+			top: 5px;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.section-user {
+	&__title {
+		padding-left: 8px;
+	}
+	&__estimation {
+		margin-top: 32px;
+	}	
+	
+	&__description {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding-left: 8px;
+		margin-top: 32px;
+	}
+	
+	&__history {
+		padding-left: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	
+	&__donation {
+		position: relative;
+	}
+	
+	&__donation-card {
+		@include bp.media-breakpoint-up(sm) {
+			position: sticky;
+			top: 202px;
+		}
+	}
+}

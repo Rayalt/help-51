@@ -1,0 +1,51 @@
+// ===============================================
+// FONTS
+// ===============================================
+
+
+// AEROPORT
+// -----------------------------------------------
+
+@font-face {
+	font-family: 'Corki';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src:
+		local('Corki-Regular'),
+		url('../fonts/Corki-Regular.woff2') format('woff2'),
+		url('../fonts/Corki-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Raleway';
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src:
+		local('Raleway-Medium'),
+		url('../fonts/Raleway-Medium.woff2') format('woff2'),
+		url('../fonts/Raleway-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Raleway';
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	src:
+		local('Raleway-Bold'),
+		url('../fonts/Raleway-SemiBold.woff2') format('woff2'),
+		url('../fonts/Raleway-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Raleway';
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src:
+		local('Raleway-Bold'),
+		url('../fonts/Raleway-Bold.woff2') format('woff2'),
+		url('../fonts/Raleway-Bold.woff') format('woff');
+}

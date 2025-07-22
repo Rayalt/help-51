@@ -1,0 +1,27 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.donate-other {
+	&__list {
+		display: grid;
+		gap: 16px 32px;
+		margin-top: 32px;
+		
+		@include bp.media-breakpoint-up(sm) {
+			grid-template-columns: repeat(2, max-content);
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+	
+	
+	&__icon {
+		color: var(--ctx-text-secondary);
+	}
+	
+	&__text {
+		margin-top: 24px;
+	}
+}

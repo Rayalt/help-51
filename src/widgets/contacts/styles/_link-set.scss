@@ -1,0 +1,27 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+
+.link-set {
+	display: flex;
+	align-items: center;
+	
+	&__icon {
+	}
+	
+	&__btn {
+		margin-left: 8px;
+		flex-shrink: 1;
+		height: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		
+		@include bp.media-breakpoint-up(lg) {
+			flex-shrink: 0;
+		}
+	}
+	
+	&__btn-text {
+		white-space: normal;
+		text-align: left;
+	}
+}

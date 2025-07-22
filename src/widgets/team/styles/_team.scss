@@ -1,0 +1,48 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.team {
+	--team-inner-gap-x: 32px;
+	--team-inner-gap-y: 8px;
+	--team-img-size: 120px;
+	
+	display: flex;
+	
+	&__inner {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		grid-gap: var(--team-inner-gap-y) var(--team-inner-gap-x);
+		
+		@include bp.media-breakpoint-down(sm) {
+			grid-template-columns: repeat(2, auto);
+		}
+		
+		@include bp.media-breakpoint-down(xs) {
+			--team-inner-gap-x: 24px;
+			
+			grid-template-columns: auto;
+		}
+		
+	}
+	
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-self: start;
+		align-self: stretch;
+		gap: 16px;
+		padding: 8px 16px 8px 8px;
+	}
+	
+	&__img {
+		width: var(--team-img-size);
+		height: var(--team-img-size);
+		border-radius: 50%;
+		object-fit: cover;
+		position: relative;
+		flex-shrink: 0;
+		box-shadow: var(--shadow-sm);
+	}
+	&__info {}
+	&__name {}
+	&__position {}
+}

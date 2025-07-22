@@ -1,0 +1,108 @@
+@use 'app/markup/scss/mixins/text-component' as tc;
+
+
+.chip {
+	--chip-btn-bg-cl: var(--ctx-elements-background-inverse-active);
+	--chip-btn-cl: var(--ctx-text-primary);
+	--chip-btn-shadow-pos: inset 0 0 0;
+	--chip-btn-shadow-w: 1px;
+	--chip-btn-shadow-cl: var(--ctx-border-secondary-light);
+	--chip-btn-px: 24px;
+	--chip-btn-brs: 32px;
+	--chip-btn-size: 58px;
+
+	position: relative;
+	cursor: default;
+	flex-shrink: 0;
+	
+	@include tc.text-component(sm, semibold);
+
+	&__btn {
+		display: grid;
+		grid-auto-flow: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: var(--chip-btn-size);
+		padding: 0 var(--chip-btn-px);
+		border: 0;
+		border-radius: var(--chip-btn-brs);
+		overflow: hidden;
+		background-color: var(--chip-btn-bg-cl);
+		box-shadow: var(--chip-btn-shadow-pos) var(--chip-btn-shadow-w) var(--chip-btn-shadow-cl);
+		color: var(--chip-btn-cl);
+		white-space: nowrap;
+
+		&:focus-within {
+			--chip-btn-cl: var(--ctx-text-primary);
+		}
+
+		&:hover {
+			--chip-btn-bg-cl: var(--chip-main-btn-hover-bg-cl, var(--ctx-elements-background-inverse-active));
+			--chip-btn-cl: var(--ctx-text-primary);
+		}
+		
+		&,
+		&.state:active {
+			transform: none;
+		}
+	}
+
+	&__input {
+		position: absolute;
+		opacity: 0;
+		pointer-events: none;
+
+		&:focus {
+			+ .state {
+				--chip-btn-shadow-pos: var(--state-shadow-pos);
+				--chip-btn-shadow-w: var(--state-shadow-w);
+				--chip-btn-shadow-cl: var(--ctx-border-accent);
+			}
+		}
+
+		&:checked {
+			&:focus {
+				/* stylelint-disable-next-line max-nesting-depth */
+				+ .state {
+					--chip-btn-shadow-w: 3px;
+				}
+			}
+			
+			+ .state {
+				--chip-btn-shadow-w: 2px;
+			}
+
+			+ .chip__btn {
+				--chip-btn-cl: var(--ctx-text-primary);
+				--chip-btn-shadow-cl: var(--ctx-border-accent);
+			}
+		}
+
+		&:disabled {
+			+ .chip__btn {
+				--chip-btn-bg-cl: var(--ctx-elements-background-inverse-active);
+				--chip-btn-cl: var(--ctx-text-disabled);
+
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__icon {
+		height: 48px;
+		width: auto;
+	}
+	
+	&_sm {
+		--chip-btn-size: 40px;
+	}
+	
+	&_md {
+		--chip-btn-size: 48px;
+	}
+	
+	&_lg {
+		--chip-btn-size: 64px;
+	}
+}

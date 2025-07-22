@@ -1,0 +1,39 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+@use 'app/markup/scss/mixins/text-component' as tc;
+
+.navbar {
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		
+		//@include bp.media-breakpoint-down(sm) {
+		//	flex-direction: column;
+		//	align-items: flex-start;
+		//}
+	}
+	
+	&__link {
+		display: flex;
+		padding: 4px;
+		//color: var(--ctx-link-primary);
+		//text-decoration: none;
+		
+		&_active {
+			pointer-events: none;
+		}
+	}
+
+	&__item {
+		& + .navbar__item {
+			//margin-left: 16px;
+		}
+	}
+	
+	&_portrait {
+		.navbar__list {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}

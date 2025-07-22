@@ -1,0 +1,119 @@
+@use "sass:map";
+@use './variables/icons-variables' as var;
+@use './variables/icons' as ic;
+@use 'app/markup/scss/variables/breakpoints' as bp-var;
+@use 'app/markup/scss/mixins/breakpoints' as bp-mixin;
+
+$strokes: '[stroke-opacity], [stroke-width], [stroke-linecap], [stroke-linejoin], [stroke-dasharray], [stroke-miterlimit], [stroke-dashoffset]';
+$icon-sizes: var.$icon-sizes;
+$icon-stroke-widths: var.$icon-stroke-widths;
+$icons: ic.$icons;
+$token-breakpoints: bp-var.$token-breakpoints;
+$grid-breakpoints: bp-var.$grid-breakpoints;
+
+.icon {
+	--icon-cl: initial;
+
+	// stylelint-disable declaration-no-important
+	display: inline-block;
+	flex-shrink: 0;
+	stroke: currentColor;
+	color: var(--icon-cl);
+	font-size: var(--icon-fz) !important;
+	vertical-align: middle;
+
+	&:not(.icon_cl) {
+		[fill] {
+			fill: currentColor;
+		}
+	}
+	
+	&:not(.icon_auto) {
+		width: var(--icon-size);
+		height: var(--icon-size);
+	}
+
+	#{$strokes} {
+		stroke: currentColor;
+		vector-effect: non-scaling-stroke;
+	}
+
+	// TODO: удалить. Оставлен для обратной совместимости
+	&_light {
+		--icon-cl: var(--ctx-graphic-secondary);
+	}
+
+	&_secondary {
+		--icon-cl: var(--ctx-graphic-secondary);
+	}
+
+	&_disabled {
+		--icon-cl: var(--ctx-graphic-disabled);
+	}
+
+	&_positive {
+		--icon-cl: var(--ctx-graphic-positive);
+	}
+
+	&_negative {
+		--icon-cl: var(--ctx-graphic-negative);
+	}
+
+	&_warning {
+		--icon-cl: var(--ctx-graphic-warning);
+	}
+
+	&_skeleton {
+		#{$strokes} {
+			stroke: var(--ctx-skeleton-background);
+		}
+
+		[fill] {
+			fill: var(--ctx-skeleton-background);
+		}
+	}
+
+	@each $bp, $component in $icons {
+		@each $component-name, $properties in $component {
+			$real-bp: map.get(map.get($token-breakpoints, $bp), real);
+			// stylelint-disable-next-line order/order
+			@include bp-mixin.media-breakpoint-up(map.get(map.get($token-breakpoints, $bp), mq)) {
+				&_#{$component-name} {
+					// stylelint-disable-next-line order/order
+					--icon-fz: var(--#{$real-bp}-icon-#{$component-name}-fz);
+
+					#{$strokes} {
+						stroke-width: var(--#{$real-bp}-icon-#{$component-name}-stroke-w);
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin icon-sizes($prefix: '') {
+	@each $key in $icon-sizes {
+		.#{$prefix}icon_size-#{$key} {
+			--icon-fz: #{$key}px;
+		}
+	}
+
+	@each $key, $value in $icon-stroke-widths {
+		.#{$prefix}icon_stroke-#{$key} {
+			#{$strokes} {
+				stroke-width: #{$value}px;
+			}
+		}
+	}
+}
+
+@include icon-sizes;
+
+@each $breakpoint in map.keys($grid-breakpoints) {
+	@include bp-mixin.media-breakpoint-only($breakpoint, $grid-breakpoints) {
+		$prefix: bp-mixin.breakpoint-prefix($breakpoint, $grid-breakpoints);
+
+		// stylelint-disable-next-line
+		@include icon-sizes($prefix);
+	}
+}

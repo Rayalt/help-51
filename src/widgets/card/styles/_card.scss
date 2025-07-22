@@ -1,0 +1,157 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp-mixin;
+@use 'app/markup/scss/mixins/text-component' as tc-mixin;
+
+.card {
+	--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+	--card-indent: 24px;
+	--card-gap: 16px;
+	--card-actions-gap: 16px;
+	--card-label-bg: 
+		linear-gradient(
+			90deg, 
+			var(--ctx-button-background-accent-secondary-gradient-2) 0%, 
+			var(--ctx-button-background-accent-secondary-gradient-1)100%
+		);
+	
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--ctx-elements-background-inverse-active);
+	border-radius: 32px;
+	box-shadow: var(--shadow-sm);
+	overflow: hidden;
+	outline: none;
+	padding: 0;
+	border: 0;
+	text-align: left;
+	width: 100%;
+	height: 100%;
+	
+	@include bp-mixin.media-breakpoint-up(lg) {
+		--card-indent: 32px;
+		--card-gap: 24px;
+		--card-actions-gap: 24px;
+	}
+	
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: var(--card-gap);
+		padding-top: var(--card-indent);
+		padding-bottom: var(--card-indent);
+		flex-grow: 1;
+	}
+	
+	&__figure {
+		position: relative;
+		display: grid;
+		width: 100%;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			background-image:
+				linear-gradient(
+					transparent 0,
+					var(--ctx-elements-background-secondary-gradient-1) 100%
+				),
+				linear-gradient(
+					180deg,
+					transparent 0,
+					var(--ctx-elements-background-secondary-gradient-1) 100%
+				);
+			user-select: none;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+		}
+		
+		&::before {
+			content: '';
+			position: absolute;
+			background-image: var(--state-bg);
+			z-index: 3;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	
+	&__img,
+	&__label {
+		grid-row-start: 1;
+		grid-row-end: 1;
+		grid-column-start: 1;
+		grid-column-end: 1;
+	}
+	
+	&__label {
+		background-image: var(--card-label-bg);
+		padding-right: 32px;
+		padding-left: 32px;
+		border-top-right-radius: 32px;
+		border-bottom-right-radius: 32px;
+		z-index: 3;
+		align-self: start;
+		justify-self: start;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 48px;
+		color: var(--ctx-text-inverse-primary);
+		
+		@include tc-mixin.text-component(sm, semibold);
+	}
+	
+	&__info {
+		padding-right: var(--card-indent);
+		padding-left: var(--card-indent);
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: auto;
+	}
+	
+	&__date {
+		margin-bottom: 12px;
+	}
+	
+	&__title {
+		//--typography-cl: var(--ctx-text-accent-secondary);
+	}
+	
+	&__estimation {
+	}
+	
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		padding-right: var(--card-indent);
+		padding-left: var(--card-indent);
+		gap: var(--card-actions-gap);
+	}
+	
+	&__history {
+		align-self: center;
+	}
+	
+	&_closed {
+		--card-label-bg: none;
+	}
+	
+	&_landscape {
+		flex-direction: row;
+		
+		.card__figure {
+			height: 200px;
+			width: 30%;
+		}
+		
+		.card__actions {
+			display: block;
+		}
+	}
+}

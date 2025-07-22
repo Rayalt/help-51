@@ -1,0 +1,44 @@
+@use 'app/markup/scss/mixins/transition' as tz;
+
+.checkbox {
+	--checkbox-mark-cl: transparent;
+	
+	display: flex;
+	gap: 8px;
+	
+	&__control {
+		box-shadow: inset 0 0 0 1px var(--ctx-border-secondary-light), var(--shadow-md);
+		width: 20px;
+		height: 20px;
+		border-radius: 4px;
+		flex-shrink: 0;
+	}
+
+	&__box {
+		appearance: none;
+		//border: 1px solid var(--ctx-border-secondary-light);
+		position: relative;
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			top: 3px;
+			right: 6px;
+			width: 6px;
+			height: 10px;
+			transform: rotate(45deg);
+			border: solid var(--checkbox-mark-cl);
+			border-width: 0 2px 2px 0;
+			
+			@include tz.transition(border-color .1s, background-color .1s);
+		}
+		
+		&:checked {
+			--checkbox-mark-cl: var(--ctx-elements-background-accent-active);
+		}
+	}
+}

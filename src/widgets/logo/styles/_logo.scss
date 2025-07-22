@@ -1,0 +1,15 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.logo {
+	--logo-h: 48px;
+	--logo-w: 174px;
+	
+	width: var(--logo-w);
+	height: var(--logo-h);
+	flex-shrink: 0;
+	
+	@include bp.media-breakpoint-up(md) {
+		--logo-h: 52px;
+		--logo-w: 186px;
+	}
+}

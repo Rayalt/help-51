@@ -1,0 +1,54 @@
+@use "sass:color";
+// ===============================================
+// COLOR MIXINS
+// ===============================================
+
+@use 'sass:string';
+@use 'sass:list';
+@use 'sass:map';
+
+/*
+	Create CSS custom properties from color map.
+
+	EXAMPLE:
+	$cl: (
+		blue-10: #1D253B,
+	);
+	@include get-cls($cl);
+
+	RESULT:
+	--blue-10: 29, 37, 59;
+	--cl-blue-10: rgb(var(--blue-10));
+
+	INFO: One '@each' expression were split into two to achieve
+	more readability of custom properties in a dev tools.
+*/
+@mixin get-colors($palette, $prefix: 'cl') {
+	@each $prop, $val in $palette {
+		$val: color.channel($val, 'red', $space: rgb) + ', ' + color.channel($val, 'green', $space: rgb) + ', ' + color.channel($val, 'blue', $space: rgb);
+
+		#{'--' + $prop}: string.unquote($val);
+	}
+
+	@each $prop in $palette {
+		$prop: list.nth($prop, 1);
+
+		#{'--' + $prefix + '-' + $prop}: rgb(var(#{'--' + $prop}));
+	}
+}
+
+
+@mixin get-ctx-colors($ctx, $prefix: 'ctx') {
+	@each $ctx-group-name, $ctx-group in $ctx {
+		@each $ctx-name, $ctx-param in $ctx-group {
+			$opacity: map.get($ctx-param, opacity);
+			$color-value: if(
+				$opacity,
+				rgba(var(--#{map.get($ctx-param, color)}), $opacity),
+				var(--cl-#{map.get($ctx-param, color)})
+			);
+
+			#{'--' + $prefix + '-' + $ctx-group-name + '-' + $ctx-name}: $color-value;
+		}
+	}
+}

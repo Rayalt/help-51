@@ -1,0 +1,33 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+
+.form-card {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	
+	&__title {
+		padding-left: 4px;
+		padding-bottom: 8px;
+	}
+	
+	&__item {
+	}
+	
+	&__offer {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	&__action {
+		margin-top: 16px;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 24px;
+		
+		@include bp.media-breakpoint-up(sm) {
+			flex-direction: row;
+		}
+	}
+}

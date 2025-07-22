@@ -1,0 +1,36 @@
+@use 'app/markup/scss/mixins/text-component' as tc;
+@use 'app/markup/scss/mixins/transition' as tz;
+
+
+.link {
+	--link-cl: var(--ctx-text-primary);
+	
+	color: var(--link-cl);
+
+	@include tc.text-component(sm, semibold);
+	@include tz.transition(color .2s);
+
+	&:focus-visible {
+		border-radius: 4px;
+		outline: none;
+		box-shadow: inset 0 0 0 1px var(--ctx-border-selected);
+	}
+	
+	&:hover {
+		--link-cl: var(--ctx-text-accent-primary);
+	}
+	
+	&_active {
+		--link-cl: var(--ctx-text-accent-primary);
+		
+		pointer-events: none;
+	}
+	
+	&_base {
+		--link-cl: inherit;
+	}
+
+	&_no-underline {
+		text-decoration: none;
+	}
+}

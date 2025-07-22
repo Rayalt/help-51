@@ -1,0 +1,237 @@
+@use 'app/markup/scss/mixins/buttons' as btn;
+@use 'app/markup/scss/mixins/text-component' as tc;
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+@use 'app/markup/scss/mixins/transition' as tz;
+
+
+.btn {
+	--btn-h: 48px;
+	--btn-inner-px: 54px;
+	--btn-bg-cl: var(--btn-main-bg-cl);
+	--btn-cl: var(--btn-main-cl);
+	--btn-main-bg-cl: inherit;
+	--btn-main-cl: inherit;
+	--btn-main-shadow-cl: transparent;
+	--btn-main-marker-cl: inherit;
+	--btn-addon-size: 24px;
+	--btn-brs: 32px;
+
+	//width: 100%;
+	height: var(--btn-h);
+	border-radius: var(--btn-brs);
+	color: var(--btn-cl);
+	background-color: var(--btn-bg-cl);
+
+	@include btn.btn;
+	@include tc.text-component(button, bold);
+
+	&__addon {
+		width: var(--btn-addon-size);
+		height: var(--btn-addon-size);
+	}
+	
+	&__inner {
+		padding-right: var(--btn-inner-px);
+		padding-left: var(--btn-inner-px);
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	&__text {
+		z-index: 1;
+	}
+	
+	&_primary,
+	&_secondary-light,
+	&_primary-light {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			pointer-events: none;
+			border-radius: inherit;
+		}
+	}
+
+	&_primary {
+		--btn-bg-cl: linear-gradient(90deg, var(--ctx-button-background-accent-gradient-2) 0%, var(--ctx-button-background-accent-gradient-1)100%);;
+		--btn-cl: var(--ctx-text-inverse-primary);
+		
+		&::after {
+			background-image: var(--btn-bg-cl);
+			border-radius: var(--btn-brs);
+			background-size: 100% 100%;
+			background-position: 0 0;
+			background-repeat: no-repeat;
+			
+			@include tz.transition(background-position .2s, background-size .2s);
+		}
+
+		&.state {
+			&::before {
+				top: -2px;
+				right: -2px;
+				bottom: -2px;
+				left: -2px;
+				border-radius: calc(var(--btn-brs) + 1px);
+				box-shadow: var(--state-shadow-pos) var(--state-shadow-w) var(--state-shadow-cl);
+			}
+		}
+		
+		&:hover {
+			&::after {
+				background-size: 200% 100%;
+				background-position: 100% 0;
+			}
+		}
+		
+		&.state {
+			--state-bg: none;
+		}
+
+		&.btn_disabled,
+		&:disabled {
+			--btn-bg-cl: var(--ctx-button-background-accent-disabled);
+			--btn-shadow-cl: transparent;
+		}
+	}
+
+	&_secondary,
+	&_secondary-light {
+		--btn-cl: var(--ctx-text-accent-secondary);
+	}
+	
+	&_secondary {
+		--btn-bg-cl: var(--ctx-button-background-secondary);
+		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary);
+
+		&.btn_disabled,
+		&:disabled {
+			--btn-bg-cl: var(--ctx-button-background-secondary-disabled);
+			--btn-cl: var(--ctx-text-accent-secondary-disabled);
+		}
+	}
+
+	&_secondary-light, 
+	&_primary-light {
+		--btn-bg-cl: var(--ctx-button-background-light);
+		
+		&::after {
+			box-shadow: var(--shadow-sm);
+		}
+
+		&.btn_disabled,
+		&:disabled {
+			--btn-shadow-cl: transparent;
+			--btn-cl: var(--ctx-text-secondary);
+		}
+	}
+	
+	&_primary-light {
+		--btn-cl: var(--ctx-text-accent-primary);
+	}
+	
+	&_secondary-light {
+		--state-main-hover-bg-img: var(--ctx-elements-background-hover-secondary-light);
+	}
+	//&_danger {
+	//	--btn-bg-cl: var(--ctx-button-background-error-active);
+	//	--btn-cl: var(--ctx-text-error-active);
+	//	--btn-shadow-cl: transparent;
+	//
+	//	&:hover {
+	//		--btn-bg-cl: var(--ctx-button-background-error-hover);
+	//		--btn-shadow-cl: transparent;
+	//	}
+	//
+	//	&:focus-visible {
+	//		--btn-shadow-cl: var(--ctx-border-error-focus);
+	//	}
+	//
+	//	&.btn_disabled,
+	//	&:disabled {
+	//		--btn-bg-cl: var(--ctx-button-background-error-disabled);
+	//		--btn-cl: var(--ctx-text-error-disabled);
+	//		--btn-shadow-cl: transparent;
+	//	}
+	//}
+	
+	&_ghost {
+		--btn-bg-cl: transparent;
+		--btn-cl: var(--ctx-text-primary);
+	}
+
+	&_disabled,
+	&:disabled {
+		pointer-events: none;
+	}
+
+	&_sm {
+		--btn-h: 36px;
+		--btn-inner-px: 16px;
+		
+		width: auto;
+	}
+
+	&_md {
+		--btn-h: 42px;
+		--btn-inner-px: 20px;
+		
+		width: auto;
+	}
+
+	&_square,
+	&_circle {
+		--btn-inner-px: 0;
+
+		width: var(--btn-h);
+	}
+	
+	&_square {
+		--btn-brs: 16px;
+	}
+	
+	&_square,
+	&_circle {
+		--btn-inner-px: 0;
+	}
+	
+	&_square {
+		--btn-brs: 8px;
+	}
+	
+	&_circle {
+		border-radius: 50%;
+	}
+	
+	&_ghost {
+		--btn-bg-cl: transparent;
+	}
+	
+	&_icon-mobile {
+		@include bp.media-breakpoint-down(xs) {
+			--btn-inner-px: 0;
+			
+			width: var(--btn-h);
+		}
+
+		.btn__text {
+			display: none;
+			
+			@include bp.media-breakpoint-up(sm) {
+				display: block;
+			}
+		}
+		
+		.btn__addon {
+			@include bp.media-breakpoint-up(sm) {
+				display: none;
+			}
+		}
+	}
+}
+

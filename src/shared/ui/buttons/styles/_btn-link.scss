@@ -1,0 +1,17 @@
+@use 'app/markup/scss/mixins/text-component';
+
+.btn-link {
+	// todo доработать
+	padding: var(--btn-link-p);
+	border: 0;
+	border-radius: 12px;
+	outline: none;
+	background-color: transparent;
+	box-shadow: var(--btn-link-shadow);
+	color: var(--ctx-text-primary);
+	line-height: inherit;
+	text-decoration: underline;
+	cursor: pointer;
+	
+	@include text-component.text-component(sm, semibold);
+}

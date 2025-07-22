@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // следит за указанием типов в ts
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // в какую спецификацию компилируем
+    "target": "es5",
+    "jsx": "react-jsx",
+    // обрабатывает js файлы тоже
+    "allowJs": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
+    // позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import
+    "esModuleInterop": true,
+    // можно писать import path from 'path'; вместо import * as path from 'path';
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [
+    "./config/jest/setup-tests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "node_modules/webpack/module.d.ts"
+  ]
+}

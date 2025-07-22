@@ -1,0 +1,58 @@
+// ===============================================
+// GRID
+// ===============================================
+
+@use 'variables/grid' as grid-variable;
+@use 'mixins/grid' as grid-mixin;
+@use 'mixins/breakpoints' as bp;
+
+$columns: grid-variable.$columns;
+
+.row {
+	--gutter-x: 24px;
+	--gutter-y: 24px;
+	--grid-columns: #{$columns};
+
+	// stylelint-disable-next-line declaration-no-important
+	display: grid !important;
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
+	gap: var(--gutter-y) var(--gutter-x);
+	height: fit-content;
+	
+	@include bp.media-breakpoint-up(lg) {
+		--gutter-x: 32px;
+		--gutter-y: 32px;
+	}
+
+	@include grid-mixin.make-cssgrid-cols;
+
+	&_auto-cols {
+		grid-template-columns: auto;
+		grid-auto-flow: column;
+		width: fit-content;
+
+		> * {
+			grid-column: auto;
+		}
+	}
+	
+	&_gy-0 {
+		--gutter-y: 0;
+	}
+	
+	&_g-16 {
+		--gutter-y: 16px;
+		--gutter-x: 16px;
+	}
+	
+	&_gy-16 {
+		--gutter-y: 16px;
+	}
+
+	> * {
+		grid-column: auto/span var(--grid-columns);
+	}
+}
+
+
+@include grid-mixin.make-cssgrid-rows;

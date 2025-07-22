@@ -1,0 +1,109 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+@use 'app/markup/scss/mixins/text-component' as tc;
+@use 'app/markup/scss/mixins/transition' as tr;
+
+
+.header {
+	--header-btn-mt: 12px;
+	--header-btn-ml: 0;
+	
+	background-color: var(--ctx-background-inverse-primary);
+	padding-top: 34px;
+	padding-bottom: 34px;
+	box-shadow: var(--shadow-md);
+	
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-areas: 
+			'logo menu'
+			'actions actions';
+		
+		@include bp.media-breakpoint-up(sm) {
+			justify-content: space-between;
+			display: flex;
+		}
+		
+		& + .header__row {
+			@include bp.media-breakpoint-up(sm) {
+				margin-top: 26px;
+			}
+		}
+	}
+	
+	&__logo {
+		grid-area: logo;
+		
+		@include tr.transition(opacity .2s);
+		
+		@include bp.media-breakpoint-up(sm) {
+			margin-right: auto;
+		}
+		
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	&__menu {
+		grid-area: menu;
+		justify-self: end;
+		
+		@include bp.media-breakpoint-up(sm) {
+			margin-left: 12px;	
+		}
+		
+		@include bp.media-breakpoint-up(md) {
+			display: none;
+		}	
+	}
+	
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		grid-area: actions;
+		
+		@include bp.media-breakpoint-up(sm) {
+			flex-direction: row;
+		}
+	}
+	
+	&__navbar {
+		align-self: flex-end;
+		
+		@include bp.media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+	
+	&__phone {
+		align-self: flex-end;
+		display: none;
+		
+		@include bp.media-breakpoint-up(sm) {
+			display: inline-flex;
+		}
+	}
+	
+	&__btn {
+		margin-top: var(--header-btn-mt);
+		margin-left: var(--header-btn-ml);
+		
+		@include bp.media-breakpoint-up(sm) {
+			--header-btn-mt: 0;
+			--header-btn-ml: 16px;
+		}
+		
+		&_secondary {
+			display: none;
+			
+			@include bp.media-breakpoint-up(sm) {
+				display: inline-flex;
+			}
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@use 'app/markup/scss/mixins/breakpoints' as bp;
+@use 'app/markup/scss/mixins/transform' as tf;
+
+.slider {
+	--swiper-pagination-bottom: 0;
+	--swiper-pagination-color: var(--ctx-elements-background-accent-active);
+	
+	--slider-max-w: 100%;
+	--slider-px: 10px;
+	--slider-mx: 0;
+			
+	width: var(--slider-max-w);
+	position: relative;
+	padding-right: 6px;
+	padding-left: 6px;
+
+	margin-left: var(--slider-mx);
+	margin-right: var(--slider-mx);
+		
+	@include bp.media-breakpoint-up(sm) {
+		--slider-max-w: 696px;
+		--slider-mx: auto;
+	}
+	
+	@include bp.media-breakpoint-up(md) {
+		--slider-max-w: 928px;
+	}
+	
+	@include bp.media-breakpoint-up(lg) {
+		--slider-max-w: 1312px;
+	}
+	
+	&__content {
+		&.swiper {
+			padding: 16px var(--slider-px) 48px;
+		}
+	}
+	
+	&_secondary {
+		--swiper-pagination-color: var(--ctx-elements-background-primary-active);
+	}
+	
+	.swiper-slide {
+		display: flex;
+		height: auto;
+		
+		.card {
+			//height: 100%;
+		}
+	}
+	
+	.swiper-pagination-bullet {
+		//background-color: var(--ctx-elements-background-disabled);
+	}
+	
+}
+
+.slider-nav-prev,
+.slider-nav-next {
+	position: relative;
+	z-index: 1;
+}

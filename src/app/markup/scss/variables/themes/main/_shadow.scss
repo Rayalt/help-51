@@ -1,0 +1,16 @@
+// ===============================================
+// SHADOW VARIABLES
+// ===============================================
+
+
+// stylelint-disable indentation, block-closing-brace-empty-line-before
+:root {
+
+
+//todo color
+--shadow-sm: 0 4px 20px -10px var(--ctx-shadow-primary);
+--shadow-md: 0 8px 44px -10px var(--ctx-shadow-primary);
+
+
+}
+// stylelint-enable indentation, block-closing-brace-empty-line-before
