@@ -1,4 +1,4 @@
-import { TeamPageAsync as TeamPage } from "./ui/team-page.async";
+import { TeamPageAsync as TeamPage } from './ui/team-page.async';
 
 export { 
 	TeamPage,

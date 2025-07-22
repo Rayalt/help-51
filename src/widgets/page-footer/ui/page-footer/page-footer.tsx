@@ -1,17 +1,16 @@
 import React from 'react';
-import cn from "classnames";
-import {NavbarFooter} from "../navbar-footer/navbar-footer";
-import {NavLink} from 'shared/ui';
-import classes from "../../page-footer.module.scss";
-import {PageFooterProps} from "../../model/types";
-import {Logo} from "widgets/logo";
-import {Contacts, Navbar} from "widgets";
-import {contactsLinkList, contactsSocialsList} from "shared/config/contacts";
-import {RoutePath} from "app/providers";
-import {useStateClass} from "shared/lib/hooks";
-import {navbarFooterList, navbarFooterListSecond, navbarItemsList} from "shared/config/navbar";
+import cn from 'classnames';
+import { NavbarFooter } from '../navbar-footer/navbar-footer';
+import { NavLink } from 'shared/ui';
+import classes from '../../page-footer.module.scss';
+import { PageFooterProps } from '../../model/types';
+import { Logo } from 'widgets/logo';
+import { Contacts } from 'widgets';
+import { contactsLinkList, contactsSocialsList } from 'shared/config/contacts';
+import { RoutePath } from 'app/providers';
+import { navbarFooterList, navbarFooterListSecond } from 'shared/config/navbar';
 
-const PageFooter = ({className}: PageFooterProps) => {
+const PageFooter = ({ className }: PageFooterProps) => {
 	const footerItemsList = navbarFooterList.map((item) => (
 		<li
 			key={ item.path }

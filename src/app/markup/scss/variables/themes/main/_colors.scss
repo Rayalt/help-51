@@ -1,7 +1,3 @@
-// ===============================================
-// COLORS VARIABLES
-// ===============================================
-
 $colors: (
 	palette: (
 		brand-100: #EAF6FD,
@@ -25,7 +21,7 @@ $colors: (
 @use "sass:map";
 @use "../../../mixins/colors" as cl;
 
-// stylelint-disable indentation, block-closing-brace-empty-line-before
+
 :root {
 
 
@@ -33,4 +29,3 @@ $colors: (
 
 
 }
-// stylelint-enable indentation, block-closing-brace-empty-line-before

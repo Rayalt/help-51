@@ -1,13 +1,13 @@
 import 'app/markup/scss/styles-common.scss';
 
-import React, {Suspense, useEffect, useState} from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { AppRouter } from 'app/providers/router';
 import cn from 'classnames';
 import classes from './app.module.scss';
-import {PageHeader} from "widgets/page-header";
-import {PageFooter} from "widgets/page-footer";
-import {ScrollHashProvider} from "app/providers/scroll-hash-provider";
-import {Sidebar} from "widgets";
+import { PageHeader } from 'widgets/page-header';
+import { PageFooter } from 'widgets/page-footer';
+import { ScrollHashProvider } from 'app/providers/scroll-hash-provider';
+import { Sidebar } from 'widgets';
 
 const App = () => {
 	const [isOpen, setIsOpen] = useState(false);

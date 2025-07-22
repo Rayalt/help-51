@@ -1,3 +1,3 @@
-import { Amount } from "./ui/amount";
+import { Amount } from './ui/amount';
 
 export { Amount };

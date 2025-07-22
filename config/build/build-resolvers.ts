@@ -1,5 +1,5 @@
-import {BuildOptions} from "./types/config";
-import path from "path";
+import { BuildOptions } from './types/config';
+import path from 'path';
 
 export function buildResolvers (options: BuildOptions) {
 	return {

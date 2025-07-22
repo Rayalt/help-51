@@ -1,4 +1,4 @@
-import {TabItem, TabsProps} from "shared/ui/tabs/model/types";
+import { TabItem } from 'shared/ui/tabs/model/types';
 
 export enum DocumentTab {
 	DOCUMENT = 'DOCUMENT',

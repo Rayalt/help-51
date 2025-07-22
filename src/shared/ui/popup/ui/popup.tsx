@@ -1,9 +1,8 @@
-import {PopupProps} from "./typings";
+import { PopupProps } from './typings';
 import cn from 'classnames';
 import classes from './popup.module.scss';
-import {Button} from "shared/ui/buttons";
-import {useCallback, useEffect, useState} from "react";
-import {Portal} from "shared/ui/portal";
+import { Button } from 'shared/ui/buttons';
+import { Portal } from 'shared/ui/portal';
 
 const Popup = ({
 	view,

@@ -1,33 +1,16 @@
-import React, {useEffect, useState} from "react";
-import {Svg} from "shared/ui";
-import { CheckboxProps } from "../model/types";
-import cn from "classnames";
+import React from 'react';
+import { CheckboxProps } from '../model/types';
+import cn from 'classnames';
 import classes from '../checbox.module.scss';
-import {useStateClass} from "shared/lib/hooks";
+import { stateClass } from 'shared/lib/hooks';
 
 const Checkbox = ({
 	checkboxId,
 	checkboxName,
 	checkboxValue,
-	disabled,
-	ariaLabel,
-	attrAriaDescribedBy,
 	checked,
 	children,
 }: CheckboxProps) => {
-
-	// Подписка на value$ (предположим, что это Observable)
-	// useEffect(() => {
-	// 	const subscription = value$?.subscribe(setChecked);
-	// 	return () => subscription?.unsubscribe();
-	// }, [value$]);
-
-	// const handleChange = (e) => {
-	// 	const newChecked = e.target.checked;
-	// 	setChecked(newChecked);
-	// 	changeHandler?.(newChecked);
-	// };
-
 	return (
 		<div 
 			className={cn(classes.checkbox)}
@@ -36,7 +19,7 @@ const Checkbox = ({
 				className={cn(classes.checkbox__control)}
 			>
 				<input
-					className={useStateClass(cn(classes.checkbox__box))}
+					className={stateClass(cn(classes.checkbox__box))}
 					type="checkbox"
 					id={ checkboxId }
 					name={ checkboxName }

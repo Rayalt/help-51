@@ -1,27 +1,27 @@
-import {ButtonCard, Section, SectionWrapper} from "widgets";
-import {RoutePath} from "app/providers/router";
-import {useNavigate} from "react-router-dom";
-import {ClientsType} from "shared/config/clients";
-import React, {useEffect, useState} from "react";
-import {WhomToHelpPageFilter} from "pages/whom-to-help-page/ui/whom-to-help-page-filter/whom-to-help-page-filter";
-import {useSelector} from "react-redux";
+import { ButtonCard, Section } from 'widgets';
+import { RoutePath } from 'app/providers/router';
+import { useNavigate } from 'react-router-dom';
+import { ClientsType } from 'shared/config/clients';
+import React, { useEffect, useState } from 'react';
+import { WhomToHelpPageFilter } from 'pages/whom-to-help-page/ui/whom-to-help-page-filter/whom-to-help-page-filter';
+import { useSelector } from 'react-redux';
 import {
 	whomToHelpPageReducer,
 	whomToHelpPageSelectors
-} from "pages/whom-to-help-page/model/slice/whom-to-help-page-slice";
-import {DynamicModuleLoader, ReducersList} from "shared/lib/components/dynamic-module-loader";
-import cn from "classnames";
+} from 'pages/whom-to-help-page/model/slice/whom-to-help-page-slice';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/dynamic-module-loader';
+import cn from 'classnames';
 import classes from '../../whom-to-help-page.module.scss';
 import {
 	getWhomToHelpPageFilter
-} from "pages/whom-to-help-page/model/selectors/whom-to-help-page-sort/get-whom-to-help-page-sort";
-import {ProgramTypes} from "shared/config/programs";
+} from 'pages/whom-to-help-page/model/selectors/whom-to-help-page-sort/get-whom-to-help-page-sort';
+import { ProgramTypes } from 'shared/config/programs';
 import {
 	getWhomToHelpPageSearch
-} from "pages/whom-to-help-page/model/selectors/whom-to-help-page-search/get-whom-to-help-page-search";
-import {AnimatePresence, motion} from "framer-motion";
-import {fade} from "shared/lib/animations";
-import {Pagination} from "shared/ui";
+} from 'pages/whom-to-help-page/model/selectors/whom-to-help-page-search/get-whom-to-help-page-search';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fade } from 'shared/lib/animations';
+import { Pagination } from 'shared/ui';
 
 const WhomToHelpPage = () => {
 	const navigate = useNavigate();

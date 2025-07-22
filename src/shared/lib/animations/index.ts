@@ -1,5 +1,5 @@
-import { fade } from "./fade";
-import { fadeDropdown } from "./fade-dropdown";
+import { fade } from './fade';
+import { fadeDropdown } from './fade-dropdown';
 
 export { 
 	fadeDropdown,

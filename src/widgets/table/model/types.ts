@@ -1,4 +1,4 @@
-import {ReactNode, TableHTMLAttributes} from "react";
+import { ReactNode, TableHTMLAttributes } from 'react';
 
 export type TableCell = {
 	data?: ReactNode;

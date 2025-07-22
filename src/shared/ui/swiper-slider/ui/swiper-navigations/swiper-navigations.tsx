@@ -1,8 +1,8 @@
-import {Fragment} from "react";
-import {Button} from "shared/ui";
-import cn from "classnames";
-import classes from "shared/ui/swiper-slider/swiper-slider.module.scss";
-import {SwiperSliderProps} from "shared/ui/swiper-slider/model/types";
+import { Fragment } from 'react';
+import { Button } from 'shared/ui';
+import cn from 'classnames';
+import classes from 'shared/ui/swiper-slider/swiper-slider.module.scss';
+import { SwiperSliderProps } from 'shared/ui/swiper-slider/model/types';
 
 const SwiperNavigations = ({ view = 'primary-light', sliderId }: SwiperSliderProps) => {
 	return (

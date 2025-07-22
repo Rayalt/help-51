@@ -1,14 +1,11 @@
-import React, {forwardRef} from 'react';
+import React, { forwardRef } from 'react';
 import InputMask from 'react-input-mask';
-import cn from 'classnames';
-import classes from '../../fields.module.scss';
-import {MaskedInputProps} from '../../model/types';
-import {Input} from 'shared/ui';
+import { MaskedInputProps } from '../../model/types';
+import { Input } from 'shared/ui';
 
 const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({
 	mask,
 	prefix,
-	className,
 	value,
 	onChange,
 	view,
@@ -22,7 +19,6 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({
 			value={value}
 			onChange={onChange}
 			disabled={view === 'disabled'}
-			{...props}
 		>
 			{ () =>
 				<Input
@@ -37,4 +33,6 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(({
 	);
 });
 
-export {MaskedInput};
+MaskedInput.displayName = 'Input';
+
+export { MaskedInput };

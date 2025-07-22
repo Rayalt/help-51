@@ -1,5 +1,5 @@
-import {SortOrder} from "shared/types";
-import {ProgramTypes} from "shared/config/programs";
+import { SortOrder } from 'shared/types';
+import { ProgramTypes } from 'shared/config/programs';
 
 export interface ClientsSortSelectorProps {
 	filter: ProgramTypes;

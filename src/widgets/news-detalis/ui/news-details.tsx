@@ -1,9 +1,9 @@
 import cn from 'classnames';
-import {Section, SectionMainAction, SectionWrapper} from "widgets";
-import classes from "../news-details.module.scss";
-import {Image, Pagination, Typography} from "shared/ui";
-import {NewsDetailsProps} from "../model/types";
-import {useRatioClass} from "shared/lib/hooks";
+import { Section } from 'widgets';
+import classes from '../news-details.module.scss';
+import { Image, Typography } from 'shared/ui';
+import { NewsDetailsProps } from '../model/types';
+import { ratioClass } from 'shared/lib/hooks';
 
 const NewsDetails = ({ newsItem }: NewsDetailsProps) => {
 	return (
@@ -47,11 +47,12 @@ const NewsDetails = ({ newsItem }: NewsDetailsProps) => {
 					className={cn(classes['sm:row-cols-4'], classes['md:row-cols-5'])}
 				>
 					<div
-						className={cn(useRatioClass({view: '3x2'}), classes['news-page__img'])}
+						className={cn(ratioClass({ view: '3x2' }), classes['news-page__img'])}
 					>
 						<Image 
 							alt=''
 							cover
+							// eslint-disable-next-line max-len
 							src='https://images.unsplash.com/photo-1750263239811-bfad7ceffa10?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 						/>
 					</div>

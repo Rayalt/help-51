@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import classes from '../donate-form-transaction.module.scss';
-import React, {ChangeEvent, FormEvent, useMemo, useState} from "react";
+import React, { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 import {
 	Amount,
 	Button,
@@ -13,18 +13,18 @@ import {
 	Link, MaskedInput,
 	Textarea,
 	Typography
-} from "shared/ui";
+} from 'shared/ui';
 import {
 	donateFormOptions, donateFormOptionsTitle,
 	donateFormTransactionFrequency,
 	donateFormTransactionSum, donateFormTransactionWay,
 	DonateFormTransactionProps,
-} from "../model/types";
-import {DropdownOptionTitle} from "shared/ui/forms/model/types";
-import {DonateFormFields, useDonateForm} from "shared/lib/hooks";
+} from '../model/types';
+import { DropdownOptionTitle } from 'shared/ui/forms/model/types';
+import { DonateFormFields, useDonateForm } from 'shared/lib/hooks';
 import { Controller } from 'react-hook-form';
 
-const DonateFormTransaction = ({children, className, view, clientName}: DonateFormTransactionProps) => {
+const DonateFormTransaction = ({ children, className, view, clientName }: DonateFormTransactionProps) => {
 	const [selectedValue, setSelectedValue] = useState<string | undefined>('На уставную деятельность фонда'); //todo
 	const [amount, setAmount] = useState<number>(0);
 	const [customAmount, setCustomAmount] = useState<string>('');
@@ -126,10 +126,10 @@ const DonateFormTransaction = ({children, className, view, clientName}: DonateFo
 			{ view === 'selected' && (
 				<Typography view='text-lg' className={classes['donate-form__subtitle']}>
 					Благотворительное пожертвование: <Typography 
-					tag='span'
-					color='accent-primary'
-					view='text-lg'
-				>{ clientName }</Typography>
+						tag='span'
+						color='accent-primary'
+						view='text-lg'
+					>{ clientName }</Typography>
 				</Typography>
 			) }
 
@@ -226,13 +226,13 @@ const DonateFormTransaction = ({children, className, view, clientName}: DonateFo
 					>
 						Кому помочь
 					</Typography>
-						<Dropdown
-							className={ cn(classes['donate-form__field']) }
-							options={ donateFormOptions }
-							optionsTitle={ donateFormOptionsTitle }
-							value={ selectedValue }
-							onChange={ setSelectedValue }
-						/>
+					<Dropdown
+						className={ cn(classes['donate-form__field']) }
+						options={ donateFormOptions }
+						optionsTitle={ donateFormOptionsTitle }
+						value={ selectedValue }
+						onChange={ setSelectedValue }
+					/>
 				</div>
 			) }
 
@@ -277,7 +277,7 @@ const DonateFormTransaction = ({children, className, view, clientName}: DonateFo
 								validate: (val) =>
 									/^\+7\d{10}$/.test(val) || 'Введите корректный номер',
 							}}
-							render={({field}) => (
+							render={({ field }) => (
 								<MaskedInput
 									mask="999 999 99 99"
 									prefix="+7"
@@ -365,8 +365,11 @@ const DonateFormTransaction = ({children, className, view, clientName}: DonateFo
 						checkboxValue='apply-oferta-checkbox'
 					>
 						<Typography view='text-sm'>
-							Я принимаю <Link to='/'>условия публичной оферты</Link> и даю согласие на <Link to='/'>обработку
-							персональных данных</Link>
+							Я принимаю <Link to='/'>
+								условия публичной оферты
+							</Link> и даю согласие на <Link to='/'>
+								обработку персональных данных
+							</Link>
 						</Typography>
 					</Checkbox>
 					<Checkbox
@@ -393,4 +396,4 @@ const DonateFormTransaction = ({children, className, view, clientName}: DonateFo
 	);
 };
 
-export {DonateFormTransaction};
+export { DonateFormTransaction };

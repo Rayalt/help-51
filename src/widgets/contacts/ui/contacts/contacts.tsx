@@ -1,10 +1,17 @@
-import {LinkSet} from "../link-set/link-set";
-import {ContactsProps} from "../../model/types";
-import {Socials} from "../socials/socials";
-import cn from "classnames";
+import { LinkSet } from '../link-set/link-set';
+import { ContactsProps } from '../../model/types';
+import { Socials } from '../socials/socials';
+import cn from 'classnames';
 import classes from '../../contacts.module.scss';
 
-const Contacts = ({view = 'secondary', footer, color, contactsSocialsList, contactsLinkList, className}: ContactsProps) => {
+const Contacts = ({ 
+	view = 'secondary', 
+	footer, 
+	color, 
+	contactsSocialsList, 
+	contactsLinkList, 
+	className 
+}: ContactsProps) => {
 	return (
 		<div
 			className={cn(

@@ -1,33 +1,22 @@
 import React from 'react';
 import cn from 'classnames';
 import classes from '../page-header.module.scss';
-import {PageHeaderProps} from "./typings";
-import {Button, ButtonLink} from "shared/ui/buttons";
-import {useLocation, useNavigate} from 'react-router-dom';
-import {useAppDispatch} from "shared/lib/hooks/use-app-dispatch/use-app-dispatch";
-import {Navbar} from "widgets/navbar";
-import {RoutePath} from "app/providers/router";
-import {Logo} from "widgets/logo";
-import {Link, NavLink} from "shared/ui/links";
-import {useStateClass} from "shared/lib/hooks";
-import {MenuBtn} from "shared/ui";
-import {navbarItemsList} from "shared/config/navbar";
+import { PageHeaderProps } from './typings';
+import { ButtonLink } from 'shared/ui/buttons';
+import { Navbar } from 'widgets/navbar';
+import { RoutePath } from 'app/providers/router';
+import { Logo } from 'widgets/logo';
+import { NavLink } from 'shared/ui/links';
+import { MenuBtn } from 'shared/ui';
+import { navbarItemsList } from 'shared/config/navbar';
 
-const PageHeader = ({onToggleMenu, className}: PageHeaderProps) => {
-	const navigate = useNavigate();
-	const dispatch = useAppDispatch();
-	const { pathname } = useLocation();
-
+const PageHeader = ({ onToggleMenu, className }: PageHeaderProps) => {
 	const collapseMenu = () => {
 		if (onToggleMenu) {
 			onToggleMenu();
 		}
-		// dispatch(sidebarActions.change());
 	}
 	
-	// const sidebarItemsList = useSelector(getSidebarItem);
-	// const sidebarCollapse = useSelector(getSidebarCollapse);
-
 	return (
 		<header className={cn(classes.header, className)}>
 			<div
@@ -44,7 +33,7 @@ const PageHeader = ({onToggleMenu, className}: PageHeaderProps) => {
 							className={ cn(classes.header__logo) }
 							base
 						>
-							<Logo/>
+							<Logo />
 						</NavLink>
 						<div
 							className={cn(classes.header__actions)}

@@ -1,6 +1,6 @@
-import {StateSchema} from "app/providers/store-provider";
-import {createSelector} from "@reduxjs/toolkit";
-import {getScrollStop} from "../get-scroll-stop/get-scroll-stop";
+import { StateSchema } from 'app/providers/store-provider';
+import { createSelector } from '@reduxjs/toolkit';
+import { getScrollStop } from '../get-scroll-stop/get-scroll-stop';
 
 export const getScrollPath = createSelector(
 	getScrollStop,

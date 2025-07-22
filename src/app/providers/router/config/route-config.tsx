@@ -1,4 +1,4 @@
-import {AppRoutesProps} from "app/providers/router/config/typings";
+import { AppRoutesProps } from 'app/providers/router/config/typings';
 import {
 	AboutPage,
 	MainPage,
@@ -18,7 +18,7 @@ import {
 	PartnershipPage,
 	NeedHelpPage,
 	HelpedDetailsPage, NewsDetailsPage,
-} from "pages";
+} from 'pages';
 
 export enum AppRoutes {
 	MAIN = 'main', // Главная

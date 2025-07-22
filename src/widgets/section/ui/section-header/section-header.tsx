@@ -1,21 +1,17 @@
-import cn from "classnames";
-import { SectionProps} from "../../model/types";
+import cn from 'classnames';
+import { SectionProps } from '../../model/types';
 import classes from '../../section.module.scss';
-import {Typography} from "shared/ui";
-import React, {Fragment} from "react";
-import {SectionDescription} from "widgets";
+import { Typography } from 'shared/ui';
+import React from 'react';
 
-const SectionHeader = ({showActions = true, typographyTitleProps, children, typographyDescriptionProps, headerActions, className}: SectionProps) => {
-	// const descrContent = typographyDescrProps?.map((descr) => (
-	// 	<Typography
-	// 		key={ descr.toString() }
-	// 		className={cn(classes.section__descr, className)}
-	// 		{ ...descr }
-	// 	>
-	// 		{ descr.children }
-	// 	</Typography>
-	// ));
-	
+const SectionHeader = ({ 
+	showActions = true, 
+	typographyTitleProps, 
+	children, 
+	typographyDescriptionProps, 
+	headerActions, 
+	className 
+}: SectionProps) => {
 	return (
 		<div className={ className }>
 			<div className={cn(classes.section__header)}>

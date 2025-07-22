@@ -1,14 +1,14 @@
 import cn from 'classnames';
 import classes from '../document.module.scss';
-import {DocumentProps} from "shared/ui/document/model/types";
-import {Link, Svg, Typography} from "shared/ui";
-import {useStateClass} from "shared/lib/hooks";
+import { DocumentProps } from 'shared/ui/document/model/types';
+import { Link, Svg, Typography } from 'shared/ui';
+import { stateClass } from 'shared/lib/hooks';
 
-const Document = ({ children, to, typographyTitleProps, typographySubtitleProps, className }: DocumentProps) => {
+const Document = ({ to, typographyTitleProps, typographySubtitleProps, className }: DocumentProps) => {
 	return (
 		<Link
 			to={ to }
-			className={ useStateClass(cn(classes.document, className)) }
+			className={ stateClass(cn(classes.document, className)) }
 		>
 			<span
 				className={ cn(classes.document__icon) }

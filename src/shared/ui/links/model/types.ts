@@ -1,4 +1,4 @@
-import {LinkProps, NavLinkProps} from "react-router-dom";
+import { LinkProps, NavLinkProps } from 'react-router-dom';
 
 export interface LinkComponentProps extends LinkProps {
 	base?: boolean;

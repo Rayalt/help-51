@@ -1,10 +1,22 @@
 import cn from 'classnames';
 import classes from '../data-widget.module.scss';
 import { DataWidgetProps } from '../model/types';
-import {Button, Typography} from "shared/ui";
-import {Fragment} from "react";
+import { Button, Typography } from 'shared/ui';
+import { Fragment } from 'react';
 
-const DataWidget = ({ children, tag: Tag = 'div', base, shadowSize, view = 'static', widgetData, colorTitle, viewTitle = 'text-lg', color, colorDescription, viewDescription, className }: DataWidgetProps) => {
+const DataWidget = ({ 
+	children, 
+	tag: Tag = 'div', 
+	base, shadowSize, 
+	view = 'static', 
+	widgetData, 
+	colorTitle, 
+	viewTitle = 'text-lg', 
+	color, 
+	colorDescription, 
+	viewDescription, 
+	className 
+}: DataWidgetProps) => {
 	const DataWidgetContent = (tag?: DataWidgetProps['tag']) => {
 		return (
 			<Fragment>

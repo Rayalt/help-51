@@ -1,8 +1,7 @@
-import cn from "classnames";
+import cn from 'classnames';
 import classes from '../range.module.scss';
-import {RangeProps} from "../model/types";
-import {Svg} from "shared/ui";
-// import {iconMap, IconName} from "shared/ui/svg/model/types";
+import { RangeProps } from '../model/types';
+import { Svg } from 'shared/ui';
 
 
 const Range = ({ view, className, ngStyle }: RangeProps) => {

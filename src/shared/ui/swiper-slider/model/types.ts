@@ -1,7 +1,5 @@
-import {SwiperProps, SwiperSlideProps} from "swiper/swiper-react";
-import {HTMLProps, Ref} from "react";
-import {BtnProps} from "shared/ui/buttons/model/types";
-import {SwiperSlide} from "swiper/swiper-element";
+import { SwiperProps } from 'swiper/swiper-react';
+import { BtnProps } from 'shared/ui/buttons/model/types';
 
 export interface SwiperSliderProps extends SwiperProps {
 	view?: BtnProps['view'];

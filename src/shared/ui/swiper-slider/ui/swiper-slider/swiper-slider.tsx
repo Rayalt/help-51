@@ -1,13 +1,12 @@
-import {Swiper, SwiperClass, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination} from 'swiper/modules';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {SwiperSliderProps} from "../../model/types";
-import {Button} from "shared/ui";
-import cn from "classnames";
+import { SwiperSliderProps } from '../../model/types';
+import cn from 'classnames';
 import classes from '../../swiper-slider.module.scss';
-import {useState} from "react";
+import { useState } from 'react';
 
 const SwiperSlider = ({
 	view, 

@@ -1,3 +1,3 @@
-import { Team } from "./ui/team/team";
+import { Team } from './ui/team/team';
 
 export { Team };

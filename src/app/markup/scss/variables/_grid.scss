@@ -1,15 +1,3 @@
-// ===============================================
-// GRID VARIABLES
-// ===============================================
-
-// ===============================================
-// GRID VARIABLES
-// ===============================================
-
-
-// COMMON COLS, GAPS AND MARGINS
-// -----------------------------------------------
-
 // Number of columns
 $columns: 12;
 
@@ -27,35 +15,4 @@ $columns-gutter-y-step: 4;
 $columns-gutter-x: 0;
 $columns-gutter-x-end: 32;
 $columns-gutter-x-step: 4;
-
-// -----------------------------------------------
-// COMMON COLS, GAPS AND MARGINS
-
-
-// PRODUCT GAPS AND MARGINS
-// -----------------------------------------------
-
-// Vertical margins and column gaps
-$product-columns-gutter-sm-step: 2;
-$product-columns-gutter-lg-step: 2;
-
-$product-columns-gutter-sm-start: 4;
-$product-columns-gutter-sm-end: 12;
-$product-columns-gutter-lg-start: 16;
-$product-columns-gutter-lg-end: 32;
-
-// Vertical margins
-$product-columns-gutter-y-sm-start: 4;
-$product-columns-gutter-y-sm-end: 12;
-$product-columns-gutter-y-lg-start: 16;
-$product-columns-gutter-y-lg-end: 32;
-
-// Column gaps
-$product-columns-gutter-x-sm-start: 4;
-$product-columns-gutter-x-sm-end: 12;
-$product-columns-gutter-x-lg-start: 16;
-$product-columns-gutter-x-lg-end: 32;
-
-// -----------------------------------------------
-// PRODUCT GAPS AND MARGINS
 

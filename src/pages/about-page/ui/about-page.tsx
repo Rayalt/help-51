@@ -1,27 +1,23 @@
-import React, {Fragment, useEffect, useRef, useState} from 'react';
-import {Button, ButtonLink} from "shared/ui/buttons";
-import {Svg} from "shared/ui/svg";
-import {NavLink, SwiperNavigations, Typography} from "shared/ui";
+import React, { Fragment } from 'react';
+import { ButtonLink } from 'shared/ui/buttons';
+import { Svg } from 'shared/ui/svg';
+import { SwiperNavigations, Typography } from 'shared/ui';
 import {
 	Section,
 	SectionCols,
-	SectionDescription,
 	SectionHeader,
-	SectionMainAction,
 	SectionWrapper
-} from "widgets/section";
+} from 'widgets/section';
 import classes from '../about.module.scss';
-import cn from "classnames";
-import {RoutePath} from "app/providers/router";
-import {ButtonCard, Contacts, Requisites, Team, YMap} from "widgets";
-import {useNavigate} from "react-router-dom";
-import {SwiperSlider} from "shared/ui";
-import {SwiperSlide} from "swiper/react";
-import {DonateFormTabs} from "features";
-import {Programs} from "shared/config/programs";
-import {Clients} from "shared/config/clients";
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
-import {contactsLinkList, contactsSocialsList} from "shared/config/contacts";
+import cn from 'classnames';
+import { RoutePath } from 'app/providers/router';
+import { Contacts, Requisites, Team, YMap } from 'widgets';
+import { useNavigate } from 'react-router-dom';
+import { SwiperSlider } from 'shared/ui';
+import { SwiperSlide } from 'swiper/react';
+import { Programs } from 'shared/config/programs';
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
+import { contactsLinkList, contactsSocialsList } from 'shared/config/contacts';
 
 const AboutPage = () => {
 	const navigate = useNavigate();
@@ -34,11 +30,21 @@ const AboutPage = () => {
 		>
 			<SectionCols
 				bgImage1='sunBW'
-				bgSize1={{ xs: "484px", sm: "684px", md: "884px", lg: '1084px' }}
-				bgPos1={{ xs: "left -248px bottom -336px", sm: "left -382px bottom -470px", md: "left -548px bottom -636px", lg: 'left -670px bottom -732px' }}
+				bgSize1={{ xs: '484px', sm: '684px', md: '884px', lg: '1084px' }}
+				bgPos1={{ 
+					xs: 'left -248px bottom -336px', 
+					sm: 'left -382px bottom -470px', 
+					md: 'left -548px bottom -636px', 
+					lg: 'left -670px bottom -732px' 
+				}}
 				bgImage2='sunBW'
-				bgSize2={{ xs: "734px", sm: "934px", md: "1134px", lg: '1334px' }}
-				bgPos2={{ xs: "right -294px bottom 314px", sm: "right -404px bottom 144px", md: "right -474px bottom -36px", lg: 'right -474px bottom -36px' }}
+				bgSize2={{ xs: '734px', sm: '934px', md: '1134px', lg: '1334px' }}
+				bgPos2={{ 
+					xs: 'right -294px bottom 314px', 
+					sm: 'right -404px bottom 144px', 
+					md: 'right -474px bottom -36px', 
+					lg: 'right -474px bottom -36px' 
+				}}
 				view='inverted'
 				typographyTitleProps={{
 					tag: 'h1',
@@ -107,8 +113,8 @@ const AboutPage = () => {
 			
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "right -54px top", sm: "right -54px top", md: "right -66px top", lg: 'right -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'right -54px top', sm: 'right -54px top', md: 'right -66px top', lg: 'right -76px top' }}
 				view='inverted'
 				className={cn(classes['section-help-ways'])}
 			>
@@ -176,8 +182,8 @@ const AboutPage = () => {
 			
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "left -54px top", sm: "left -54px top", md: "left -66px top", lg: 'left -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 				wrapper
 				container={ false }
 				typographyTitleProps={{
@@ -201,8 +207,8 @@ const AboutPage = () => {
 			
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "right -54px top", sm: "right -54px top", md: "right -66px top", lg: 'right -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'right -54px top', sm: 'right -54px top', md: 'right -66px top', lg: 'right -76px top' }}
 				view='inverted'
 				typographyTitleProps={{
 					children: 'Наша команда',
@@ -221,11 +227,16 @@ const AboutPage = () => {
 
 			<Section
 				bgImage1='lighthouseBW'
-				bgSize1={{ xs: "500px", sm: "716px", md: "1008px", lg: '1362px' }}
-				bgPos1={{ xs: "right -343px bottom -73px", sm: "right -479px bottom -108px", md: "right -662px top 40px", lg: 'right -810px top -40px' }}
+				bgSize1={{ xs: '500px', sm: '716px', md: '1008px', lg: '1362px' }}
+				bgPos1={{ 
+					xs: 'right -343px bottom -73px', 
+					sm: 'right -479px bottom -108px', 
+					md: 'right -662px top 40px',
+					lg: 'right -810px top -40px' 
+				}}
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "left -54px top", sm: "left -54px top", md: "left -66px top", lg: 'left -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 				className={cn(classes['section-contacts'])}
 				id='contacts'
 			>
@@ -238,7 +249,9 @@ const AboutPage = () => {
 						<YMap />
 					</div>
 					<div
-						className={cn(classes['md:row-cols-5'], classes['md:col-start-8'], classes['section-contacts__info'])}
+						className={
+							cn(classes['md:row-cols-5'], classes['md:col-start-8'], classes['section-contacts__info'])
+						}
 					>
 						<SectionHeader
 							typographyTitleProps={{

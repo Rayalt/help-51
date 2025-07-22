@@ -1,4 +1,4 @@
-import {TableProps} from "widgets";
+import { TableProps } from 'widgets';
 
 export const donatesHeader: TableProps['cellsHeader'] = [
 	{ data: `

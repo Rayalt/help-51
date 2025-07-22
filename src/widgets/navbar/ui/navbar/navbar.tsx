@@ -1,11 +1,10 @@
 import React from 'react';
-import cn from "classnames";
-import classes from "../../navbar.module.scss";
-import {NavbarItem} from "../navbar-item/navbar-item";
-import {NavbarProps} from "../../model/types";
-import {RoutePath} from "app/providers/router";
+import cn from 'classnames';
+import classes from '../../navbar.module.scss';
+import { NavbarItem } from '../navbar-item/navbar-item';
+import { NavbarProps } from '../../model/types';
 
-const Navbar = ({view, itemsList, className, onClick}: NavbarProps) => {
+const Navbar = ({ view, itemsList, className, onClick }: NavbarProps) => {
 	return (
 		<nav
 			className={cn(

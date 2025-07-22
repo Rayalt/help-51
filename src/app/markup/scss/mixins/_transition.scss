@@ -54,7 +54,6 @@ $transition-props-list: trv.$transition-props-list;
 
 	// https://ru.hexlet.io/blog/posts/novye-mediazaprosy-kotorye-izmenyat-vashi-predstavleniya-o-vozmozhnostyah-css
 
-	// stylelint-disable-next-line scss/media-feature-value-dollar-variable
 	@media (prefers-reduced-motion: reduce) {
 		transition: none;
 	}

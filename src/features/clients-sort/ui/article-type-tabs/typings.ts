@@ -1,4 +1,4 @@
-import {HTMLProps} from "react";
+import { HTMLProps } from 'react';
 // import {ArticleTags} from "entities/article";
 
 export interface ArticleTypeTabsProps extends HTMLProps<HTMLElement> {

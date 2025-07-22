@@ -1,6 +1,5 @@
-import {TableProps} from "widgets";
+import { TableProps } from 'widgets';
 
-export const cellsHeader: TableProps['cellsHeader'] = [];
 export const requisites: TableProps['cellsRow'] = [
 	[
 		{ data: `

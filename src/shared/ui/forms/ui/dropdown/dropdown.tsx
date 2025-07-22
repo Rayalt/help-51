@@ -1,11 +1,11 @@
-import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
-import { Button } from "shared/ui/buttons";
-import { DropdownProps } from "../../model/types";
-import cn from "classnames";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Button } from 'shared/ui/buttons';
+import { DropdownProps } from '../../model/types';
+import cn from 'classnames';
 import classes from '../../fields.module.scss';
-import {Typography} from "shared/ui";
-import {AnimatePresence, motion} from "framer-motion";
-import {fadeDropdown} from "shared/lib/animations";
+import { Typography } from 'shared/ui';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fadeDropdown } from 'shared/lib/animations';
 
 const Dropdown = <T extends string>({
 	options = [],

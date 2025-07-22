@@ -1,7 +1,7 @@
-import {TypographyProps} from "../../model/types";
-import classes from "../../typography.module.scss";
-import cn from "classnames";
-import { useTypograph } from 'shared/lib/hooks';
+import { TypographyProps } from '../../model/types';
+import classes from '../../typography.module.scss';
+import cn from 'classnames';
+import { typograph } from 'shared/lib/hooks';
 
 const Typography = ({
 	view = 'text-md', 
@@ -35,7 +35,7 @@ const Typography = ({
 			)}
 		>
 			{ typeof children === 'string' && 
-				useTypograph(children)
+				typograph(children)
 			}
 
 			{ typeof children !== 'string' && children }

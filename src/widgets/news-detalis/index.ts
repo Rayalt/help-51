@@ -1,3 +1,3 @@
-import { NewsDetails } from "./ui/news-details";
+import { NewsDetails } from './ui/news-details';
 
 export { NewsDetails };

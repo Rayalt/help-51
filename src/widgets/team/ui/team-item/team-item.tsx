@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import classes from '../../team-item.module.scss';
-import {TeamItemProps} from "../../model/types";
-import {Image, Typography} from "shared/ui";
+import { TeamItemProps } from '../../model/types';
+import { Image, Typography } from 'shared/ui';
 
 const TeamItem = ({ name, photo, position, className }: TeamItemProps) => {
 	return (
@@ -31,7 +31,7 @@ const TeamItem = ({ name, photo, position, className }: TeamItemProps) => {
 							key={ line }
 						>
 							{ line }
-							<br/>
+							<br />
 						</span>
 					)) }
 				</Typography>

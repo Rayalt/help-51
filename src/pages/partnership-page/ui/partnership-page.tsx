@@ -1,20 +1,19 @@
-import {Contacts, Section, SectionDescription, SectionHeader, SectionWrapper} from "widgets";
-import {Button, ButtonLink, Svg, Typography} from "shared/ui";
-import {RoutePath} from "app/providers/router";
+import { Contacts, Section,  SectionHeader } from 'widgets';
+import { Svg, Typography } from 'shared/ui';
 import cn from 'classnames';
 import classes from '../partnership-page.module.scss';
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
-import {contactsLinkListEmail, contactsLinkListShort} from "shared/config/contacts";
-import React from "react";
-import {useRatioClass} from "shared/lib/hooks";
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
+import { contactsLinkListShort } from 'shared/config/contacts';
+import React from 'react';
+import { ratioClass } from 'shared/lib/hooks';
 
 const PartnershipPage = () => {
 	return (
 		<div>
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "left -54px top", sm: "left -54px top", md: "left -66px top", lg: 'left -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 				view='inverted'
 			>
 				<div
@@ -57,8 +56,8 @@ const PartnershipPage = () => {
 			
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "right -54px top", sm: "right -54px top", md: "right -66px top", lg: 'right -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'right -54px top', sm: 'right -54px top', md: 'right -66px top', lg: 'right -76px top' }}
 				typographyTitleProps={{
 					children: 'Генеральный партнер фонда',
 				}}
@@ -71,7 +70,7 @@ const PartnershipPage = () => {
 						base
 					>
 						<div
-							className={cn(useRatioClass({view: '1x1'}))}
+							className={cn(ratioClass({ view: '1x1' }))}
 						>
 							<Svg 
 								name='ads' 
@@ -86,8 +85,8 @@ const PartnershipPage = () => {
 			
 			<Section
 				bgImage2='starsLargeBW'
-				bgSize2={{ xs: "500px", sm: "600px", md: "700px", lg: '866px' }}
-				bgPos2={{ xs: "left -54px top", sm: "left -54px top", md: "left -66px top", lg: 'left -76px top' }}
+				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
+				bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 				view='inverted'
 				typographyTitleProps={{
 					children: 'Партнеры фонда',
@@ -100,16 +99,16 @@ const PartnershipPage = () => {
 						className={cn(classes['md:col-3'], classes['sm:col-4'], classes['col-7'])}
 					>
 						<div
-							className={cn(useRatioClass({view: '1x1'}), classes['partner-card'])}
+							className={cn(ratioClass({ view: '1x1' }), classes['partner-card'])}
 						>
 							<Typography
 								view='subtitle'
 								color='accent-primary'
 							>
 								Здесь
-								<br/>
+								<br />
 								может быть
-								<br/>
+								<br />
 								ваш логотип
 							</Typography>
 						</div>

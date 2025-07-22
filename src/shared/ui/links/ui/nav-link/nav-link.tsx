@@ -1,11 +1,10 @@
-import { NavLink as NavLinkComponent } from "react-router-dom";
-import cn from "classnames";
+import { NavLink as NavLinkComponent } from 'react-router-dom';
+import cn from 'classnames';
 import classes from '../../link.module.scss';
-import {NavLinkComponentProps} from "../../model/types";
+import { NavLinkComponentProps } from '../../model/types';
 
 const NavLink = ({
 	to,
-	view = 'primary',
 	base,
 	noUnderline = false,
 	className,

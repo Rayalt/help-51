@@ -1,14 +1,14 @@
 import cn from 'classnames';
 import classes from '../voluntering-request.module.scss';
-import {VolunteringRequestProps} from "../model/types";
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
-import {FormCard} from "widgets";
-import {itemContentType} from "widgets/form-card/model/types";
-import {Button, Hint, Input, MaskedInput, Textarea} from "shared/ui";
-import {Controller, useForm} from "react-hook-form";
-import React, {Fragment} from "react";
+import { VolunteringRequestProps } from '../model/types';
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
+import { FormCard } from 'widgets';
+import { itemContentType } from 'widgets/form-card/model/types';
+import { Hint, Input, MaskedInput, Textarea } from 'shared/ui';
+import { Controller, useForm } from 'react-hook-form';
+import React, { Fragment } from 'react';
 
-const VolunteringRequest = ({ children, className }: VolunteringRequestProps) => {
+const VolunteringRequest = () => {
 	const { control, handleSubmit, register, formState: { errors } } = useForm({
 		defaultValues: {
 			fullName: '',
@@ -46,64 +46,64 @@ const VolunteringRequest = ({ children, className }: VolunteringRequestProps) =>
 		{
 			label: 'Фамилия, имя и отчество',
 			field: 
-			<Fragment>
-				<Input 
-					placeholder='Фамилия Имя Отчество'
-					{...register('fullName', { 
-						required: 'Укажите имя'
-					})}
-					view={errors.fullName ? 'error' : undefined}
-				/>
-				{ errors.fullName && 
-					<Hint color="error">{errors.fullName.message}</Hint> 
-				}
-			</Fragment>
+	<Fragment>
+		<Input 
+			placeholder='Фамилия Имя Отчество'
+			{...register('fullName', { 
+				required: 'Укажите имя'
+			})}
+			view={errors.fullName ? 'error' : undefined}
+		/>
+		{ errors.fullName && 
+		<Hint color="error">{errors.fullName.message}</Hint> 
+		}
+	</Fragment>
 		},
 		{
 			label: 'Возраст',
 			field:
-				<Controller
-					name="age"
-					control={control}
-					rules={{
-						required: 'Укажите возраст',
-						validate: (val) =>
-							Number(val) >= 1 && Number(val) <= 150 || 'Возраст от 1 до 150',
+	<Controller
+		name="age"
+		control={control}
+		rules={{
+			required: 'Укажите возраст',
+			validate: (val) =>
+				Number(val) >= 1 && Number(val) <= 150 || 'Возраст от 1 до 150',
+		}}
+		render={({ field }) => (
+			<Fragment>
+				<MaskedInput
+					mask="99"
+					placeholder="Ваш возраст"
+					value={field.value}
+					onChange={(e) => {
+						const raw = e.target.value.replace(/\D/g, '');
+						field.onChange(raw);
 					}}
-					render={({field}) => (
-						<Fragment>
-							<MaskedInput
-								mask="99"
-								placeholder="Ваш возраст"
-								value={field.value}
-								onChange={(e) => {
-									const raw = e.target.value.replace(/\D/g, '');
-									field.onChange(raw);
-								}}
-								view={errors.age ? 'error' : undefined}
-							/>
-							{ errors.age && 
-								<Hint color="error">{errors.age.message}</Hint>
-							}
-						</Fragment>
-					)}
+					view={errors.age ? 'error' : undefined}
 				/>
+				{ errors.age && 
+				<Hint color="error">{errors.age.message}</Hint>
+				}
+			</Fragment>
+		)}
+	/>
 		},
 		{
 			label: 'Город проживания',
 			field:
-			<Fragment>
-				<Input 
-					placeholder='Ваш город'
-					{...register('city', { 
-						required: 'Укажите город'
-					})}
-					view={errors.city ? 'error' : undefined}
-				/>
-				{ errors.city && 
-					<Hint color="error">{errors.city.message}</Hint> 
-				}
-			</Fragment>
+	<Fragment>
+		<Input 
+			placeholder='Ваш город'
+			{...register('city', { 
+				required: 'Укажите город'
+			})}
+			view={errors.city ? 'error' : undefined}
+		/>
+		{ errors.city && 
+		<Hint color="error">{errors.city.message}</Hint> 
+		}
+	</Fragment>
 		},
 		{
 			label: 'Контактный телефон',
@@ -142,20 +142,20 @@ const VolunteringRequest = ({ children, className }: VolunteringRequestProps) =>
 		{
 			label: 'Ваш email',
 			field: 
-				<Fragment>
-					<Input
-						placeholder='Ваш email'
-						{...register('email', {
-							required: 'Введите email',
-							pattern: {
-								value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-								message: 'Введите корректный email',
-							},
-						})}
-						view={errors.email ? 'error' : undefined}
-					/>
-					{errors.email && <Hint color="error">{errors.email.message}</Hint>}
-				</Fragment>
+	<Fragment>
+		<Input
+			placeholder='Ваш email'
+			{...register('email', {
+				required: 'Введите email',
+				pattern: {
+					value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+					message: 'Введите корректный email',
+				},
+			})}
+			view={errors.email ? 'error' : undefined}
+		/>
+		{errors.email && <Hint color="error">{errors.email.message}</Hint>}
+	</Fragment>
 		},
 		{
 			label: 'Комментарии и пожелания',

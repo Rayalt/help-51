@@ -1,13 +1,10 @@
-import {memo, useMemo} from "react";
-import {Dropdown, DropdownOption} from "shared/ui";
-import {ClientsSortSelectorProps} from "features/clients-sort/ui/clients-sort-selector/typings";
-import {Programs, ProgramTypes} from "shared/config/programs";
+import { Dropdown } from 'shared/ui';
+import { ClientsSortSelectorProps } from 'features/clients-sort/ui/clients-sort-selector/typings';
+import { Programs } from 'shared/config/programs';
 
-const ClientsSortSelector = memo(({
+const ClientsSortSelector = ({
 	filter,
-	order,
 	onChangeSortField,
-	onChangeOrder,
 }: ClientsSortSelectorProps) => {
 	return (
 		<div>
@@ -19,6 +16,6 @@ const ClientsSortSelector = memo(({
 			/>
 		</div>
 	);
-});
+};
 
 export { ClientsSortSelector };

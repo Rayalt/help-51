@@ -1,4 +1,4 @@
-import {ProgramTypes} from "shared/config/programs";
+import { ProgramTypes } from 'shared/config/programs';
 
 export type Document = {
 	src: string;
@@ -35,6 +35,7 @@ export type ClientsType = {
 	program: ProgramTypes;
 };
 
+/* eslint-disable max-len */
 export const Clients: ClientsType[] = [
 	{
 		id: '8486c68c-b122-416f-a459-ed407248f050',

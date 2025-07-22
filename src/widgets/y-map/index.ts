@@ -1,4 +1,4 @@
-import { YMap } from "./ui/y-map";
+import { YMap } from './ui/y-map';
 
 export {
 	YMap,

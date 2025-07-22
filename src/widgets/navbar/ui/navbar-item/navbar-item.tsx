@@ -1,9 +1,8 @@
-import {Link, NavLink} from "shared/ui/links";
-import {NavbarItemProps} from "../../model/types";
-import {useTypograph} from "shared/lib/hooks";
-import {Fragment} from "react";
+import { NavLink } from 'shared/ui/links';
+import { NavbarItemProps } from '../../model/types';
+import { typograph } from 'shared/lib/hooks';
 
-const NavbarItem = ({className, onClick, item}: NavbarItemProps) => {
+const NavbarItem = ({ className, onClick, item }: NavbarItemProps) => {
 	return (
 		<NavLink
 			to={ item.path }
@@ -11,7 +10,7 @@ const NavbarItem = ({className, onClick, item}: NavbarItemProps) => {
 			onClick={ onClick }
 			noUnderline={ true }
 		>
-			{ useTypograph(item.text) }
+			{ typograph(item.text) }
 		</NavLink>
 	);
 };

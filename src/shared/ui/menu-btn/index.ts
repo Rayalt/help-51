@@ -1,3 +1,3 @@
-import { MenuBtn } from "./ui/menu-btn";
+import { MenuBtn } from './ui/menu-btn';
 
 export { MenuBtn };

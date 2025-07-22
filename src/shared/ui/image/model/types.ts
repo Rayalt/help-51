@@ -1,4 +1,4 @@
-import {ImgHTMLAttributes} from "react";
+import { ImgHTMLAttributes } from 'react';
 
 import ozon from 'app/markup/graphics/img/ozon.jpg';
 import directorAvatar from 'app/markup/graphics/img/director-avatar.jpg';

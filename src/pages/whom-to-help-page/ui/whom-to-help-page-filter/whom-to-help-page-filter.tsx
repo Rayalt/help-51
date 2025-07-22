@@ -1,21 +1,19 @@
 import cn from 'classnames';
 import classes from '../../whom-to-help-page.module.scss';
-import {WhomToHelpPageFilterProps} from "../../model/types/types";
-import {ClientsSortSelector} from "features/clients-sort";
-import {useDispatch, useSelector} from "react-redux";
-import {Fragment, useCallback} from "react";
+import { ClientsSortSelector } from 'features/clients-sort';
+import { useDispatch, useSelector } from 'react-redux';
+import { useCallback } from 'react';
 import {
 	getWhomToHelpPageFilter
-} from "pages/whom-to-help-page/model/selectors/whom-to-help-page-sort/get-whom-to-help-page-sort";
-import {whomToHelpPageAction} from "pages/whom-to-help-page/model/slice/whom-to-help-page-slice";
-import {ProgramTypes} from "shared/config/programs";
-import {Input, InputProps} from "shared/ui";
-import {useDebounce} from "shared/lib/hooks/use-debounce/use-debounce";
+} from 'pages/whom-to-help-page/model/selectors/whom-to-help-page-sort/get-whom-to-help-page-sort';
+import { whomToHelpPageAction } from 'pages/whom-to-help-page/model/slice/whom-to-help-page-slice';
+import { ProgramTypes } from 'shared/config/programs';
+import { Input, InputProps } from 'shared/ui';
 import {
 	getWhomToHelpPageSearch
-} from "pages/whom-to-help-page/model/selectors/whom-to-help-page-search/get-whom-to-help-page-search";
+} from 'pages/whom-to-help-page/model/selectors/whom-to-help-page-search/get-whom-to-help-page-search';
 
-const WhomToHelpPageFilter = ({ children, className }: WhomToHelpPageFilterProps) => {
+const WhomToHelpPageFilter = () => {
 	const filter = useSelector(getWhomToHelpPageFilter);
 	const search = useSelector(getWhomToHelpPageSearch);
 	// const debounceFetchData = useDebounce(fetchData, 500);

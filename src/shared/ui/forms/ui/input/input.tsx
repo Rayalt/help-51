@@ -2,16 +2,13 @@ import cn from 'classnames';
 
 import classes from '../../fields.module.scss';
 
-import React, {useCallback, useState} from "react";
-import { InputProps } from "../../model/types";
-import {useStateClass} from "shared/lib/hooks";
+import React, { forwardRef, useCallback } from 'react';
+import { InputProps } from '../../model/types';
+import { stateClass } from 'shared/lib/hooks';
 
-//todo memo not working
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({
-	addonText,
+const Input = forwardRef<HTMLInputElement, InputProps>(({
 	className,
 	placeholder,
-	labelText,
 	view,
 	type = 'text',
 	autoComplete = 'off',
@@ -22,7 +19,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({
 	readOnly,
 	pattern,
 	inputMode,
-	value,
 	prefix,
 	...props
 }, ref) => {
@@ -62,7 +58,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({
 	
 	return (
 		<div
-			className={useStateClass(cn(classes.field, {
+			className={stateClass(cn(classes.field, {
 				[classes.field + '_' + view]: view && !!view,
 				[classes.field_phone]: prefix,
 				[classes.field + '_' + 'readonly']: readOnly,
@@ -90,5 +86,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({
 		</div>
 	);
 });
+
+Input.displayName = 'Input';
 
 export { Input };

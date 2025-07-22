@@ -1,10 +1,9 @@
 import { useRef } from 'react';
-// import { useRemoveFocus } from 'shared/lib/remove-focus/use-remove-focus';
 import cn from 'classnames';
 
 import classes from '../../button.module.scss';
-import {useStateClass} from "shared/lib/hooks";
-import { BtnProps } from "../../model/types";
+import { stateClass } from 'shared/lib/hooks';
+import { BtnProps } from '../../model/types';
 import { ButtonContent } from '../../lib/ui/button-content/button-content';
 
 const Button = ({
@@ -56,7 +55,7 @@ const Button = ({
 			title={title}
 			type={type}
 			ref={buttonRef}
-			className={useStateClass(cn({
+			className={stateClass(cn({
 				[classes.btn]: !base && shape !== 'link',
 				[classes.btn_square]: square && !circle,
 				[classes.btn_circle]: circle && !square,
@@ -84,4 +83,4 @@ const Button = ({
 	);
 };
 
-export {Button};
+export { Button };

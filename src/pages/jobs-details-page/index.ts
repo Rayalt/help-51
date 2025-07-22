@@ -1,3 +1,3 @@
-import { JobsDetailsPageAsync as JobsDetailsPage } from "./ui/jobs-details-page.async";
+import { JobsDetailsPageAsync as JobsDetailsPage } from './ui/jobs-details-page.async';
 
 export { JobsDetailsPage };

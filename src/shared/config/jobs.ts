@@ -8,6 +8,7 @@ export type Job = {
 	offer?: string[];
 };
 
+/* eslint-disable max-len */
 export const jobs: Job[] = [
 	{
 		id: '111',
@@ -107,4 +108,4 @@ export const jobs: Job[] = [
 			'Компенсацию затрат на спортивные абонементы, приложение Т‑Спорта для онлайн-занятий и командные тренировки с коллегами',
 		],
 	}
-]
+];

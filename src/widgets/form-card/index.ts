@@ -1,3 +1,3 @@
-import { FormCard } from "./ui/form-card";
+import { FormCard } from './ui/form-card';
 
 export { FormCard };

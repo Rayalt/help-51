@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {TabContent, TabItem, Tabs, Typography} from "shared/ui";
+import { TabContent, TabItem, Tabs, Typography } from 'shared/ui';
 import classes from '../programs-tabs.module.scss'
-import cn from "classnames";
-import {Programs, ProgramTypes} from "shared/config/programs";
+import cn from 'classnames';
+import { Programs, ProgramTypes } from 'shared/config/programs';
 
 const ProgramsTabs = () => {
 	const [activeTab, setActiveTab] = useState<ProgramTypes>(ProgramTypes.POOR);

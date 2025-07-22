@@ -1,12 +1,20 @@
 import cn from 'classnames';
 import classes from '../../chips.module.scss';
-import {ChipsProps} from "../../model/types";
-import React, {Fragment} from "react";
-import {Amount, Svg} from "shared/ui";
-import {useStateClass} from "shared/lib/hooks";
-// import {iconMap, IconName} from "shared/ui/svg/model/types";
+import { ChipsProps } from '../../model/types';
+import React, { Fragment } from 'react';
+import { Svg } from 'shared/ui';
+import { stateClass } from 'shared/lib/hooks';
 
-const Chips = ({ chips, type = 'radio', inputName, disabled, checkedValue, children, onChange, className, size }: ChipsProps) => {
+const Chips = ({ 
+	chips,
+	type = 'radio',
+	inputName,
+	disabled,
+	checkedValue,
+	onChange,
+	className,
+	size 
+}: ChipsProps) => {
 	const changeHandler: ChipsProps['onChange'] = (value) => {
 		onChange?.(value);
 	};
@@ -17,8 +25,9 @@ const Chips = ({ chips, type = 'radio', inputName, disabled, checkedValue, child
 				
 				<label
 					className={ cn(
-						classes.chip, className,
-						{[classes.chip + '_' + size]: size },
+						classes.chip,
+						className,
+						{ [classes.chip + '_' + size]: size },
 					) }
 					key={ chip.id }
 				>
@@ -33,7 +42,7 @@ const Chips = ({ chips, type = 'radio', inputName, disabled, checkedValue, child
 						disabled={ disabled || chip.disabled } // мб просто chip.disabled 
 					/>
 					<span
-						className={ useStateClass(cn(classes.chip__btn)) }
+						className={ stateClass(cn(classes.chip__btn)) }
 					>
 						{/*{ chip.icon && (*/}
 						{/*	// const iconName = chip.icon as IconName;*/}

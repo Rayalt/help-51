@@ -1,16 +1,15 @@
-import cn from 'classnames';
-import {JobDescriptionProps} from "widgets/job-description/model/types";
-import {Section} from "widgets";
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
-import {Typography} from "shared/ui";
+import { JobDescriptionProps } from 'widgets/job-description/model/types';
+import { Section } from 'widgets';
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
+import { Typography } from 'shared/ui';
 
-const JobDescription = ({ children, job, className }: JobDescriptionProps) => {
+const JobDescription = ({ job }: JobDescriptionProps) => {
 	return (
 		<Section
 			typographyTitleProps={{
 				children: job.title,
 			}}
-			typographyDescrProps={[{
+			typographyDescriptionProps={[{
 				children: job.subtitle
 			}]}
 		>
@@ -45,7 +44,6 @@ const JobDescription = ({ children, job, className }: JobDescriptionProps) => {
 					Мы предлагаем
 				</Typography>
 			</DataWidget>
-			
 		</Section>
 	);
 };

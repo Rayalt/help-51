@@ -1,4 +1,4 @@
-import {InfiniteScrollWrapper} from "./ui/infinite-scroll-wrapper";
+import { InfiniteScrollWrapper } from './ui/infinite-scroll-wrapper';
 
 export { 
 	InfiniteScrollWrapper

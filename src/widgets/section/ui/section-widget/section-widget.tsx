@@ -1,9 +1,9 @@
-import cn from "classnames";
-import classes from "../../section.module.scss";
-import {SectionWidgetProps} from "../../model/types";
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
+import cn from 'classnames';
+import classes from '../../section.module.scss';
+import { SectionWidgetProps } from '../../model/types';
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
 
-const SectionWidget = ({className, children}: SectionWidgetProps) => {
+const SectionWidget = ({ className, children }: SectionWidgetProps) => {
 	return (
 		<DataWidget
 			base

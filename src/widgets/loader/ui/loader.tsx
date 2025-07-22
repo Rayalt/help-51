@@ -1,9 +1,9 @@
-import {Section} from "widgets";
+import { Section } from 'widgets';
 
 const Loader = () => {
 	return (
 		<Section>
-			loader
+			Загрузка...
 		</Section>
 	);
 };

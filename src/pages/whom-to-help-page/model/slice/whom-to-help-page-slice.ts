@@ -1,8 +1,7 @@
-import {createEntityAdapter, createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {StateSchema} from "app/providers/store-provider";
-import {SortOrder} from "shared/types";
-import {Clients, ClientsType} from "shared/config/clients";
-import {ProgramTypes} from "shared/config/programs";
+import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/store-provider';
+import { Clients, ClientsType } from 'shared/config/clients';
+import { ProgramTypes } from 'shared/config/programs';
 
 const whomToHelpPageAdapter = createEntityAdapter<ClientsType>({});
 

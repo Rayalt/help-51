@@ -1,6 +1,6 @@
-import {SkeletonProps} from "../model/types";
-import {CSSProperties, useMemo} from "react";
-import cn from "classnames";
+import { SkeletonProps } from '../model/types';
+import { CSSProperties, useMemo } from 'react';
+import cn from 'classnames';
 import classes from '../skeleton.module.scss';
 
 const Skeleton = ({

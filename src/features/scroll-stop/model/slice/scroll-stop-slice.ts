@@ -1,5 +1,5 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {ScrollStopSchema} from "../types/scroll-stop-schema";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ScrollStopSchema } from '../types/scroll-stop-schema';
 
 const initialState: ScrollStopSchema = {
 	scroll: {},

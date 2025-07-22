@@ -1,3 +1,3 @@
-import { DonateFormTransaction } from "./ui/donate-form-transaction";
+import { DonateFormTransaction } from './ui/donate-form-transaction';
 
 export { DonateFormTransaction };

@@ -1,17 +1,10 @@
 import cn from 'classnames';
 import classes from '../form-card.module.scss';
-import {FormCardProps} from "widgets/form-card/model/types";
-import {Button, Checkbox, Link, Typography} from "shared/ui";
-import React, {FormEvent, useCallback} from "react";
+import { FormCardProps } from 'widgets/form-card/model/types';
+import { Button, Checkbox, Link, Typography } from 'shared/ui';
+import React from 'react';
 
-const FormCard = ({ children, onSubmit, itemContent, className }: FormCardProps) => {
-	
-	const submitHandler = (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		if (onSubmit) {
-			onSubmit(event);
-		}
-	};
+const FormCard = ({ onSubmit, itemContent, className }: FormCardProps) => {
 	
 	return (
 		<form
@@ -43,8 +36,10 @@ const FormCard = ({ children, onSubmit, itemContent, className }: FormCardProps)
 						checkboxValue='apply-oferta-checkbox'
 					>
 						<Typography view='text-sm'>
-							Я принимаю <Link to='/'>условия публичной оферты</Link> и даю согласие на <Link to='/'>обработку
-							персональных данных</Link>
+							Я принимаю <Link to='/'>
+								условия публичной оферты
+							</Link> и даю согласие на <Link to='/'>обработку
+								персональных данных</Link>
 						</Typography>
 					</Checkbox>
 					<Checkbox

@@ -1,12 +1,9 @@
-import {Section, SectionHeader, SectionWrapper} from "widgets";
-import {ProgramsTabs} from "widgets/programs-tabs/ui/programs-tabs";
-import cn from "classnames";
+import { Section } from 'widgets';
+import cn from 'classnames';
 import classes from '../team-page.module.scss';
-import {Image, Typography} from "shared/ui";
-import headAvatar from "app/markup/graphics/img/head-avatar.jpg";
-import {useRatioClass} from "shared/lib/hooks";
-import {team} from "widgets/team/model/team";
-import {Fragment} from "react";
+import { Image, Typography } from 'shared/ui';
+import { ratioClass } from 'shared/lib/hooks';
+import { team } from 'widgets/team/model/team';
 
 const TeamPage = () => {
 	return (
@@ -17,13 +14,19 @@ const TeamPage = () => {
 		>
 			{ team.map(item =>
 				<div
+					key={ item.id }
 					className={cn(classes.row, classes['team-element'])}
 				>
 					<Image
 						src={ item.photo }
 						alt=''
 						cover
-						className={cn(useRatioClass({ view: '1x1' }), classes['sm:col-3'], classes['col-5'], classes['team-element__img'])}
+						className={cn(
+							ratioClass({ view: '1x1' }),
+							classes['sm:col-3'], 
+							classes['col-5'], 
+							classes['team-element__img']
+						)}
 					></Image>
 					
 					<div

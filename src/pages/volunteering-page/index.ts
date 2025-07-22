@@ -1,3 +1,3 @@
-import { VolunteeringPageAsync as VolunteeringPage } from "./ui/volunteering-page.async";
+import { VolunteeringPageAsync as VolunteeringPage } from './ui/volunteering-page.async';
 
 export { VolunteeringPage };

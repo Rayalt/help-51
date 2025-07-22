@@ -1,13 +1,11 @@
-import {NewsCard} from "../../model/types";
-import {Button, ButtonLink, Image, Typography} from "shared/ui";
-import {RoutePath} from "app/providers/router";
-import cn from "classnames";
+import { NewsCardProps } from '../../model/types';
+import { ButtonLink, Image, Typography } from 'shared/ui';
+import { RoutePath } from 'app/providers/router';
+import cn from 'classnames';
 import classes from '../../card.module.scss';
-import {Estimation} from "../estimation/estimation";
-import {useRatioClass, useTypograph} from "shared/lib/hooks";
-import {Fragment} from "react";
+import { ratioClass } from 'shared/lib/hooks';
 
-const NewsCard = ({className, newsData, view = 'portrait'}: NewsCard) => {
+const NewsCard = ({ className, newsData, view = 'portrait' }: NewsCardProps) => {
 	return (
 		<div
 			className={cn(
@@ -25,11 +23,12 @@ const NewsCard = ({className, newsData, view = 'portrait'}: NewsCard) => {
 					cover
 					className={cn(
 						{
-							[useRatioClass({view: '4x3'})]: view === 'portrait',
-							[useRatioClass({view: '1x1'})]: view === 'landscape',
+							[ratioClass({ view: '4x3' })]: view === 'portrait',
+							[ratioClass({ view: '1x1' })]: view === 'landscape',
 						},
 						classes.card__img
 					)}
+					// eslint-disable-next-line max-len
 					src='https://images.unsplash.com/photo-1750263239811-bfad7ceffa10?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 				/>
 			</div>

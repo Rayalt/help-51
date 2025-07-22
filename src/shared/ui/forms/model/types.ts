@@ -1,6 +1,4 @@
-import React, {ChangeEvent, HTMLProps, InputHTMLAttributes, Ref, TextareaHTMLAttributes} from 'react';
-import {TabItem, TypographyProps} from "shared/ui";
-
+import { ChangeEvent, HTMLProps, InputHTMLAttributes, TextareaHTMLAttributes } from 'react';
 
 // InputProps
 
@@ -10,7 +8,6 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 	placeholder: string;
 	view?: 'error' | 'secondary' | 'disabled' | undefined;
 	onChange?: (event: ChangeEvent<HTMLInputElement>, payload: { value: string }) => void;
-	// label?: boolean;
 }
 
 // MaskedInputProps
@@ -26,12 +23,9 @@ export interface MaskedInputProps extends InputProps {
 
 // TextareaProps
 export interface TextareaProps extends Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange'> {
-	labelText?: string;
-	addonText?: string;
 	placeholder: string;
 	view?: 'error' | 'secondary' | 'disabled' | undefined;
 	onChange?: (event: ChangeEvent<HTMLTextAreaElement>, payload: { value: string }) => void;
-	// label?: boolean;
 }
 
 // Autocomplete

@@ -29,6 +29,5 @@ $transform-props-list: tf.$transform-props-list;
 }
 
 @function _wrap-transform-in-var($item, $index, $list) {
-	// Не ошибка, дефолтное значение должно быть просто пустым
 	@return var(--transform-#{$item},);
 }

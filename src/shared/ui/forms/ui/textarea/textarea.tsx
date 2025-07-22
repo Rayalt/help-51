@@ -2,15 +2,13 @@ import cn from 'classnames';
 
 import classes from '../../fields.module.scss';
 
-import React, { useCallback } from "react";
-import { TextareaProps } from "../../model/types";
-import {useStateClass} from "shared/lib/hooks";
+import React, { forwardRef, useCallback } from 'react';
+import { TextareaProps } from '../../model/types';
+import { stateClass } from 'shared/lib/hooks';
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
-	addonText,
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
 	className,
 	placeholder,
-	labelText,
 	view,
 	autoComplete = 'off',
 	autoFocus,
@@ -26,7 +24,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
 	// 	}
 	// };
 
-	// todo почему Omit
 	const changeHandler = useCallback(
 		(event: React.ChangeEvent<HTMLTextAreaElement>) => {
 			if (onChange) {
@@ -57,7 +54,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
 
 	return (
 		<div
-			className={useStateClass(cn(classes.field, classes.field_textarea, {
+			className={stateClass(cn(classes.field, classes.field_textarea, {
 				[classes.field + '_' + view]: view,
 				[classes.field + '_' + 'readonly']: readOnly,
 			}, className))}
@@ -78,5 +75,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
 		</div>
 	);
 });
+
+Textarea.displayName = 'Textarea';
 
 export { Textarea };

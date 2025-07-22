@@ -1,7 +1,7 @@
-import {HTMLAttributes, useMemo} from "react";
-import {DropdownOption, DropdownOptionTitle} from "shared/ui/forms/model/types";
-import {ChipItem} from "shared/ui/chips/model/types";
-import {Amount, Svg} from "shared/ui";
+import { HTMLAttributes, useMemo } from 'react';
+import { DropdownOption, DropdownOptionTitle } from 'shared/ui/forms/model/types';
+import { ChipItem } from 'shared/ui/chips/model/types';
+import { Amount, Svg } from 'shared/ui';
 
 export enum donateFrequency {
 	ONES = 'ONES',
@@ -12,45 +12,45 @@ export const donateFormTransactionSum: ChipItem[] = [
 	{
 		id: '4a0de044-362d-410b-bf5b-b7052407e1c1',
 		label: 
-			<Amount 
-				value={ 100 }
-			/>
+	<Amount 
+		value={ 100 }
+	/>
 		,
 		value: '100',
 	},
 	{
 		id: '0f99963c-e39d-4b7b-9641-d1c245053a33',
 		label: 
-			<Amount 
-				value={ 500 }
-			/>
+	<Amount 
+		value={ 500 }
+	/>
 		,
 		value: '500',
 	},
 	{
 		id: '0e5e9d52-b011-4d36-bded-ae00e3133602',
 		label: 
-			<Amount 
-				value={ 1000 }
-			/>
+	<Amount 
+		value={ 1000 }
+	/>
 		,
 		value: '5000',
 	},
 	{
 		id: '2e6432f8-b013-4920-8db7-eb16e6322311',
 		label: 
-			<Amount 
-				value={ 2000 }
-			/>
+	<Amount 
+		value={ 2000 }
+	/>
 		,
 		value: '2000',
 	},
 	{
 		id: 'ed1ef2c5-cf76-4cdf-987c-aaed9ccd6160',
 		label: 
-			<Amount 
-				value={ 5000 }
-			/>
+	<Amount 
+		value={ 5000 }
+	/>
 		,
 		value: '20000',
 	},
@@ -106,8 +106,8 @@ export const donateFormOptions: DropdownOption[] = [
 ];
 
 export const donateFormOptionsTitle: DropdownOptionTitle[] = [
-	{title: 'Имя', titleClass: '3'},
-	{title: 'Диагноз', titleClass: '9'},
+	{ title: 'Имя', titleClass: '3' },
+	{ title: 'Диагноз', titleClass: '9' },
 ];
 
 export interface DonateFormTransactionProps extends HTMLAttributes<HTMLElement> {

@@ -1,9 +1,8 @@
-import { TabItem, TabsProps } from "../../model/types";
-import { Button } from "shared/ui/buttons";
-import React, { useCallback } from "react";
+import { TabItem, TabsProps } from '../../model/types';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 import classes from '../../tabs.module.scss';
-import {ButtonTab} from "shared/ui";
+import { ButtonTab } from 'shared/ui';
 
 const Tabs = ({ className, children, tabs, value, view = 'primary', contentView, onTabClick }: TabsProps) => {
 	const tabHandler = useCallback((tab: TabItem) => () => {

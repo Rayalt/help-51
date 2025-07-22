@@ -1,12 +1,12 @@
-import React, {Fragment, useState} from 'react';
-import {DonateTab, tabList} from "../../model/donate-form-tabs";
-import {Table} from 'widgets';
-import {Button, Image, Svg, TabContent, TabItem, Tabs, Typography} from "shared/ui";
-import {requisites} from "widgets/requisites/model/requisites";
-import {TabsContentRow} from "shared/ui/tabs/ui/tabs-content-row/tabs-content-row";
-import {useRatioClass} from "shared/lib/hooks";
-import {DonateFormTransaction} from "features";
-import {DonateOther} from "../donate-other/donate-other";
+import React, { Fragment, useState } from 'react';
+import { DonateTab, tabList } from '../../model/donate-form-tabs';
+import { Table } from 'widgets';
+import { Button, Image, Svg, TabContent, TabItem, Tabs, Typography } from 'shared/ui';
+import { requisites } from 'widgets/requisites/model/requisites';
+import { TabsContentRow } from 'shared/ui/tabs/ui/tabs-content-row/tabs-content-row';
+import { ratioClass } from 'shared/lib/hooks';
+import { DonateFormTransaction } from 'features';
+import { DonateOther } from '../donate-other/donate-other';
 
 const DonateFormTabs = () => {
 	const [activeTab, setActiveTab] = useState<DonateTab>(DonateTab.TRANSACTION);
@@ -27,15 +27,15 @@ const DonateFormTabs = () => {
 					title={{ children: 'Благотворительное пожертвование' }}
 					description={{ children: 'На уставную деятельность фонда' }}
 					img={
-					<div
-						className={useRatioClass({view: '1x1'})}
-					>
-						<Svg
-							name='qrDonate'
-							base
-							auto
-						/>
-					</div>
+						<div
+							className={ratioClass({ view: '1x1' })}
+						>
+							<Svg
+								name='qrDonate'
+								base
+								auto
+							/>
+						</div>
 					}
 				/>
 			)
@@ -50,7 +50,7 @@ const DonateFormTabs = () => {
 						<Image
 							src='ozon'
 							alt=''
-							className={useRatioClass({ view: '3x2' })}
+							className={ratioClass({ view: '3x2' })}
 						/>
 					}
 					action={

@@ -1,4 +1,4 @@
-import {ContactsType, SocialsType} from "widgets";
+import { ContactsType, SocialsType } from 'widgets';
 
 export const contactsLinkListEmail: ContactsType[] = [
 	{

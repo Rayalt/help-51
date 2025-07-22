@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import classes from '../../button.module.scss';
-import {Link} from "shared/ui/links";
-import {ButtonContent} from "../../lib/ui/button-content/button-content";
-import {ButtonLinkProps} from "../../model/types";
-import {useStateClass} from "shared/lib/hooks";
+import { Link } from 'shared/ui/links';
+import { ButtonContent } from '../../lib/ui/button-content/button-content';
+import { ButtonLinkProps } from '../../model/types';
+import { stateClass } from 'shared/lib/hooks';
 
 const ButtonLink = ({
 	to, 
@@ -42,7 +42,7 @@ const ButtonLink = ({
 		<Link
 			to={ to }
 			base
-			className={useStateClass(cn({
+			className={stateClass(cn({
 				[classes.btn]: !base,
 				[classes.btn + '_' + view]: view,
 				[classes.btn + '_' + size]: size,
@@ -65,4 +65,4 @@ const ButtonLink = ({
 	);
 };
 
-export {ButtonLink};
+export { ButtonLink };

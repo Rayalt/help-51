@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import classes from '../menu-btn.module.scss';
 import { MenuBtnProps } from '../model/types';
-import {Button} from "shared/ui";
+import { Button } from 'shared/ui';
 
-const MenuBtn = ({ children, isOpen, onClick, className }: MenuBtnProps) => {
+const MenuBtn = ({ isOpen, onClick, className }: MenuBtnProps) => {
 	return (
 		<Button
 			view='secondary'

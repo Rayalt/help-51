@@ -1,8 +1,8 @@
-import {useCallback, useMemo} from "react";
-import {ArticleTypeTabsProps} from "./typings";
-import {TabItem, Tabs} from "shared/ui";
+import { useCallback, useMemo } from 'react';
+import { ArticleTypeTabsProps } from './typings';
+import { TabItem, Tabs } from 'shared/ui';
 
-const ArticleTypeTabs = ({value, onChangeType}: ArticleTypeTabsProps) => {
+const ArticleTypeTabs = ({ value, onChangeType }: ArticleTypeTabsProps) => {
 	const typeTabs = useMemo<TabItem[]>(() => [
 		{
 			value: 'DonateType.TRANSACTION',

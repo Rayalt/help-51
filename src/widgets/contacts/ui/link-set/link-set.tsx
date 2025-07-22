@@ -1,12 +1,12 @@
 import React from 'react';
-import cn from "classnames";
-import classes from "../../contacts.module.scss";
-import {ButtonLink} from "shared/ui/buttons";
-import {LinkSetProps} from "../../model/types";
-import {Svg, Typography} from "shared/ui";
+import cn from 'classnames';
+import classes from '../../contacts.module.scss';
+import { ButtonLink } from 'shared/ui/buttons';
+import { LinkSetProps } from '../../model/types';
+import { Svg, Typography } from 'shared/ui';
 // import {iconMap, IconName} from "shared/ui/svg/model/types";
 
-const LinkSet = ({className, item, view, color}: LinkSetProps) => {
+const LinkSet = ({ className, item, view, color }: LinkSetProps) => {
 	if (!item) return;
 	
 	// const iconName = item.icon as IconName;

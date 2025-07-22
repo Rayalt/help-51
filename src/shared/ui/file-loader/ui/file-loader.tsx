@@ -1,8 +1,8 @@
 import cn from 'classnames';
-import {FileLoaderProps} from "shared/ui/file-loader/types/types";
-import {Button} from "shared/ui";
+import { FileLoaderProps } from 'shared/ui/file-loader/types/types';
+import { Button } from 'shared/ui';
 
-const FileLoader = ({ children, className }: FileLoaderProps) => {
+const FileLoader = ({ className }: FileLoaderProps) => {
 	return (
 		<div
 			className={ cn( className) }

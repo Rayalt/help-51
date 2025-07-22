@@ -1,4 +1,4 @@
-import {InputHTMLAttributes} from "react";
+import { InputHTMLAttributes } from 'react';
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	checkboxId: string;
@@ -6,10 +6,6 @@ export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 	checkboxValue: string;
 	disabled?: boolean;
 	checked?: boolean;
-	// tabindex,
-	// changeHandler,
-	// onFocus,
-	// onBlur,
 	ariaLabel?: string;
 	attrAriaDescribedBy?: string;
 }

@@ -1,4 +1,4 @@
-import { ProgramsPageAsync as ProgramsPage } from "./ui/programs-page.async";
+import { ProgramsPageAsync as ProgramsPage } from './ui/programs-page.async';
 
 export { 
 	ProgramsPage,

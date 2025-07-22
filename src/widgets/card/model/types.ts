@@ -1,8 +1,8 @@
-import {HTMLProps} from "react";
-import {BtnProps, ButtonLinkProps} from "shared/ui/buttons/model/types";
-import {TypographyProps} from "shared/ui";
-import {ClientsType} from "shared/config/clients";
-import {NewsType} from "shared/config/news";
+import { HTMLProps } from 'react';
+import { BtnProps } from 'shared/ui/buttons/model/types';
+import { TypographyProps } from 'shared/ui';
+import { ClientsType } from 'shared/config/clients';
+import { NewsType } from 'shared/config/news';
 
 export interface CardProps extends HTMLProps<HTMLElement> {
 	view?: ClientsType['view'];
@@ -13,7 +13,7 @@ export interface CardProps extends HTMLProps<HTMLElement> {
 	viewTitle?: TypographyProps['view'];
 }
 
-export interface NewsCard extends HTMLProps<HTMLElement> {
+export interface NewsCardProps extends HTMLProps<HTMLElement> {
 	view?: 'landscape' | 'portrait';
 	newsData: NewsType;
 }

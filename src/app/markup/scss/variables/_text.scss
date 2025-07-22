@@ -1,18 +1,10 @@
-// ===============================================
-// TEXT VARIABLES
-// ===============================================
-
 @use "../typography" as typography-variables;
 @use "../mixins/text-component";
 @use "../variables/breakpoints";
 @use "../variables/typography";
 
-// stylelint-disable indentation, block-closing-brace-empty-line-before
+
 :root {
-
-
-// TEXT COMPONENTS
-// -----------------------------------------------
 
 
 @include text-component.text-vars-generate(
@@ -22,9 +14,4 @@
 );
 
 
-// -----------------------------------------------
-// TEXT COMPONENTS
-
-
 }
-// stylelint-enable indentation, block-closing-brace-empty-line-before

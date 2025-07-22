@@ -1,9 +1,9 @@
-import {configureStore, Reducer, ReducersMapObject, UnknownAction} from '@reduxjs/toolkit';
-import {StateSchema, ThunkExtraArgs} from "app/providers/store-provider";
-import {counterReducer} from "entities/counter";
-import {createReducerManager} from "app/providers/store-provider/config/reducer-manager";
-import {$api} from "shared/api/api";
-import {scrollStopReducer} from "features/scroll-stop";
+import { configureStore, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit';
+import { StateSchema, ThunkExtraArgs } from 'app/providers/store-provider';
+import { counterReducer } from 'entities/counter';
+import { createReducerManager } from 'app/providers/store-provider/config/reducer-manager';
+import { $api } from 'shared/api/api';
+import { scrollStopReducer } from 'features/scroll-stop';
 
 export function createReduxStore(
 	initialState?: StateSchema, 

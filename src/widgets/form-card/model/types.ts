@@ -1,4 +1,4 @@
-import {FormEventHandler, HTMLAttributes, ReactNode} from "react";
+import { FormEventHandler, HTMLAttributes, ReactNode } from 'react';
 
 export type itemContentType = {
 	label: string;

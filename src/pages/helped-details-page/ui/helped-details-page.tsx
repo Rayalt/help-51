@@ -1,18 +1,18 @@
-import {NewsCard, Section, SectionHeader, SectionWrapper} from "widgets";
-import {useLocation, useParams} from "react-router-dom";
-import {RoutePath} from "app/providers/router";
-import React, {Fragment, useEffect, useState} from "react";
-import {Image, TabContent, TabItem, Tabs, Typography} from "shared/ui";
-import cn from "classnames";
+import { NewsCard, Section } from 'widgets';
+import { useLocation, useParams } from 'react-router-dom';
+import { RoutePath } from 'app/providers/router';
+import React, { useEffect, useState } from 'react';
+import { Image, TabContent, TabItem, Tabs, Typography } from 'shared/ui';
+import cn from 'classnames';
 import classes from '../helped-details-page.module.scss';
-import {Clients} from "shared/config/clients";
-import {DataWidget} from "widgets/data-widget/ui/data-widget";
-import {ClientTab, clientTabs} from "shared/config/client-tabs";
-import {news} from "shared/config/news";
-import { DonateFormTransaction } from "features";
-import {Estimation} from "widgets/card/ui/estimation/estimation";
+import { Clients } from 'shared/config/clients';
+import { DataWidget } from 'widgets/data-widget/ui/data-widget';
+import { ClientTab, clientTabs } from 'shared/config/client-tabs';
+import { news } from 'shared/config/news';
+import { DonateFormTransaction } from 'features';
+import { Estimation } from 'widgets/card/ui/estimation/estimation';
 
-const HelpedDetailsPage = ({}) => {
+const HelpedDetailsPage = () => {
 	const { pathname } = useLocation();
 	const { id } = useParams();
 	const [closed, setClosed] = useState<'estimation' | 'closed'>('estimation'); 
@@ -140,7 +140,9 @@ const HelpedDetailsPage = ({}) => {
 										base
 									>
 										<div
-											className={ cn(classes.row, classes['sm:row-cols-2'], classes['md:row-cols-3']) }
+											className={ 
+												cn(classes.row, classes['sm:row-cols-2'], classes['md:row-cols-3']) 
+											}
 										>
 											{ client.documents?.map((item) => (
 												<Image

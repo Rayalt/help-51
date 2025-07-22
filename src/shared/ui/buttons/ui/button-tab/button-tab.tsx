@@ -1,8 +1,8 @@
-import { Button } from "shared/ui/buttons";
-import {Svg, Typography} from "shared/ui";
-import cn from "classnames";
-import classes from "../../button.module.scss";
-import {ButtonTabProps} from "../../model/types";
+import { Button } from 'shared/ui/buttons';
+import { Svg, Typography } from 'shared/ui';
+import cn from 'classnames';
+import classes from '../../button.module.scss';
+import { ButtonTabProps } from '../../model/types';
 
 
 export const ButtonTab = ({ item, isActive, view = 'primary', name, onClick, className }: ButtonTabProps) => {

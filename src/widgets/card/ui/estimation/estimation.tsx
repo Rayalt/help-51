@@ -1,8 +1,8 @@
-import React, {CSSProperties, Fragment, useState} from 'react';
-import cn from "classnames";
-import classes from "../../card.module.scss";
-import {Amount, Range, Typography} from "shared/ui";
-import {EstimationProps} from "../../model/types";
+import React, { CSSProperties, Fragment } from 'react';
+import cn from 'classnames';
+import classes from '../../card.module.scss';
+import { Amount, Range, Typography } from 'shared/ui';
+import { EstimationProps } from '../../model/types';
 
 const Estimation = ({ amount, base = false, view, className }: EstimationProps) => {
 	const collected = amount?.collected || 0;
@@ -15,8 +15,8 @@ const Estimation = ({ amount, base = false, view, className }: EstimationProps) 
 				[classes.estimation_closed]: view === 'closed',
 				[classes.estimation_shadow]: !base,
 			}, 
-				classes.estimation, 
-				className
+			classes.estimation, 
+			className
 			)}
 		>
 			<Range

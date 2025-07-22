@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
-import {TabContentProps} from "../../model/types";
-import cn from "classnames";
+import React from 'react';
+import { TabContentProps } from '../../model/types';
+import cn from 'classnames';
 import classes from '../../tabs.module.scss';
-import {Typography} from "shared/ui";
-import {AnimatePresence, motion} from "framer-motion";
-import {fade} from "shared/lib/animations";
+import { Typography } from 'shared/ui';
+import { AnimatePresence, motion } from 'framer-motion';
+import { fade } from 'shared/lib/animations';
 
 const TabContent = ({ title, description, active, className, children, actions, view }: TabContentProps) => {
 	if (!active) return null;

@@ -1,7 +1,7 @@
-import {HTMLProps, ReactNode} from "react";
-import {BtnProps, ButtonLinkProps} from "shared/ui/buttons/model/types";
-import {TypographyProps} from "shared/ui";
-import {SvgProps} from "shared/ui/svg/model/types";
+import { HTMLProps, ReactNode } from 'react';
+import { BtnProps, ButtonLinkProps } from 'shared/ui/buttons/model/types';
+import { TypographyProps } from 'shared/ui';
+import { SvgProps } from 'shared/ui/svg/model/types';
 
 export type ContactsType = {
 	path: string;

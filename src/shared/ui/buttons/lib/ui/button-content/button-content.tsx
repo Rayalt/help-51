@@ -1,19 +1,25 @@
-import React, {Fragment, memo, useMemo} from 'react';
+import React, { Fragment } from 'react';
 import cn from 'classnames';
-import {Svg} from "shared/ui/svg";
+import { Svg } from 'shared/ui/svg';
 import classes from '../../../button.module.scss';
-import {BtnProps} from "../../../model/types";
-// import {iconMap, IconName} from "shared/ui/svg/model/types";
+import { BtnProps } from '../../../model/types';
 
-const ButtonContent = memo(({ base, size, btnTextClass, addonLeft, addonLeftView, addonRight, addonRightClass, addonRightView, children }: BtnProps) => {
-	// const iconName = icon as IconName;
-	// const IconComponent = iconMap[iconName];
-	
+const ButtonContent = ({ 
+	base, 
+	size, 
+	btnTextClass, 
+	addonLeft, 
+	addonLeftView, 
+	addonRight, 
+	addonRightClass, 
+	addonRightView, 
+	children 
+}: BtnProps) => {
 	return (
 		<Fragment>
 			{ addonLeft &&
 				<Svg
-					className={ cn({[classes.btn__addon]: !base}) }
+					className={ cn({ [classes.btn__addon]: !base }) }
 					name={ addonLeft }
 					view={ size || addonLeftView }
 				/>
@@ -47,6 +53,6 @@ const ButtonContent = memo(({ base, size, btnTextClass, addonLeft, addonLeftView
 			}
 		</Fragment>
 	);
-});
+};
 
-export {ButtonContent};
+export { ButtonContent };

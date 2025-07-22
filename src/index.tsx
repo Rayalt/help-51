@@ -5,7 +5,7 @@ import { App } from 'app/App';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ErrorMessage } from 'widgets';
 import { Suspense } from 'react';
-import {StoreProvider} from "app/providers";
+import { StoreProvider } from 'app/providers';
 
 // const rootElement: HTMLElement = document.getElementById('root');
 // const root = ReactDOM.createRoot(rootElement);

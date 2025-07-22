@@ -1,4 +1,4 @@
-import {News} from "shared/config/clients";
+import { News } from 'shared/config/clients';
 
 export enum ClientTab {
 	HISTORY = 'HISTORY',
@@ -22,6 +22,7 @@ export type ClientTabType = {
 	documents?: Document[];
 };
 
+/* eslint-disable max-len */
 export const clientTabs: ClientTabType[] = [
 	{
 		id: 'e9b20c06-9e51-4a60-b16f-7f36ce8eeedc',

@@ -1,5 +1,5 @@
-import {HTMLAttributes} from "react";
-import {TypographyProps} from "shared/ui";
+import { HTMLAttributes } from 'react';
+import { TypographyProps } from 'shared/ui';
 
 export enum Symbols {
 	RUB = '₽',

@@ -1,10 +1,10 @@
-import React, {memo, Suspense, useCallback} from 'react';
+import React, { Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Loader } from 'widgets/loader';
-import {AppRoutesProps} from "app/providers/router/config/typings";
-import {routeConfig} from "app/providers/router/config/route-config";
+import { AppRoutesProps } from 'app/providers/router/config/typings';
+import { routeConfig } from 'app/providers/router/config/route-config';
 
-const AppRouter = memo(() => {
+const AppRouter = () => {
 	const renderWithWrapper = useCallback((route: AppRoutesProps) => {
 		const suspense = (
 			<Suspense fallback={<Loader />}>
@@ -25,6 +25,6 @@ const AppRouter = memo(() => {
 			{ Object.values(routeConfig).map(renderWithWrapper) }
 		</Routes>
 	);
-});
+};
 
 export { AppRouter };

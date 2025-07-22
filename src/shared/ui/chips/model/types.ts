@@ -1,6 +1,5 @@
-
-import {InputHTMLAttributes, ReactNode} from "react";
-import {SvgProps} from "shared/ui/svg/model/types";
+import { InputHTMLAttributes, ReactNode } from 'react';
+import { SvgProps } from 'shared/ui/svg/model/types';
 
 export type ChipItem = {
 	id: string;
@@ -15,11 +14,6 @@ export interface ChipsProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
 	chips: ChipItem[];
 	type?: 'radio' | 'checkbox';
 	checkedValue?: string;
-	// wrapperClass?: string;
-	// labelClass?: string;
-	// inputClass?: string;
-	// contentClass?: string;
-	// iconClass?: string;
 	inputName?: string;
 	disabled?: boolean;
 	size?: 'sm' | 'md' | 'lg';

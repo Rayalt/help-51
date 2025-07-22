@@ -1,8 +1,8 @@
-import React, {Fragment, ReactNode} from 'react';
-import {TabContentRowProps} from "../../model/types";
-import cn from "classnames";
+import React from 'react';
+import { TabContentRowProps } from '../../model/types';
+import cn from 'classnames';
 import classes from '../../tabs.module.scss';
-import {Typography} from "shared/ui";
+import { Typography } from 'shared/ui';
 
 const TabsContentRow = ({ title, description, action, img }: TabContentRowProps) => {
 	return (

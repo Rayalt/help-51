@@ -1,6 +1,6 @@
-import {HTMLProps, ReactNode} from "react";
-import {ButtonLinkProps, TypographyProps} from "shared/ui";
-import {SvgProps} from "shared/ui/svg/model/types";
+import { HTMLProps, ReactNode } from 'react';
+import { TypographyProps } from 'shared/ui';
+import { SvgProps } from 'shared/ui/svg/model/types';
 
 export interface ResponsiveValue {
 	xs?: string;
@@ -21,7 +21,6 @@ export interface SectionProps extends HTMLProps<HTMLElement> {
 	typographyTitleProps?: TypographyProps;
 	color?: TypographyProps['color'];
 	typographyDescriptionProps?: TypographyProps[];
-	typographyDescrProps?: TypographyProps[];
 	typographyWidgetTitleProps?: TypographyProps;
 	typographyWidgetDescrProps?: TypographyProps;
 	headerActions?: ReactNode;
@@ -36,15 +35,6 @@ export interface SectionProps extends HTMLProps<HTMLElement> {
 	bgPos2?: string | ResponsiveValue;
 	bgSize1?: string | ResponsiveValue;
 	bgSize2?: string | ResponsiveValue;
-}
-
-// export interface SectionHeaderProps extends HTMLProps<HTMLElement> {
-// 	typographyTitleProps?: TypographyProps;
-// 	container?: SectionProps['container'];
-// }
-
-export interface SectionDescriptionProps extends HTMLProps<HTMLElement> {
-	typographyDescrProps?: TypographyProps;
 }
 
 export interface SectionMainActionProps extends HTMLProps<HTMLElement> {

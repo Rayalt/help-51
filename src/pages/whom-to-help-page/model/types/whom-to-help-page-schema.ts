@@ -1,7 +1,7 @@
-import {EntityState} from "@reduxjs/toolkit";
-import {SortOrder} from "shared/types";
-import {ClientsType} from "shared/config/clients";
-import {ProgramTypes} from "shared/config/programs";
+import { EntityState } from '@reduxjs/toolkit';
+import { SortOrder } from 'shared/types';
+import { ClientsType } from 'shared/config/clients';
+import { ProgramTypes } from 'shared/config/programs';
 
 export interface WhomToHelpPageSchema extends EntityState<ClientsType, string> {
 	isLoading?: boolean;

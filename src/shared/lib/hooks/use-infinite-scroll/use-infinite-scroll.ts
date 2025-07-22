@@ -1,5 +1,5 @@
-import {useEffect, useRef} from "react";
-import {useInfiniteScrollOptions} from "./typings";
+import { useEffect, useRef } from 'react';
+import { useInfiniteScrollOptions } from './typings';
 
 export const useInfiniteScroll = ({
 	callback,

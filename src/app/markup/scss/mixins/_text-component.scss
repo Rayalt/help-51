@@ -1,8 +1,3 @@
-// ===============================================
-// TEXT COMPONENT
-// ===============================================
-
-
 @use 'sass:map';
 @use 'sass:list';
 @use '../variables/breakpoints' as bp-variable;
@@ -67,8 +62,7 @@ $grid-breakpoints: bp-variable.$grid-breakpoints;
 		.#{$name}#{$i} {
 			@include text-component(#{$name}#{$i});
 		}
-
-		// stylelint-disable-next-line
+		
 		$i: $i + 1;
 	}
 }

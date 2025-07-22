@@ -1,16 +1,15 @@
 import cn from 'classnames';
 import classes from '../sidebar.module.scss';
-import {SidebarProps} from "../model/types";
-import {Navbar} from "widgets";
-import {navbarFooterList, navbarFooterListSecond} from "shared/config/navbar";
-import {Button, Svg} from "shared/ui";
+import { SidebarProps } from '../model/types';
+import { Navbar } from 'widgets';
+import { navbarFooterList, navbarFooterListSecond } from 'shared/config/navbar';
+import { Button } from 'shared/ui';
 
-const Sidebar = ({ onToggleMenu, children, className }: SidebarProps) => {
+const Sidebar = ({ onToggleMenu, className }: SidebarProps) => {
 	const collapseMenu = () => {
 		if (onToggleMenu) {
 			onToggleMenu();
 		}
-		// dispatch(sidebarActions.change());
 	}
 	
 	return (

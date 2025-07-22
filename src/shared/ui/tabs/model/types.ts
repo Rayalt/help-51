@@ -1,9 +1,5 @@
-import {HTMLProps, ReactNode} from "react";
-import {TypographyProps} from "shared/ui";
-
-export type TabEvent<T extends HTMLElement> = Event & {
-	target: T;
-}
+import { HTMLProps, ReactNode } from 'react';
+import { TypographyProps } from 'shared/ui';
 
 export interface TabItem<T = string> extends Omit<HTMLProps<HTMLElement>, 'value' | 'title'> {
 	title: T;

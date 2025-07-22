@@ -1,10 +1,9 @@
 import cn from 'classnames';
-import {DonatesProps} from "../model/types";
-import classes from '../donates.module.scss';
-import {Table} from "widgets";
-import {donatesHeader, donatesRows} from "widgets/donates/model/donates";
+import { DonatesProps } from '../model/types';
+import { Table } from 'widgets';
+import { donatesHeader, donatesRows } from 'widgets/donates/model/donates';
 
-const Donates = ({ children, className }: DonatesProps) => {
+const Donates = ({ className }: DonatesProps) => {
 	return (
 		<Table 
 			view='row-1-accent'

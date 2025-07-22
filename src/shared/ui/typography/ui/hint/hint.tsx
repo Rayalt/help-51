@@ -1,7 +1,7 @@
 import cn from 'classnames';
 import classes from '../../typography.module.scss';
-import {HintProps} from "../../model/types";
-import {Typography} from "shared/ui";
+import { HintProps } from '../../model/types';
+import { Typography } from 'shared/ui';
 
 const Hint = ({ children, color, className, typographyProps }: HintProps) => {
 	return (

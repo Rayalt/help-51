@@ -1,5 +1,5 @@
-import {UnknownAction, combineReducers, ReducersMapObject, Reducer} from "@reduxjs/toolkit";
-import {ReducerManager, StateSchema, StateSchemaKey, MountedReducersType} from "app/providers/store-provider";
+import { UnknownAction, combineReducers, ReducersMapObject, Reducer } from '@reduxjs/toolkit';
+import { ReducerManager, StateSchema, StateSchemaKey, MountedReducersType } from 'app/providers/store-provider';
 
 const createReducerManager = (initialReducers: ReducersMapObject<StateSchema>): ReducerManager => {
 	const reducers = { ...initialReducers };

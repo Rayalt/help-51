@@ -1,13 +1,20 @@
-import {CardProps} from "../../model/types";
-import {Button, ButtonLink, Image, Typography} from "shared/ui";
-import {RoutePath} from "app/providers/router";
-import cn from "classnames";
+import { CardProps } from '../../model/types';
+import { Button, ButtonLink, Image, Typography } from 'shared/ui';
+import { RoutePath } from 'app/providers/router';
+import cn from 'classnames';
 import classes from '../../card.module.scss';
-import {Estimation} from "../estimation/estimation";
-import {useRatioClass, useTypograph} from "shared/lib/hooks";
-import {Fragment} from "react";
+import { Estimation } from '../estimation/estimation';
+import { ratioClass } from 'shared/lib/hooks';
 
-const ButtonCard = ({colorTitle = 'accent-primary', viewTitle = 'subtitle', view = 'estimation', base, onClick, className, cardData}: CardProps) => {
+const ButtonCard = ({ 
+	colorTitle = 'accent-primary', 
+	viewTitle = 'subtitle', 
+	view = 'estimation', 
+	base, 
+	onClick, 
+	className, 
+	cardData
+}: CardProps) => {
 	return (
 		<Button 
 			onClick={ onClick }
@@ -30,9 +37,11 @@ const ButtonCard = ({colorTitle = 'accent-primary', viewTitle = 'subtitle', view
 					}
 					<Image 
 						className={cn(
-							useRatioClass({view: '4x3'}),
+							ratioClass({ view: '4x3' }),
 							classes.card__img
 						)}
+						
+						// eslint-disable-next-line max-len
 						src='https://images.unsplash.com/photo-1750263239811-bfad7ceffa10?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
 					/>
 				</span>

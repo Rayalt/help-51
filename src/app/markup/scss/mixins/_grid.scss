@@ -1,8 +1,3 @@
-// ===============================================
-// GRID SYSTEM MIXINS
-// ===============================================
-
-
 @use 'sass:math';
 @use 'sass:map';
 @use '../variables/breakpoints' as bp-variable;
@@ -15,8 +10,7 @@ $columns: grid-variable.$columns;
 @mixin make-cssgrid-cols($breakpoints: $grid-breakpoints) {
 	@each $breakpoint in map.keys($breakpoints) {
 		$prefix: bp-mixin.breakpoint-prefix($breakpoint, $breakpoints);
-
-		// stylelint-disable-next-line order/order
+		
 		@include bp-mixin.media-breakpoint-up($breakpoint, $breakpoints) {
 			@if ($columns > 0) {
 				@for $i from 1 through $columns {
@@ -46,10 +40,8 @@ $columns: grid-variable.$columns;
 @mixin make-cssgrid-rows($breakpoints: $grid-breakpoints) {
 	@each $breakpoint in map.keys($breakpoints) {
 		$prefix: bp-mixin.breakpoint-prefix($breakpoint, $breakpoints);
-
-		// stylelint-disable-next-line order/order
+		
 		@include bp-mixin.media-breakpoint-up($breakpoint, $breakpoints) {
-			// stylelint-disable-next-line order/order
 			$i: 2;
 
 			@while $i <= $columns {
@@ -61,7 +53,6 @@ $columns: grid-variable.$columns;
 					}
 				}
 
-				// stylelint-disable-next-line order/order
 				$i: $i + 1;
 			}
 		}

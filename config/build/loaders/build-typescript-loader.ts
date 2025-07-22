@@ -1,4 +1,4 @@
-import {BuildOptions} from "../types/config";
+import { BuildOptions } from '../types/config';
 
 export const buildTypescriptLoader = (options?: BuildOptions) => {
 	return {

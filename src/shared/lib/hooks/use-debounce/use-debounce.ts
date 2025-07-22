@@ -1,4 +1,4 @@
-import {useCallback, useRef} from "react";
+import { useCallback, useRef } from 'react';
 
 export const useDebounce = <T extends (...args: any[]) => void>(callback: T, delay: number) => {
 	const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);

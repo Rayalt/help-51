@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import classes from '../../table.module.scss';
 import { TableProps } from '../../model/types';
-import {TableHeader} from "../table-header/table-header";
-import {TableRow} from "../table-row/table-row";
+import { TableHeader } from '../table-header/table-header';
+import { TableRow } from '../table-row/table-row';
 
 const Table = ({ view, cellsHeader, cellsRow, className }: TableProps) => {
 	return (

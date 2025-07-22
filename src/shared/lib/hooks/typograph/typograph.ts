@@ -27,6 +27,6 @@ const tp = new Typograph({
 	],
 });
 
-export const useTypograph = (html: string) => {
+export const typograph = (html: string) => {
 	return tp.execute(html);
 };

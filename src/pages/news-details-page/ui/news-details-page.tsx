@@ -1,8 +1,6 @@
-
-import {Fragment} from "react";
-import {NewsDetails} from "widgets";
-import {useLocation, useParams} from "react-router-dom";
-import {news} from "shared/config/news";
+import { NewsDetails } from 'widgets';
+import { useParams } from 'react-router-dom';
+import { news } from 'shared/config/news';
 
 const NewsDetailsPage = () => {
 	const { id } = useParams();

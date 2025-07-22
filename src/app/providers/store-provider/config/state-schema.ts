@@ -1,8 +1,8 @@
-import {CounterSchema} from "entities/counter";
-import {EnhancedStore, Reducer, ReducersMapObject, StateFromReducersMapObject, UnknownAction} from "@reduxjs/toolkit";
-import {AxiosInstance} from "axios";
-import {ScrollStopSchema} from "features/scroll-stop/model/types/scroll-stop-schema";
-import {WhomToHelpPageSchema} from "pages/whom-to-help-page/model/types/whom-to-help-page-schema";
+import { CounterSchema } from 'entities/counter';
+import { EnhancedStore, Reducer, ReducersMapObject, StateFromReducersMapObject, UnknownAction } from '@reduxjs/toolkit';
+import { AxiosInstance } from 'axios';
+import { ScrollStopSchema } from 'features/scroll-stop/model/types/scroll-stop-schema';
+import { WhomToHelpPageSchema } from 'pages/whom-to-help-page/model/types/whom-to-help-page-schema';
 
 export interface StateSchema {
 	counter: CounterSchema;

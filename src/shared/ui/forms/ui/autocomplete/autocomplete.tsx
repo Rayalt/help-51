@@ -1,11 +1,10 @@
-import {useMemo} from "react";
-import {AutocompleteProps} from "../../model/types";
-import { Input } from "../input/input";
+import { useMemo } from 'react';
+import { AutocompleteProps } from '../../model/types';
+import { Input } from '../input/input';
 
 const Autocomplete = ({
 	placeholder,
 	options,
-	value,
 	onChange,
 }: AutocompleteProps) => {
 	const onChangeHandler: AutocompleteProps['onChange'] = ((event, payload) => {

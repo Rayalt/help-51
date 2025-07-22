@@ -1,7 +1,7 @@
-import {Fragment, useEffect} from "react";
-import {useDispatch, useStore} from "react-redux";
-import {ReduxStoreWithManager, StateSchemaKey} from "app/providers/store-provider";
-import {DynamicModuleLoaderProps} from "shared/lib/components/dynamic-module-loader";
+import { Fragment, useEffect } from 'react';
+import { useDispatch, useStore } from 'react-redux';
+import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/store-provider';
+import { DynamicModuleLoaderProps } from 'shared/lib/components/dynamic-module-loader';
 
 const DynamicModuleLoader = ({
 	children,
@@ -26,7 +26,7 @@ const DynamicModuleLoader = ({
 		
 		return () => {
 			if (removeAfterUnmount) {
-				Object.entries(reducers).forEach(([name, reducer]) => {
+				Object.entries(reducers).forEach(([name]) => {
 					store.reducerManager.remove(name as StateSchemaKey);
 					dispatch({ type: `@DESTROY ${name} reducer` })
 				})

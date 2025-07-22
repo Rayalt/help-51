@@ -1,7 +1,7 @@
-import { useState } from "react";
-import cn from "classnames";
-import classes from "../image.module.scss";
-import {ImageKey, imageMap} from "../model/types";
+import { useState } from 'react';
+import cn from 'classnames';
+import classes from '../image.module.scss';
+import { ImageKey, imageMap } from '../model/types';
 
 type ImageProps = {
 	src?: string | ImageKey;

@@ -1,11 +1,11 @@
-import {ButtonCard, Section, SectionHeader, SectionMainAction, SectionWrapper} from "widgets";
-import {Button, ButtonLink} from "shared/ui";
-import {RoutePath} from "app/providers/router";
+import { ButtonCard, Section, SectionHeader, SectionMainAction, SectionWrapper } from 'widgets';
+import { Button, ButtonLink } from 'shared/ui';
+import { RoutePath } from 'app/providers/router';
 import classes from '../helped-page.module.scss';
-import cn from "classnames";
-import {useNavigate} from "react-router-dom";
-import {Pagination} from "shared/ui";
-import {Clients, ClientsType} from "shared/config/clients";
+import cn from 'classnames';
+import { useNavigate } from 'react-router-dom';
+import { Pagination } from 'shared/ui';
+import { Clients, ClientsType } from 'shared/config/clients';
 
 const HelpedPage = () => {
 	const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import cn from 'classnames';
 import classes from '../../team-item.module.scss';
-import {TeamProps} from "../../model/types";
-import {TeamItem} from "widgets/team/ui/team-item/team-item";
-import {team} from "widgets/team/model/team";
+import { TeamProps } from '../../model/types';
+import { TeamItem } from 'widgets/team/ui/team-item/team-item';
+import { team } from 'widgets/team/model/team';
 
-const Team = ({children, className}: TeamProps) => {
+const Team = ({ className }: TeamProps) => {
 	return (
 		<div
 			className={cn(classes.team, className)}
@@ -25,4 +25,4 @@ const Team = ({children, className}: TeamProps) => {
 	);
 };
 
-export {Team};
+export { Team };

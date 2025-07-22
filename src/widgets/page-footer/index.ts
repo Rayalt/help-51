@@ -1,3 +1,3 @@
-import { PageFooter } from "./ui/page-footer/page-footer";
+import { PageFooter } from './ui/page-footer/page-footer';
 
 export { PageFooter };

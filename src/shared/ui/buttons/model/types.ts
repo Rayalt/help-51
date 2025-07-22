@@ -1,7 +1,7 @@
-import {ButtonHTMLAttributes, HTMLProps} from 'react';
-import { LinkProps } from "react-router-dom";
-import {TabItem, TypographyProps} from "shared/ui";
-import {SvgProps} from "shared/ui/svg/model/types";
+import { ButtonHTMLAttributes, HTMLProps } from 'react';
+import { LinkProps } from 'react-router-dom';
+import { TabItem } from 'shared/ui';
+import { SvgProps } from 'shared/ui/svg/model/types';
 
 export interface BtnProps
 	extends ButtonHTMLAttributes<HTMLButtonElement> {

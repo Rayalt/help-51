@@ -1,11 +1,9 @@
 import cn from 'classnames';
 
 import classes from '../svg.module.scss';
-import { iconMap, SvgProps } from "../model/types";
-import log from "eslint-plugin-react/lib/util/log";
+import { iconMap, SvgProps } from '../model/types';
 
 const Svg = ({
-	title, 
 	name,
 	view,
 	base,

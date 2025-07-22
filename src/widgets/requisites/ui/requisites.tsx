@@ -1,7 +1,6 @@
-import cn from 'classnames';
-import {Table} from "widgets";
-import React from "react";
-import {requisites} from "../model/requisites";
+import { Table } from 'widgets';
+import React from 'react';
+import { requisites } from '../model/requisites';
 
 const Requisites = () => {
 	return (

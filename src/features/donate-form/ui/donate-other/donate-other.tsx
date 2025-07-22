@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import classes from '../../donate-form.module.scss';
-import {DonateOtherProps} from "../../model/types";
-import {Svg, Typography} from "shared/ui";
-import React from "react";
-import {donateOtherList} from "features/donate-form/model/donate-other";
+import { DonateOtherProps } from '../../model/types';
+import { Svg, Typography } from 'shared/ui';
+import React from 'react';
+import { donateOtherList } from 'features/donate-form/model/donate-other';
 
 const DonateOther = ({ children, className }: DonateOtherProps) => {
 	return (

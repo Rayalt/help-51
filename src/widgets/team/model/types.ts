@@ -1,5 +1,5 @@
-import {HTMLAttributes} from "react";
-import {TeamItem} from "widgets/team/model/team";
+import { HTMLAttributes } from 'react';
+import { TeamItem } from 'widgets/team/model/team';
 
 export interface TeamProps extends HTMLAttributes<HTMLElement> {}
 

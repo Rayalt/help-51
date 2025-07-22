@@ -1,6 +1,6 @@
-import {Button} from "shared/ui";
-import {useNavigate} from "react-router-dom";
-import {Section, SectionWrapper} from "widgets/section";
+import { Button } from 'shared/ui';
+import { useNavigate } from 'react-router-dom';
+import { Section } from 'widgets/section';
 
 const NotFoundPage = () => {
 	const navigate = useNavigate();
@@ -15,14 +15,12 @@ const NotFoundPage = () => {
 				children: 'Страница не найдена',
 			}}
 		>
-			<SectionWrapper>
-				<Button
-					view='primary'
-					onClick={onBackHandler}
-				>
-					Назад
-				</Button>
-			</SectionWrapper>
+			<Button
+				view='primary'
+				onClick={onBackHandler}
+			>
+				Назад
+			</Button>
 		</Section>
 	);
 };

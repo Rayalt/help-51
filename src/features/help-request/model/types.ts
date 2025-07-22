@@ -1,7 +1,7 @@
-import {HTMLAttributes} from "react";
-import {ChipItem} from "shared/ui/chips/model/types";
-import {DropdownOption} from "shared/ui";
-import {ProgramTypes} from "shared/config/programs";
+import { HTMLAttributes } from 'react';
+import { ChipItem } from 'shared/ui/chips/model/types';
+import { DropdownOption } from 'shared/ui';
+import { ProgramTypes } from 'shared/config/programs';
 
 export enum HelpGender {
 	MALE = 'MALE',

@@ -1,5 +1,5 @@
-import {AppDispatch, createReduxStore} from './config/store-config';
-import {StoreProvider} from './ui/store-provider';
+import { AppDispatch, createReduxStore } from './config/store-config';
+import { StoreProvider } from './ui/store-provider';
 import {
 	StateSchema,
 	StateSchemaKey,

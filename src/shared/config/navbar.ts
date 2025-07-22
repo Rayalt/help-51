@@ -1,4 +1,4 @@
-import {RoutePath} from "app/providers/router";
+import { RoutePath } from 'app/providers/router';
 
 export type NavbarItemType = {
 	id: string;

@@ -1,3 +1,3 @@
-import { Document } from "./ui/document";
+import { Document } from './ui/document';
 
 export { Document };

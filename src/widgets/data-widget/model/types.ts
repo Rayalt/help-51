@@ -1,5 +1,5 @@
-import {HTMLAttributes, ReactNode} from "react";
-import {TypographyProps} from "shared/ui";
+import { HTMLAttributes, ReactNode } from 'react';
+import { TypographyProps } from 'shared/ui';
 
 export type DataWidgetType = {
 	title?: string;

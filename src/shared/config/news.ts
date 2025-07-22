@@ -6,6 +6,7 @@ export type NewsType = {
 	clientId: string;
 };
 
+/* eslint-disable max-len */
 export const news: NewsType[] = [
 	{
 		id: '1',

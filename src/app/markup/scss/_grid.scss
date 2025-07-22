@@ -1,7 +1,3 @@
-// ===============================================
-// GRID
-// ===============================================
-
 @use 'variables/grid' as grid-variable;
 @use 'mixins/grid' as grid-mixin;
 @use 'mixins/breakpoints' as bp;
@@ -13,7 +9,6 @@ $columns: grid-variable.$columns;
 	--gutter-y: 24px;
 	--grid-columns: #{$columns};
 
-	// stylelint-disable-next-line declaration-no-important
 	display: grid !important;
 	grid-template-columns: repeat(var(--grid-columns), 1fr);
 	gap: var(--gutter-y) var(--gutter-x);
