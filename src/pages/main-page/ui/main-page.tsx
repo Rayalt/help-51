@@ -9,7 +9,7 @@ import { ButtonLink, SwiperNavigations, SwiperSlider } from 'shared/ui';
 import { RoutePath } from 'app/providers/router';
 import { SwiperSlide } from 'swiper/react';
 import { useNavigate } from 'react-router-dom';
-import { Programs } from 'shared/config/programs';
+import { Programs, ProgramTypes } from 'shared/config/programs';
 import { Clients, ClientsType } from 'shared/config/clients';
 import { DataWidget } from 'widgets/data-widget/ui/data-widget';
 import { DonateFormTabs } from 'features';
@@ -22,8 +22,8 @@ const MainPage = () => {
 		return () => navigate(RoutePath.helped_details + id);
 	};
 	
-	const programsHandler = () => {
-		navigate(RoutePath.programs);
+	const programsHandler = (tab: ProgramTypes) => {
+		return () => navigate(`${RoutePath.programs}?tab=${tab}`);
 	};
 	
 	const filteredClients = Clients.filter(client => client.view === 'estimation');
@@ -137,7 +137,7 @@ const MainPage = () => {
 						>
 							<DataWidget
 								view='interactive'
-								onClick={ programsHandler }
+								onClick={ programsHandler( program.value ) }
 								widgetData={ program }
 								viewTitle='subtitle'
 								colorTitle='accent-secondary'

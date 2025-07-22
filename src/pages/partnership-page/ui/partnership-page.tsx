@@ -1,26 +1,27 @@
 import { Contacts, Section,  SectionHeader } from 'widgets';
-import { Svg, Typography } from 'shared/ui';
+import { Col, Row, Svg, Typography } from 'shared/ui';
 import cn from 'classnames';
 import classes from '../partnership-page.module.scss';
 import { DataWidget } from 'widgets/data-widget/ui/data-widget';
 import { contactsLinkListShort } from 'shared/config/contacts';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ratioClass } from 'shared/lib/hooks';
 
 const PartnershipPage = () => {
 	return (
-		<div>
+		<Fragment>
 			<Section
 				bgImage2='starsLargeBW'
 				bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
 				bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 				view='inverted'
 			>
-				<div
-					className={cn(classes.row)}
-				>
-					<div
-						className={cn(classes['sm:col-10'], classes['md:col-8'])}
+				<Row>
+					<Col
+						gridCols={{
+							sm: 10, 
+							md: 8,
+						}}
 					>
 						<SectionHeader
 							typographyTitleProps={{
@@ -50,8 +51,8 @@ const PartnershipPage = () => {
 								color='primary'
 							/>
 						</SectionHeader>
-					</div>
-				</div>
+					</Col>
+				</Row>
 			</Section>
 			
 			<Section
@@ -62,25 +63,30 @@ const PartnershipPage = () => {
 					children: 'Генеральный партнер фонда',
 				}}
 			>
-				<div
-					className={cn(classes.row)}
-				>
-					<DataWidget
-						className={cn(classes['md:col-3'], classes['sm:col-4'], classes['col-7'])}
-						base
+				<Row>
+					<Col
+						gridCols={{
+							xs: 7, 
+							sm: 4, 
+							md: 3,
+						}}
 					>
-						<div
-							className={cn(ratioClass({ view: '1x1' }))}
+						<DataWidget
+							base
 						>
-							<Svg 
-								name='ads' 
-								base
-								iconCl
-								auto
-							/>
-						</div>
-					</DataWidget>
-				</div>
+							<div
+								className={cn(ratioClass({ view: '1x1' }))}
+							>
+								<Svg 
+									name='ads' 
+									base
+									iconCl
+									auto
+								/>
+							</div>
+						</DataWidget>
+					</Col>
+				</Row>
 			</Section>
 			
 			<Section
@@ -93,10 +99,10 @@ const PartnershipPage = () => {
 				}}
 			>
 				<div
-					className={cn(classes.row)}
+					className='row'
 				>
 					<div
-						className={cn(classes['md:col-3'], classes['sm:col-4'], classes['col-7'])}
+						className='md:col-3 sm:col-4 col-7'
 					>
 						<div
 							className={cn(ratioClass({ view: '1x1' }), classes['partner-card'])}
@@ -157,7 +163,7 @@ const PartnershipPage = () => {
 			{/*		</div>*/}
 			{/*	</SectionWrapper>*/}
 			{/*</Section>*/}
-		</div>
+		</Fragment>
 	);
 };
 

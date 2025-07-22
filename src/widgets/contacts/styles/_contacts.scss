@@ -1,7 +1,7 @@
 @use 'app/markup/scss/mixins/breakpoints' as bp;
 
 .contacts {
-	--contacts-gap: 16px;
+	--contacts-gap: 8px;
 	
 	display: flex;
 	flex-direction: column;
@@ -9,13 +9,13 @@
 	gap: var(--contacts-gap);
 	
 	@include bp.media-breakpoint-down(md) {
-		--contacts-gap: 8px;
+		--contacts-gap: 16px;
 	}
 	
 	&__links {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: 12px;
 		padding-left: 8px;
 	}
 	

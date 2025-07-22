@@ -1,0 +1,24 @@
+@mixin bg-image($layers...) {
+	$bg-list: ();
+
+	@each $layer in $layers {
+		$layer-name: str-replace(str-to-lower-case(str-trim(#{$layer})), ' ', '-');
+		$bg-list: append($bg-list, var(--bg-layer-#{$layer-name}), comma);
+		--bg-layer-#{$layer-name}: #{$layer};
+	}
+
+	background-image: $bg-list;
+}
+
+// Вспомогательные функции:
+@function str-trim($string) {
+	@return str-slice($string, 1, str-length($string));
+}
+
+@function str-to-lower-case($string) {
+	@return to-lower-case($string);
+}
+
+@function str-replace($string, $search, $replace) {
+	@return str-slice($string, 1, str-length($string)); // Простейший заменитель, можешь расширить по необходимости
+}

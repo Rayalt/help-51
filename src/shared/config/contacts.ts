@@ -21,7 +21,7 @@ export const contactsLinkList: ContactsType[] = [
 	...contactsLinkListShort,
 	{
 		path: '/',
-		text: 'Мурманск, Карла Либкхнента, 28, офис 401',
+		text: 'Главный офис: Мурманск, Карла Либкхнента, 28, офис 401',
 		icon: 'placemark',
 	},
 ];

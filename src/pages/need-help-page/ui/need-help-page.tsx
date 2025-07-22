@@ -21,10 +21,10 @@ const NeedHelpPage = () => {
 			bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 		>
 			<div
-				className={cn(classes.row)}
+				className={cn('row')}
 			>
 				<SectionHeader
-					className={cn(classes['sm:col-8'])}
+					className={cn(['sm:col-8'])}
 					typographyTitleProps={{
 						children: 'Заявка на помощь',
 						color: 'accent-secondary',
@@ -33,8 +33,8 @@ const NeedHelpPage = () => {
 						/* eslint-disable no-irregular-whitespace */
 						{
 							children: `
-								Оказались в трудной ситуации и нуждаетесь в поддержке? Расскажите нам 
-								о своей проблеме — мы приложим максимум усилий, чтобы найти возможность 
+								Оказались в трудной ситуации и нуждаетесь в поддержке? Расскажите нам о своей 
+								проблеме — мы приложим максимум усилий, чтобы найти возможность 
 								помочь и поддержать вас в это непростое время
 							`,
 						},

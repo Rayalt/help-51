@@ -1,6 +1,6 @@
 import { ButtonCard, NewsCard, Section, SectionMainAction, SectionWrapper } from 'widgets';
 import { Clients } from 'shared/config/clients';
-import { Pagination } from 'shared/ui';
+import { Pagination, Row } from 'shared/ui';
 import cn from 'classnames';
 import classes from 'pages/helped-page/helped-page.module.scss';
 import { news } from 'shared/config/news';
@@ -26,8 +26,11 @@ const NewsPage = () => {
 				<Pagination />
 			}
 		>
-			<div
-				className={cn(classes.row, classes['sm:row-cols-2'], classes['md:row-cols-3'])}
+			<Row
+				rowCols={{ 
+					sm: 2, 
+					md: 3, 
+				}}
 			>
 				{ news.map(newsItem => (
 					<NewsCard
@@ -35,7 +38,7 @@ const NewsPage = () => {
 						newsData={ newsItem }
 					/>
 				)) }
-			</div>
+			</Row>
 		</Section>
 	);
 };

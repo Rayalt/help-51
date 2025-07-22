@@ -11,10 +11,10 @@ const NewsDetails = ({ newsItem }: NewsDetailsProps) => {
 			className={cn(classes['news-page'])}
 		>
 			<div
-				className={cn(classes.row)}
+				className={'row'}
 			>
 				<div
-					className={cn(classes['sm:row-cols-8'], classes['md:row-cols-7'])}
+					className={ 'sm:row-cols-8 md:row-cols-7' }
 				>
 					<Typography
 						tag='h1'
@@ -25,9 +25,9 @@ const NewsDetails = ({ newsItem }: NewsDetailsProps) => {
 					</Typography>
 				</div>
 			</div>
-			<div className={cn(classes.row)}>
+			<div className={'row'}>
 				<div
-					className={cn(classes['sm:row-cols-8'], classes['md:row-cols-7'], classes['news-page__text'])}
+					className={cn('sm:row-cols-8 md:row-cols-7', classes['news-page__text'])}
 				>
 					<Typography
 						view='text-xxs'

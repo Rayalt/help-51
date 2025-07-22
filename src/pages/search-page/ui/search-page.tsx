@@ -8,10 +8,10 @@ const SearchPage = () => {
 	return (
 		<Section>
 			<div
-				className={cn(classes.row)}
+				className={cn('row')}
 			>
 				<div
-					className={cn(classes['sm:col-10'], classes['md:col-8'])}
+					className={cn(['sm:col-10'], ['md:col-8'])}
 				>
 					<SectionHeader
 						typographyTitleProps={{

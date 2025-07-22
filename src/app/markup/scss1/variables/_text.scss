@@ -1,0 +1,17 @@
+@use "../typography" as typography-variables;
+@use "../mixins/text-component";
+@use "../variables/breakpoints";
+@use "../variables/typography";
+
+
+:root {
+
+
+@include text-component.text-vars-generate(
+	typography-variables.$typography,
+	breakpoints.$token-breakpoints,
+	typography.$text-properties-list
+);
+
+
+}

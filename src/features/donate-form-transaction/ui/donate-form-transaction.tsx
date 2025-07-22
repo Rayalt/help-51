@@ -249,10 +249,10 @@ const DonateFormTransaction = ({ children, className, view, clientName }: Donate
 				</Typography>
 				
 				<div
-					className={cn(classes.row, classes['row_g-16'])}
+					className={'row row_g-16'}
 				>
 					<div
-						className={cn(classes['col-12'])}
+						className={'col-12'}
 					>
 						<Input
 							placeholder='Ваше имя'
@@ -267,7 +267,7 @@ const DonateFormTransaction = ({ children, className, view, clientName }: Donate
 					</div>
 		
 					<div
-						className={cn(classes['col-6'])}
+						className={'col-6'}
 					>
 						<Controller
 							name="phone"
@@ -297,7 +297,7 @@ const DonateFormTransaction = ({ children, className, view, clientName }: Donate
 					</div>
 		
 					<div
-						className={cn(classes['col-6'])}
+						className={'col-6'}
 					>
 						<Input
 							placeholder='Ваш email'

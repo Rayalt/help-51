@@ -14,10 +14,7 @@ export const buildCssLoader = (isDev: boolean) => {
 						namedExport: false,
 						exportLocalsConvention: 'dashes',
 						auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-						localIdentName: isDev
-							// ? '[path][name]__[local]--[hash:base64:8]'
-							? '[path][name]_[local]' 
-							: '[local]',
+						localIdentName: '[local]',
 					},
 				},
 			},
@@ -26,8 +23,12 @@ export const buildCssLoader = (isDev: boolean) => {
 				loader: 'sass-loader',
 				options: {
 					sassOptions: {
-						includePaths: ['./src']
-					}
+						includePaths: [
+							'./src',
+							'./src/app/markup/fonts',
+						]
+					},
+					additionalData: '@use \'app/markup/scss1/shared\' as *;',
 				},
 			},
 		],

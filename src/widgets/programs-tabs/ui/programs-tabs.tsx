@@ -3,10 +3,16 @@ import { TabContent, TabItem, Tabs, Typography } from 'shared/ui';
 import classes from '../programs-tabs.module.scss'
 import cn from 'classnames';
 import { Programs, ProgramTypes } from 'shared/config/programs';
+import { useSearchParams } from 'react-router-dom';
 
 const ProgramsTabs = () => {
-	const [activeTab, setActiveTab] = useState<ProgramTypes>(ProgramTypes.POOR);
+	const [searchParams] = useSearchParams();
+	const tabParam = searchParams.get('tab') as ProgramTypes | null;
 
+	const [activeTab, setActiveTab] = useState<ProgramTypes>(
+		tabParam ?? ProgramTypes.POOR
+	);
+	
 	const onTabClick = (tab: TabItem) => {
 		setActiveTab(tab.value as ProgramTypes);
 	};
@@ -27,10 +33,10 @@ const ProgramsTabs = () => {
 					active={ program.value === activeTab }
 				>
 					<div 
-						className={ cn(classes.row) }
+						className={ 'row' }
 					>
 						<div 
-							className={ cn(classes['sm:col-7'], classes['programs-tabs__text']) }
+							className={ 'sm:col-7 programs-tabs__text' }
 						>
 							{ program.details?.map((item, index) => (
 								<Typography 

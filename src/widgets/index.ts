@@ -11,6 +11,7 @@ export * from './page-header';
 export * from './requisites';
 export * from './section';
 export * from './sidebar';
+export * from './scroll-to-top';
 export * from './team';
 export * from './table';
 export * from './y-map';

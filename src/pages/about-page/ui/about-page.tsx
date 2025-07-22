@@ -15,14 +15,14 @@ import { Contacts, Requisites, Team, YMap } from 'widgets';
 import { useNavigate } from 'react-router-dom';
 import { SwiperSlider } from 'shared/ui';
 import { SwiperSlide } from 'swiper/react';
-import { Programs } from 'shared/config/programs';
+import { Programs, ProgramTypes } from 'shared/config/programs';
 import { DataWidget } from 'widgets/data-widget/ui/data-widget';
 import { contactsLinkList, contactsSocialsList } from 'shared/config/contacts';
 
 const AboutPage = () => {
 	const navigate = useNavigate();
-	const programsHandler = () => {
-		navigate(RoutePath.programs);
+	const programsHandler = (tab: ProgramTypes) => {
+		return () => navigate(`${RoutePath.programs}?tab=${tab}`);
 	};
 
 	return (
@@ -95,13 +95,14 @@ const AboutPage = () => {
 					view='secondary-light'
 					sliderId='main-clients'
 				>
-					{ Programs.map(card => (
+					{ Programs.map(program => (
 						<SwiperSlide
-							key={ card.id }
+							key={ program.id }
 						>
 							<DataWidget
-								onClick={ programsHandler }
-								widgetData={ card }
+								view='interactive'
+								onClick={ programsHandler( program.value ) }
+								widgetData={ program }
 								viewTitle='subtitle'
 								colorTitle='accent-secondary'
 							/>
@@ -109,7 +110,6 @@ const AboutPage = () => {
 					))}
 				</SwiperSlider>
 			</Section>
-			
 			
 			<Section
 				bgImage2='starsLargeBW'
@@ -119,10 +119,10 @@ const AboutPage = () => {
 				className={cn(classes['section-help-ways'])}
 			>
 				<div
-					className={cn(classes.row)}
+					className={'row'}
 				>
 					<SectionHeader
-						className={cn(classes['lg:col-6'], classes['md:col-7'], classes['sm:col-9'])}
+						className={'lg:col-6 md:col-7 sm:col-9'}
 						typographyTitleProps={{
 							children: 'Как вы можете помочь',
 							color: 'accent-primary',
@@ -136,7 +136,7 @@ const AboutPage = () => {
 					/>
 				</div>
 				<div
-					className={cn(classes.row, classes['md:row-cols-3'])}
+					className={'row md:row-cols-3'}
 				>
 					<div
 						className={cn(classes['section-help-ways__item'])}
@@ -241,16 +241,15 @@ const AboutPage = () => {
 				id='contacts'
 			>
 				<div
-					className={cn(classes.row)}
+					className={'row'}
 				>
 					<div
-						className={cn(classes['md:row-cols-6'], classes['section-contacts__map'])}
+						className={'md:row-cols-6 section-contacts__map'}
 					>
 						<YMap />
 					</div>
 					<div
-						className={
-							cn(classes['md:row-cols-5'], classes['md:col-start-8'], classes['section-contacts__info'])
+						className={cn('md:row-cols-5 md:col-start-8', classes['section-contacts__info'])
 						}
 					>
 						<SectionHeader

@@ -1,15 +1,15 @@
 @use "sass:map";
-@use './variables/icons-variables' as var;
-@use './variables/icons' as ic;
-@use 'app/markup/scss/variables/breakpoints' as bp-var;
+@use './variables/icons-variables' as *;
+@use './variables/icons' as *;
+@use 'app/markup/scss/variables/breakpoints' as bp-vars;
 @use 'app/markup/scss/mixins/breakpoints' as bp-mixin;
 
 $strokes: '[stroke-opacity], [stroke-width], [stroke-linecap], [stroke-linejoin], [stroke-dasharray], [stroke-miterlimit], [stroke-dashoffset]';
-$icon-sizes: var.$icon-sizes;
-$icon-stroke-widths: var.$icon-stroke-widths;
-$icons: ic.$icons;
-$token-breakpoints: bp-var.$token-breakpoints;
-$grid-breakpoints: bp-var.$grid-breakpoints;
+$icon-sizes: $icon-sizes;
+$icon-stroke-widths: $icon-stroke-widths;
+$icons: $icons;
+$token-breakpoints: bp-vars.$token-breakpoints;
+$grid-breakpoints: bp-vars.$grid-breakpoints;
 
 .icon {
 	--icon-cl: initial;

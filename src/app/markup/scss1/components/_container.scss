@@ -1,0 +1,27 @@
+@use '../mixins/breakpoints' as bp;
+
+
+.container {
+	--container-max-w: 100%;
+	--container-px: 16px;
+	--container-mx: 0;
+		
+	width: var(--container-max-w);
+	padding-right: var(--container-px);
+	padding-left: var(--container-px);
+	margin-left: var(--container-mx);
+	margin-right: var(--container-mx);
+	
+	@include bp.media-breakpoint-up(sm) {
+		--container-max-w: 696px;
+		--container-mx: auto;
+	}
+	
+	@include bp.media-breakpoint-up(md) {
+		--container-max-w: 928px;
+	}
+	
+	@include bp.media-breakpoint-up(lg) {
+		--container-max-w: 1312px;
+	}
+}

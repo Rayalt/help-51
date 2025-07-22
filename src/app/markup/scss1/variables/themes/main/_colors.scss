@@ -1,0 +1,31 @@
+$colors: (
+	palette: (
+		brand-100: #EAF6FD,
+		brand-200: #75C3EC,
+		brand-300: #1481C4,
+		brand-400: #145589,
+		gray-400: #282828,
+		gray-300: #999999,
+		gray-200: #D5D5D5,
+		gray-100: #EBEBEB,
+		white: #FFFFFF,
+		orange-400: #ED5E34,
+		orange-100: #f69577,
+		yellow-400: #EB9D28,
+		red-400: #FF5566,
+		red-300: #FF717D,
+		red-200: #FFD2D2,
+	),
+);
+
+@use "sass:map";
+@use "../../../mixins/colors" as cl;
+
+
+:root {
+
+
+@include cl.get-colors(map.get($colors, palette));
+
+
+}

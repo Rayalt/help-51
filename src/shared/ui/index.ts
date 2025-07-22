@@ -2,6 +2,7 @@ export * from './amount';
 export * from './buttons';
 export * from './document';
 export * from './forms';
+export * from './grid';
 export * from './image';
 export * from './links';
 export * from './menu-btn';

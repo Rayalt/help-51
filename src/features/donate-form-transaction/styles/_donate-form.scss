@@ -32,7 +32,7 @@
 	}
 	
 	&__chips-wrapper {
-		overflow-x: scroll;
+		overflow-x: auto;
 		padding-bottom: 12px;
 		
 		& + .donate-form__field {

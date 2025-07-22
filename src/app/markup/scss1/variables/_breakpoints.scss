@@ -1,0 +1,13 @@
+$grid-breakpoints: (
+	xs: 0,
+	sm: 768px,
+	md: 1024px,
+	lg: 1440px,
+	xl: 1920px,
+);
+
+$token-breakpoints: (
+	s: (real: xs, mq: xs),
+	m: (real: sm, mq: sm),
+	l: (real: lg, mq: lg),
+);

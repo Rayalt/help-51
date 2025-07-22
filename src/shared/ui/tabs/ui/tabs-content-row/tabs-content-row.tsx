@@ -7,10 +7,10 @@ import { Typography } from 'shared/ui';
 const TabsContentRow = ({ title, description, action, img }: TabContentRowProps) => {
 	return (
 		<div
-			className={cn(classes.row, classes.tabs__row)}
+			className={cn('row', classes.tabs__row)}
 		>
 			<div
-				className={cn(classes['md:col-4'])}
+				className={cn('md:col-4')}
 			>
 				<div
 					className={cn(classes.tabs__img)}
@@ -19,7 +19,7 @@ const TabsContentRow = ({ title, description, action, img }: TabContentRowProps)
 				</div>
 			</div>
 			<div
-				className={cn(classes['md:col-8'])}
+				className={cn(['md:col-8'])}
 			>
 				<Typography
 					view='text-lg'

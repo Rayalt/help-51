@@ -15,7 +15,8 @@ const DataWidget = ({
 	color, 
 	colorDescription, 
 	viewDescription, 
-	className 
+	className,
+	onClick,
 }: DataWidgetProps) => {
 	const DataWidgetContent = (tag?: DataWidgetProps['tag']) => {
 		return (
@@ -54,13 +55,14 @@ const DataWidget = ({
 			{ view === 'interactive' &&
 				<Button
 					base
+					onClick={ onClick }
 					className={ cn(
 						classes['data-widget'],
 						classes['data-widget_interactive'], 
 						className,
 						{
 							[classes['data-widget_' + shadowSize]]: shadowSize,
-							[classes['data-widget_secondary']]: color === 'secondary',
+							[classes['data-widget_secondary']]: colorTitle === 'accent-secondary',
 						}
 					) }
 				>

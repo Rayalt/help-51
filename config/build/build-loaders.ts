@@ -5,6 +5,7 @@ import { buildTypescriptLoader } from './loaders/build-typescript-loader';
 import { buildBabelLoader } from './loaders/build-babel-loader';
 import { buildSvgLoader } from './loaders/build-svg-loader';
 import { buildImgLoader } from './loaders/build-img-loader';
+import { buildAssetsLoader } from './loaders/build-assets-loader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 	const cssLoader = buildCssLoader(isDev);
@@ -17,10 +18,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 	
 	const svgLoader = buildSvgLoader();
 	const imgLoader = buildImgLoader();
+	const assetsLoader = buildAssetsLoader();
 
 	return [
 		svgLoader,
 		imgLoader,
+		// assetsLoader,
 		babelLoader,
 		typescriptLoader,
 		cssLoader,

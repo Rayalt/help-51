@@ -41,15 +41,15 @@ const HelpedDetailsPage = () => {
 			className={cn(classes['section-user'])}
 		>
 			<div
-				className={cn(classes.row)}
+				className={cn('row')}
 			>
 				<div
-					className={cn(classes['col-12'], classes['sm:col-6'], classes['md:col-4'])}
+					className={cn(['col-12'], ['sm:col-6'], ['md:col-4'])}
 				>
 					
 				</div>
 				<div
-					className={cn(classes['col-12'], classes['sm:col-6'], classes['md:col-8'])}
+					className={cn(['col-12'], ['sm:col-6'], ['md:col-8'])}
 				>
 					<Typography
 						tag='h2'
@@ -122,10 +122,10 @@ const HelpedDetailsPage = () => {
 						active={ client.value === activeTab }
 					>
 						<div 
-							className={ cn(classes.row) }
+							className={ cn('row') }
 						>
 							<div 
-								className={ cn(classes['sm:col-7'], classes['section-user__history']) }
+								className={ cn(['sm:col-7'], classes['section-user__history']) }
 							>
 								{ client.details?.map(( item ) => (
 									<Typography
@@ -141,7 +141,7 @@ const HelpedDetailsPage = () => {
 									>
 										<div
 											className={ 
-												cn(classes.row, classes['sm:row-cols-2'], classes['md:row-cols-3']) 
+												cn('row', ['sm:row-cols-2'], ['md:row-cols-3']) 
 											}
 										>
 											{ client.documents?.map((item) => (
@@ -157,7 +157,7 @@ const HelpedDetailsPage = () => {
 	
 								{  activeTab === ClientTab.NEWS &&
 									<div
-										className={ cn(classes.row) }
+										className={ cn('row') }
 									>
 										{ clientNews.map(newsItem => (
 											<NewsCard
@@ -171,7 +171,7 @@ const HelpedDetailsPage = () => {
 							</div>
 	
 							<div 
-								className={ cn(classes['sm:col-4'], classes['section-user__donation']) }
+								className={ cn(['sm:col-4'], classes['section-user__donation']) }
 							>
 								<DataWidget
 									className={cn(classes['section-user__donation-card'])}

@@ -15,7 +15,7 @@ const TeamPage = () => {
 			{ team.map(item =>
 				<div
 					key={ item.id }
-					className={cn(classes.row, classes['team-element'])}
+					className={cn('row', classes['team-element'])}
 				>
 					<Image
 						src={ item.photo }

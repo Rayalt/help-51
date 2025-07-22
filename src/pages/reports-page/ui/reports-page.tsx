@@ -42,7 +42,7 @@ const ReportsPage = () => {
 			>
 				<TabContent active>
 					<ul
-						className={cn(classes.row, classes['lg:row-cols-2'])}
+						className={'row lg:row-cols-2'}
 					>
 						{ !filteredDocuments.length &&
 							<Typography
@@ -54,7 +54,7 @@ const ReportsPage = () => {
 						{ filteredDocuments.map((document) => (
 							<li
 								key={ document.id }
-								className={cn(classes['lg:col-1'], classes['lg:col-start-1'])}
+								className={'lg:col-1 lg:col-start-1'}
 							>
 								<Document
 									to="/"

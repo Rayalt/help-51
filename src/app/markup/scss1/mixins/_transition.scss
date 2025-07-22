@@ -1,0 +1,64 @@
+@use 'sass:meta' as meta;
+@use 'sass:list' as list;
+@use '@sass-fairy/string' as string;
+
+@use '../variables/transition' as trv;
+
+$transition-base: trv.$transition-base;
+$transition-props-list: trv.$transition-props-list;
+
+
+@mixin transition($transition...) {
+	// Если параметры указаны
+	@if (list.length($transition) != 0) {
+		// Первым параметром указано true — генерируем переменные, transition не перезапишет старые значения
+		@if (list.nth($transition, 1) == bool) {
+			$transition-values: ();
+
+			transition: list.map($transition-props-list, meta.get-function('_wrap-transition-in-var'), $separator: comma);
+
+			@if list.length($transition) == 1 {
+				// Остальные параметры не были переданы, используем дефолтное значение таким же образом
+				$transition-values: list.prepend($transition-values, $transition-base);
+			} @else {
+				$transition-args: list.slice($transition, $start-at: 2);
+				$transition-values: string.split(str-slice(string.replace(list.to-string($transition-args), '), (', '/'), 2, -2), '/');
+			}
+
+			@each $transition-item in $transition-values {
+				$transition-list: string.split(#{string.trim(#{$transition-item})}, ' ');
+				$transition-name: #{list.slice($transition-list, $start-at: 1, $end-at: 1)};
+				$transition-value: #{list.slice($transition-list, $start-at: 2)};
+				--transition-#{$transition-name}: #{$transition-value};
+			}
+		} @else {
+			// Просто записываем параметры в свойство transition
+			@if list.length($transition) > 1 {
+				@each $value in $transition {
+					@if $value == null or $value == none {
+						@warn "The keyword 'none' or 'null' must be used as a single argument.";
+					}
+				}
+			}
+
+			@if list.nth($transition, 1) != null {
+				& {
+					transition: $transition;
+				}
+			}
+		}
+	} @else {
+		// Просто выводим дефолтное значение
+		transition: $transition-base;
+	}
+
+	// https://ru.hexlet.io/blog/posts/novye-mediazaprosy-kotorye-izmenyat-vashi-predstavleniya-o-vozmozhnostyah-css
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+@function _wrap-transition-in-var($item, $index, $list) {
+	@return #{$item} var(--transition-#{$item}, 0s);
+}

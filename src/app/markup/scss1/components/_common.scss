@@ -1,0 +1,35 @@
+@use '../mixins/text-component';
+
+body,
+html,
+#root {
+	height: 100%;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--body-bg-cl);
+	color: var(--body-cl);
+	font-family: var(--ff-raleway);
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'pnum' on, 'lnum' on;
+
+	@include text-component.text-component(sm);
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+}

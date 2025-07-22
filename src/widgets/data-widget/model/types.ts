@@ -18,4 +18,5 @@ export interface DataWidgetProps extends HTMLAttributes<HTMLElement>{
 	colorDescription?: TypographyProps['color'];
 	viewDescription?: TypographyProps['view'];
 	tag?: TypographyProps['tag'];
+	link?: boolean;
 }

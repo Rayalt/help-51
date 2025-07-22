@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../variables/breakpoints' as bp-variable;
+@use '../mixins/breakpoints' as bp-mixin;
+
+$grid-breakpoints: bp-variable.$grid-breakpoints;
+
+@mixin text-component($key, $weight: 400, $var: false, $props: true, $breakpoints: $grid-breakpoints) {
+	@if ($props) {
+		font-size: var(--#{$key}-fz);
+		font-weight: var(--#{$key}-fw);
+		line-height: var(--#{$key}-lh);
+		letter-spacing: var(--#{$key}-ls);
+	}
+
+	@if ($weight == bold) {
+		--#{$key}-fw: 700;
+	} @else if ($weight == semibold) {
+		--#{$key}-fw: 600;
+	} @else if ($weight == medium) {
+		--#{$key}-fw: 500;
+	} @else {
+		--#{$key}-fw: 400;
+	}
+
+	@if $var {
+		--xs-#{$var}-fz: var(--xs-#{$key}-fz);
+		--xs-#{$var}-lh: var(--xs-#{$key}-lh);
+		--xs-#{$var}-ls: var(--xs-#{$key}-ls);
+
+		--md-#{$var}-fz: var(--md-#{$key}-fz);
+		--md-#{$var}-lh: var(--md-#{$key}-lh);
+		--md-#{$var}-ls: var(--md-#{$key}-ls);
+	} @else {
+		@include bp-mixin.media-breakpoint-up(xs) {
+			--#{$key}-fz: var(--xs-#{$key}-fz);
+			--#{$key}-lh: var(--xs-#{$key}-lh);
+			--#{$key}-ls: var(--xs-#{$key}-ls);
+		}
+
+		@include bp-mixin.media-breakpoint-up(sm) {
+			--#{$key}-fz: var(--sm-#{$key}-fz);
+			--#{$key}-lh: var(--sm-#{$key}-lh);
+			--#{$key}-ls: var(--sm-#{$key}-ls);
+		}
+
+		@include bp-mixin.media-breakpoint-up(lg) {
+			--#{$key}-fz: var(--lg-#{$key}-fz);
+			--#{$key}-lh: var(--lg-#{$key}-lh);
+			--#{$key}-ls: var(--lg-#{$key}-ls);
+		}
+	}
+}
+
+/*
+	Генерирует классы для заголовков на основе text-component
+*/
+@mixin h-generate($start, $end, $name: h) {
+	$i: $start;
+
+	@while $i <= $end {
+		.#{$name}#{$i} {
+			@include text-component(#{$name}#{$i});
+		}
+		
+		$i: $i + 1;
+	}
+}
+
+/*
+	Принимает $typography, сконвертированный из typography.json.
+	Дополнительно используются переменные $text-properties-list и $token-breakpoints
+*/
+
+@mixin text-vars-generate($typography, $token-breakpoints, $text-properties-list) {
+	@each $bp, $component in $typography {
+		@each $component-name, $properties in $component {
+			@each $name, $value in $properties {
+				$local-bp: list.nth(map.get(map.get($token-breakpoints, $bp), real), 1);
+				$short-name: list.nth(map.get($text-properties-list, $name), 1);
+				$unit: list.nth(map.get($text-properties-list, $name), 2);
+
+				--#{$local-bp}-#{$component-name}-#{$short-name}: #{$value * list.nth(map.get($text-properties-list, $name), 3)}#{$unit};
+			}
+		}
+	}
+}

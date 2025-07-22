@@ -41,7 +41,7 @@ const WhomToHelpPageFilter = () => {
 	
 	return (
 		<div
-			className={cn(classes.row, classes['sm:row-cols-2'])}
+			className={cn('row', ['sm:row-cols-2'])}
 		>
 			<Input 
 				placeholder='Начните вводить имя или диагноз' 

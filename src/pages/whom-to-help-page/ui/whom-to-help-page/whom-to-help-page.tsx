@@ -71,7 +71,7 @@ const WhomToHelpPage = () => {
 				<WhomToHelpPageFilter />
 				
 				<div
-					className={cn(classes.row, classes['sm:row-cols-3'])}
+					className={cn('row', ['sm:row-cols-3'])}
 				>
 					<AnimatePresence>
 						{ filteredClients.map(client => (

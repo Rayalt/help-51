@@ -104,7 +104,7 @@ export const navbarFooterListSecond: NavbarItemType[] = [
 	// },
 	{
 		id: '705e92f2-ebe1-4921-9a79-4eb1f592dd9a',
-		path: RoutePath.contacts,
+		path: RoutePath.about + RoutePath.contacts,
 		text: 'Контакты',
 	},
 ];

@@ -80,11 +80,11 @@ const SectionCols = ({
 				className={cn(classes.container, classes.section__container)}
 			>
 				<div
-					className={cn(classes.row)}
+					className={'row'}
 				>
 					{ image &&
 						<div
-							className={cn(classes['md:col-4'], classes['sm:col-4'], classes['col-7'])}
+							className={'md:col-4 sm:col-4 col-7'}
 						>
 							<Svg 
 								name={ image }
@@ -97,9 +97,9 @@ const SectionCols = ({
 						
 					}
 					<div
-						className={cn(classes['md:col-8'], classes['sm:col-8'], classes['col-11'])}
+						className={cn(['md:col-8'], ['sm:col-8'], ['col-11'])}
 					>
-						<ul className={cn(classes['col-12'], classes.section__nav)}>
+						<ul className={cn(['col-12'], classes.section__nav)}>
 							{ sectionNav }
 						</ul>
 						

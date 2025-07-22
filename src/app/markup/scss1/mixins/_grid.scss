@@ -1,0 +1,60 @@
+@use 'sass:math';
+@use 'sass:map';
+@use '../variables/breakpoints' as bp-variable;
+@use '../variables/grid' as grid-variable;
+@use '../mixins/breakpoints' as bp-mixin;
+
+$grid-breakpoints: bp-variable.$grid-breakpoints;
+$columns: grid-variable.$columns;
+
+@mixin make-cssgrid-cols($breakpoints: $grid-breakpoints) {
+	@each $breakpoint in map.keys($breakpoints) {
+		$prefix: bp-mixin.breakpoint-prefix($breakpoint, $breakpoints);
+		
+		@include bp-mixin.media-breakpoint-up($breakpoint, $breakpoints) {
+			@if ($columns > 0) {
+				@for $i from 1 through $columns {
+					.#{$prefix}col-#{$i} {
+						grid-column-end: span $i;
+					}
+				}
+
+				/*
+					Start with `1` because `0` is and invalid value.
+					Ends with `$columns - 1` because offsetting by the width of an entire row isn't possible.
+				*/
+				@for $i from 1 through ($columns - 1) {
+					.#{$prefix}col-start-#{$i} {
+						grid-column-start: $i;
+					}
+				}
+
+				.#{$prefix}col-start-auto {
+					grid-column-start: auto;
+				}
+			}
+		}
+	}
+}
+
+@mixin make-cssgrid-rows($breakpoints: $grid-breakpoints) {
+	@each $breakpoint in map.keys($breakpoints) {
+		$prefix: bp-mixin.breakpoint-prefix($breakpoint, $breakpoints);
+		
+		@include bp-mixin.media-breakpoint-up($breakpoint, $breakpoints) {
+			$i: 2;
+
+			@while $i <= $columns {
+				.#{$prefix}row-cols-#{$i} {
+					--grid-columns: #{$i};
+
+					> * {
+						grid-column: auto;
+					}
+				}
+
+				$i: $i + 1;
+			}
+		}
+	}
+}

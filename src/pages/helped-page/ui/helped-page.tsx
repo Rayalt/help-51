@@ -37,7 +37,7 @@ const HelpedPage = () => {
 			}
 		>
 			<div
-				className={cn(classes.row, classes['sm:row-cols-2'], classes['md:row-cols-3'])}
+				className={'row sm:row-cols-2 md:row-cols-3'}
 			>
 				{ filteredClients.map(client => (
 					<ButtonCard

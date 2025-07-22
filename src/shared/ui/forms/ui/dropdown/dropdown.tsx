@@ -68,7 +68,7 @@ const Dropdown = <T extends string>({
 					<Button
 						data-value={option.value}
 						onClick={handleSelect}
-						className={cn(classes.row, classes['row_g-16'], classes.dropdown__btn)}
+						className={cn('row', ['row_g-16'], classes.dropdown__btn)}
 						base
 					>
 						{contentArray.map((cell, i) => (
@@ -137,7 +137,7 @@ const Dropdown = <T extends string>({
 						{ ...fadeDropdown }
 					>
 						{optionsTitle && (
-							<li className={cn(classes.row, classes['row_g-16'], classes['dropdown__options-title'])}>
+							<li className={cn('row', ['row_g-16'], classes['dropdown__options-title'])}>
 								{ optionsTitle.map((option, i) => (
 									<Typography
 										key={ i }

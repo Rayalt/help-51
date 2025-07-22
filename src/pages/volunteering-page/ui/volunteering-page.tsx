@@ -3,6 +3,7 @@ import cn from 'classnames';
 import classes from 'pages/partnership-page/partnership-page.module.scss';
 import React from 'react';
 import { VolunteringRequest } from 'features';
+import { Col, Row } from 'shared/ui';
 
 const VolunteeringPage = () => {
 	return (
@@ -19,11 +20,11 @@ const VolunteeringPage = () => {
 			bgSize2={{ xs: '500px', sm: '600px', md: '700px', lg: '866px' }}
 			bgPos2={{ xs: 'left -54px top', sm: 'left -54px top', md: 'left -66px top', lg: 'left -76px top' }}
 		>
-			<div
-				className={cn(classes.row)}
-			>
-				<div
-					className={cn(classes['sm:col-8'])}
+			<Row>
+				<Col
+					gridCols={{
+						sm: 8, 
+					}}
 				>
 					<SectionHeader
 						typographyTitleProps={{
@@ -38,8 +39,8 @@ const VolunteeringPage = () => {
 							внести свой вклад, у вас есть идеи или просто желание помогать — присоединяйтесь
 						` }]}
 					/>
-				</div>
-			</div>
+				</Col>
+			</Row>
 			
 			<VolunteringRequest />
 		</Section>
